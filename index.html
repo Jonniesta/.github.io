@@ -66,18 +66,32 @@
     /* HERO */
 
     .hero{
-      height:100vh;
+      height:50vh;
 
       background:
       linear-gradient(rgba(0,0,0,0.45),
       rgba(0,0,0,0.45)),
-      url("slate.jpg");
+      url("file:///C:/Users/jonni/Downloads/slate1.jpg") no-repeat;
 
       background-size:cover;
       background-position:center;
-
+        
       display:flex;
       justify-content:center;
+      align-items:center;
+      text-align:center;
+      flex-direction:column;
+
+      color:white;
+    }
+     .heroprofile{
+       height:50vh;
+
+      background:
+      linear-gradient(rgba(36,36,36,100),
+      rgba(255,255,255,100));
+      display: flex;
+      justify-content:start;
       align-items:center;
       text-align:center;
       flex-direction:column;
@@ -87,24 +101,42 @@
 
     .hero img{
       width:180px;
-      height:180px;
+      height: 180px;
       border-radius:50%;
       object-fit:cover;
       border:5px solid white;
-      margin-bottom:25px;
+      margin-top: 28%;
     }
 
-    .hero h1{
+    .heroprofile h1{
       font-size:5rem;
       font-family:'Playfair Display', serif;
       font-weight:700;
+      height: -100px;
+      margin-top: -200px;
+    }
+    .heroprofile p {
+      font-family:'Playfair Display', serif;
+      font-size: 30px;
+      text-align: center;
+      font-weight: 300;
+      height: 50px;
+      margin-top: 250px;
+      color:whitesmoke  ;
+      text-shadow: 
+        -1px -1px 0 black, 
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
     }
 
-    .hero p{
-      margin-top:10px;
-      font-size:1.1rem;
-      letter-spacing:2px;
-      color:#ddd;
+     .herocontext p{
+      font-family:'Playfair Display', serif;
+      font-size: 20px;
+      text-align: center;
+      height: 50px;
+      margin-top: auto;
+      color: #fffefe;
     }
 
     /* FILTER BAR */
@@ -179,7 +211,9 @@
       background:black;
       color:#aaa;
       text-align:center;
-      padding:30px;
+      padding: 50px;
+      position:static;
+
     }
 
     /* MOBILE */
@@ -219,7 +253,7 @@
   <nav>
 
     <div class="logo">
-      Jonny Calderon
+      JC
     </div>
 
     <ul>
@@ -236,18 +270,25 @@
 
   <section class="hero">
 
+   <img src="file:///C:/Users/jonni/Downloads/me.png" alt="Jonny Calderon">
+
+  </section>
+   <section class="heroprofile">
+
     <!-- YOUR PROFILE IMAGE -->
-    <img src="me.png" alt="Jonny Calderon">
+    
 
     <h1>Jonny Calderon</h1>
+    <p>Designer • Creator • Developer </p>
 
-    <p>
-      Designer • Creator • Developer
-    </p>
+
+  </section>
+  
+   <section class="herocontext">
+    
 
   </section>
 
-  <!-- FILTER BAR -->
 
   <section class="filters">
 
