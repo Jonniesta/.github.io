@@ -227,13 +227,12 @@
   display:flex;
   flex-direction:column;
   gap:12px;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .contact-info a{
+  color:#cbd5e1;
   text-decoration:none;
-  color:white;
-  font-size:1rem;
   transition:0.3s;
 }
 
@@ -406,29 +405,24 @@
 
     </div>
 
-    <!-- CONTACT FORM -->
-    <form action="https://formsubmit.co/jonniesta@gmail.com" method="POST">
+   <!-- CONTACT FORM (FORMSPREE) -->
+<form action="https://formspree.io/f/mbjpalvn" method="POST">
 
-      <!-- Prevent Spam -->
-      <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="name" placeholder="Your Name" required>
 
-      <!-- Optional Success Page -->
-      <input type="hidden" name="_next" value="https://jonnycjonnydo.com">
+  <input type="email" name="email" placeholder="Your Email" required>
 
-      <input type="text" name="name" placeholder="Your Name" required>
+  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
 
-      <input type="email" name="email" placeholder="Your Email" required>
+  <!-- Optional: subject line -->
+  <input type="hidden" name="_subject" value="New Portfolio Contact Message">
 
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="5"
-        required
-      ></textarea>
+  <!-- Optional: redirect after submit -->
+  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thanks.html">
 
-      <button type="submit">Send Message</button>
+  <button type="submit">Send Message</button>
 
-    </form>
+</form>
 
   </div>
 </section>
