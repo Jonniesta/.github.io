@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonny Calderon Portfolio</title>
+  <title>Jonny Calderon | Portfolio</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,81 +16,119 @@
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- =========================
+     NAVIGATION
+========================= -->
+<header>
   <nav>
     <div class="logo">
-      <img src="logo.JPG" alt="logo">
+      <img src="assets/images/logo.jpg" alt="Jonny Logo">
     </div>
 
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a class="active" href="index.html">Home</a></li>
       <li><a href="design.html">Design</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="photography.html">Photography</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
+</header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <img src="me.png" alt="Jonny Calderon">
+<!-- =========================
+     HERO (PREMIUM STRUCTURE)
+========================= -->
+<section class="hero">
 
-    <h1>Jonny Calderon</h1>
+  <div class="hero-content">
 
-    <p>Designer • Creator • Developer</p>
+    <img src="assets/images/me.png" alt="Jonny Calderon Portrait">
 
-    <a href="projects.html" class="hero-btn">View My Work</a>
-  </section>
+    <h1>
+      Jonny Calderon
+    </h1>
 
-  <!-- FEATURED PROJECTS -->
-  <section class="projects">
+    <p>
+      Designer • Creator • Developer
+    </p>
 
-    <div class="card">
-      <img src="assets/images/project1.jpg">
-      <div class="card-content">
-        <small>Featured Project</small>
-        <h3>Creative Design Collection</h3>
-        <p>Branding, typography, and modern visual identity work.</p>
-      </div>
+    <div class="hero-actions">
+      <a href="projects.html" class="hero-btn">View Projects</a>
+      <a href="contact.html" class="hero-btn secondary">Contact Me</a>
     </div>
 
-    <div class="card">
-      <img src="assets/images/project2.jpg">
-      <div class="card-content">
-        <small>Featured Photography</small>
-        <h3>Cinematic Visual Work</h3>
-        <p>Lighting-focused storytelling and portrait photography.</p>
-      </div>
+  </div>
+
+</section>
+
+<!-- =========================
+     FEATURED WORK
+========================= -->
+<section class="section-title">
+  <h2>Featured Work</h2>
+  <p>A selection of creative projects across design, photography, and writing.</p>
+</section>
+
+<section class="projects">
+
+  <article class="card">
+    <img src="assets/images/project1.jpg" alt="Design Project">
+
+    <div class="card-content">
+      <small>Design</small>
+      <h3>Creative Identity System</h3>
+      <p>Branding, typography, and visual direction for modern digital identities.</p>
     </div>
+  </article>
 
-    <div class="card">
-      <img src="assets/images/project3.jpg">
-      <div class="card-content">
-        <small>Writing</small>
-        <h3>Philosophy & Reflection</h3>
-        <p>Thoughts on ethics, identity, and human experience.</p>
-      </div>
+  <article class="card">
+    <img src="assets/images/project2.jpg" alt="Photography Project">
+
+    <div class="card-content">
+      <small>Photography</small>
+      <h3>Cinematic Visual Study</h3>
+      <p>Lighting-focused storytelling through cinematic portrait photography.</p>
     </div>
+  </article>
 
-  </section>
+  <article class="card">
+    <img src="assets/images/project3.jpg" alt="Writing Project">
 
-  <!-- ABOUT -->
-  <section class="about-preview">
+    <div class="card-content">
+      <small>Writing</small>
+      <h3>Human Thought & Philosophy</h3>
+      <p>Exploring ethics, identity, and perception through reflective writing.</p>
+    </div>
+  </article>
+
+</section>
+
+<!-- =========================
+     ABOUT SECTION
+========================= -->
+<section class="about">
+
+  <div class="about-container">
+
     <h2>About Me</h2>
 
     <p>
-      I’m a creative designer and developer focused on visual storytelling, branding,
-      and digital media. I enjoy building clean, modern, and meaningful experiences.
+      I’m a creative designer and developer focused on building meaningful visual experiences.
+      My work blends design, storytelling, and digital expression.
     </p>
 
-    <a href="contact.html">Let’s Connect →</a>
-  </section>
+    <a href="contact.html" class="text-link">Let’s work together →</a>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Jonny Calderon
-  </footer>
+  </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  © 2026 Jonny Calderon. All rights reserved.
+</footer>
 
 </body>
-
 </html>
