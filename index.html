@@ -1,161 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jonny Calderon Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-
   <nav>
-
     <div class="logo">
-      <img src="logo.jpg" alt= "logotop">
+      <img src="assets/images/logo.jpg" alt="logo">
     </div>
 
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Design</a></li>
-      <li><a href="#">Projects</a></li>
-      <li><a href="#">Photography</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="design.html">Design</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
-
   </nav>
 
   <!-- HERO -->
-
   <section class="hero">
-
-    <!-- YOUR PROFILE IMAGE -->
-    <img src="me.png" alt="Jonny Calderon">
+    <img src="assets/images/me.png" alt="Jonny Calderon">
 
     <h1>Jonny Calderon</h1>
 
-    <p>
-      Designer • Creator • Developer
-    </p>
+    <p>Designer • Creator • Developer</p>
 
+    <a href="projects.html" class="hero-btn">View My Work</a>
   </section>
 
-  <!-- FILTER BAR -->
-
- 
-  <div></div>
-  <div></div>
-  <div></div>
-
-  <!-- PROJECTS -->
-
+  <!-- FEATURED PROJECTS -->
   <section class="projects">
 
     <div class="card">
-
-      <img src="project1.jpg" alt="Project">
-
+      <img src="assets/images/project1.jpg">
       <div class="card-content">
-
-        <small>Portfolio Project • 2026</small>
-
-        <h3>
-          Creative Design Collection
-        </h3>
-
-        <p>
-          A collection of branding, digital art, and creative media projects focused on modern visual storytelling.
-        </p>
-
+        <small>Featured Project</small>
+        <h3>Creative Design Collection</h3>
+        <p>Branding, typography, and modern visual identity work.</p>
       </div>
-
     </div>
 
     <div class="card">
-
-      <img src="project2.jpg" alt="Project">
-
+      <img src="assets/images/project2.jpg">
       <div class="card-content">
-
-        <small>Photography • 2026</small>
-
-        <h3>
-          Cinematic Visual Work
-        </h3>
-
-        <p>
-          Visual photography and editing projects inspired by cinematic lighting and emotional storytelling.
-        </p>
-
+        <small>Featured Photography</small>
+        <h3>Cinematic Visual Work</h3>
+        <p>Lighting-focused storytelling and portrait photography.</p>
       </div>
-
     </div>
 
     <div class="card">
-
-      <img src="project3.jpg" alt="Project">
-
+      <img src="assets/images/project3.jpg">
       <div class="card-content">
-
-        <small>Writing • 2026</small>
-
-        <h3>
-          Philosophy & Reflection
-        </h3>
-
-        <p>
-          Academic and reflective writing centered on ethics, truth, perspective, and human understanding.
-        </p>
-
+        <small>Writing</small>
+        <h3>Philosophy & Reflection</h3>
+        <p>Thoughts on ethics, identity, and human experience.</p>
       </div>
-
     </div>
 
   </section>
-  <!-- Contact Me Section -->
-<section class="contact-section">
-  <div class="contact-box">
 
-    <h2>Contact Me</h2>
+  <!-- ABOUT -->
+  <section class="about-preview">
+    <h2>About Me</h2>
 
     <p>
-      Feel free to reach out for collaborations, projects, or just to connect.
+      I’m a creative designer and developer focused on visual storytelling, branding,
+      and digital media. I enjoy building clean, modern, and meaningful experiences.
     </p>
 
-    <!-- DIRECT CONTACT INFO -->
-    <div class="contact-info">
+    <a href="contact.html">Let’s Connect →</a>
+  </section>
 
-      <a href="mailto:jonniesta@gmail.com">
-        📧 Email me
-      </a>
-
-      <a href="tel:+13172134147">
-        📱 Text or Call 
-      </a>
-
-    </div>
-
-   <!-- CONTACT FORM (FORMSPREE) -->
-<form action="https://formspree.io/f/mbjpalvn" method="POST">
-
-  <input type="text" name="name" placeholder="Your Name" required>
-
-  <input type="email" name="email" placeholder="Your Email" required>
-
-  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-
-  <!-- Optional: subject line -->
-  <input type="hidden" name="_subject" value="New Portfolio Contact Message">
-
-  <!-- Optional: redirect after submit -->
-  <input type="hidden" name="_redirect" value="https://yourwebsite.com/thanks.html">
-
-  <button type="submit">Send Message</button>
-
-</form>
-
-  </div>
-</section>
-
+  <!-- FOOTER -->
   <footer>
     © 2026 Jonny Calderon
   </footer>
 
 </body>
+
 </html>
