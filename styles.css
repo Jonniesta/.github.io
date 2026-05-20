@@ -27,7 +27,8 @@ nav {
 }
 
 .logo img {
-  height: 45px;
+  height: 10px;
+  width: auto;
 }
 
 nav ul {
