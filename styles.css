@@ -35,12 +35,13 @@ nav ul {
   display: flex;
   gap: 30px;
   list-style: none;
+  align-items: center; /* ensures vertical alignment */
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  line-height: 1;
 }
 
 nav a:hover {
