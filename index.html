@@ -1,133 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonny Calderon | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-<header>
-  <nav>
-    <div class="logo">
-      <img src="assets/images/logo.jpg" alt="Jonny Logo">
-    </div>
+<!-- NAV -->
+<nav>
+  <div class="logo">Jonny</div>
 
-    <ul>
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="design.html">Design</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="photography.html">Photography</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-<!-- =========================
-     HERO (PREMIUM STRUCTURE)
-========================= -->
+<!-- HERO -->
 <section class="hero">
-
   <div class="hero-content">
 
-    <img src="assets/images/me.png" alt="Jonny Calderon Portrait">
+    <img src="assets/images/profile.jpg" alt="profile">
 
-    <h1>
-      Jonny Calderon
-    </h1>
+    <h1>Jonny Calderon</h1>
 
-    <p>
-      Designer • Creator • Developer
-    </p>
+    <p>Designer • Developer • Creator</p>
 
-    <div class="hero-actions">
-      <a href="projects.html" class="hero-btn">View Projects</a>
-      <a href="contact.html" class="hero-btn secondary">Contact Me</a>
-    </div>
+    <a href="projects.html" class="btn">View Work</a>
 
   </div>
-
 </section>
 
-<!-- =========================
-     FEATURED WORK
-========================= -->
-<section class="section-title">
+<!-- FEATURED -->
+<section class="section">
+
   <h2>Featured Work</h2>
-  <p>A selection of creative projects across design, photography, and writing.</p>
-</section>
+  <p>Selected projects and creative work</p>
 
-<section class="projects">
+  <div class="grid">
 
-  <article class="card">
-    <img src="assets/images/project1.jpg" alt="Design Project">
-
-    <div class="card-content">
-      <small>Design</small>
-      <h3>Creative Identity System</h3>
-      <p>Branding, typography, and visual direction for modern digital identities.</p>
+    <div class="card">
+      <img src="assets/images/project1.jpg">
+      <div class="card-content">
+        <h3>Brand Design</h3>
+        <p>Modern identity system</p>
+      </div>
     </div>
-  </article>
 
-  <article class="card">
-    <img src="assets/images/project2.jpg" alt="Photography Project">
-
-    <div class="card-content">
-      <small>Photography</small>
-      <h3>Cinematic Visual Study</h3>
-      <p>Lighting-focused storytelling through cinematic portrait photography.</p>
+    <div class="card">
+      <img src="assets/images/project2.jpg">
+      <div class="card-content">
+        <h3>Photography</h3>
+        <p>Cinematic lighting work</p>
+      </div>
     </div>
-  </article>
 
-  <article class="card">
-    <img src="assets/images/project3.jpg" alt="Writing Project">
-
-    <div class="card-content">
-      <small>Writing</small>
-      <h3>Human Thought & Philosophy</h3>
-      <p>Exploring ethics, identity, and perception through reflective writing.</p>
+    <div class="card">
+      <img src="assets/images/project3.jpg">
+      <div class="card-content">
+        <h3>Creative Writing</h3>
+        <p>Philosophy & reflection</p>
+      </div>
     </div>
-  </article>
-
-</section>
-
-<!-- =========================
-     ABOUT SECTION
-========================= -->
-<section class="about">
-
-  <div class="about-container">
-
-    <h2>About Me</h2>
-
-    <p>
-      I’m a creative designer and developer focused on building meaningful visual experiences.
-      My work blends design, storytelling, and digital expression.
-    </p>
-
-    <a href="contact.html" class="text-link">Let’s work together →</a>
 
   </div>
 
 </section>
 
-<!-- =========================
-     FOOTER
-========================= -->
 <footer>
-  © 2026 Jonny Calderon. All rights reserved.
+  © 2026 Jonny Calderon
 </footer>
 
 </body>
