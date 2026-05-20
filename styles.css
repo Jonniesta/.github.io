@@ -57,7 +57,7 @@ nav a.active {
 
 .hero {
   height: 100vh;
-  background: url("assets/images/slate1.jpg") center/cover no-repeat;
+  background: url("slate1.jpg") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
