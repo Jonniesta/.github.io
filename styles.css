@@ -68,7 +68,10 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
- background-image: url("slate1.jpg") center/cover no-repeat;
+   background-image: url("slate1.jpg");
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
 }
 
 .hero-content {
