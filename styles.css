@@ -26,9 +26,15 @@ nav {
   z-index: 1000;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
-  height: 25px;
+  height: 32px;
   width: auto;
+  display: block;
 }
 
 nav ul {
