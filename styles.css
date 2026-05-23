@@ -291,6 +291,17 @@ background-repeat: no-repeat;
   color: #94a3b8;
   font-size: 0.9rem;
 }
+/* ZOOM EFFECT */
+.zoomable {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.zoomable:active {
+  transform: scale(2);
+  position: relative;
+  z-index: 10;
+}
 
 /* =========================
    ABOUT
