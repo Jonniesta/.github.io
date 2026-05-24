@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Photography | Jonny Calderon</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">
-    <img src="assets/images/logo.jpg" alt="logo">
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      <img src="assets/images/logo.jpg" alt="logo">
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a class="active" href="photography.html">Photography</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <section class="photo-header">
+    <h1>Photography</h1>
+    <p>A collection of moments captured through my lens.</p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <img src="Daboi copy.JPG" alt="Photo" class="gallery-img">
+    <img src="aquaplant copy.JPG" alt="Photo" class="gallery-img">
+    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
+    <img src="dafish copy.JPG" alt="Photo" class="gallery-img">
+    <img src="Hannah copy.JPG" alt="Photo" class="gallery-img">
+    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
+    <img src="Daboi copy.JPG" alt="Photo" class="gallery-img">
+    <img src="aquaplant copy.JPG" alt="Photo" class="gallery-img">
+    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
+  </section>
+
+  <!-- MODAL -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
   </div>
 
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a class="active" href="photography.html">Photography</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-</section>
-</div>
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Jonny Calderon
+  </footer>
 
+  <!-- MODAL SCRIPT -->
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const images = document.querySelectorAll(".gallery-img");
+    const closeBtn = document.querySelector(".close");
 
-<section>
-</div>
-</section>
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = img.src;
+      });
+    });
 
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
 
-<section class="gallery">
-  <img src="Daboi copy.JPG" alt="" class="zoomable">
-  <img src="aquaplant copy.JPG" alt="" class="zoomable">
-  <img src="daboilook copy.JPG" alt="" class="zoomable">
-  <img src="dafish copy.JPG" alt="" class="zoomable">
-  <img src="Hannah copy.JPG" alt="" class="zoomable">
-  <img src="daboilook copy.JPG" alt="" class="zoomable">
-  <img src="Daboi copy.JPG" alt="" class="zoomable">
-  <img src="aquaplant copy.JPG" alt="" class="zoomable">
-  <img src="daboilook copy.JPG" alt="" class="zoomable">
-</section>
-</div>
-
-
-</section>
-
-<footer>© 2026 Jonny Calderon</footer>
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
+
 </html>
