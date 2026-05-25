@@ -66,8 +66,8 @@ nav a.active {
   color: var(--green);
 }
 .logo img {
-  width: 44px;
-  height: 44px;
+  width: 15px;
+  height: 15px;
 
   object-fit: cover;
   border-radius: 50%;
