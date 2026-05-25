@@ -40,8 +40,16 @@ nav {
 .logo img {
   width: 70px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-
+.logo a {
+  display: inline-block;
+}
+.logo img:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
 nav ul {
   display: flex;
   gap: 30px;
