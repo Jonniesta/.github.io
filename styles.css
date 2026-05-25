@@ -151,7 +151,7 @@ nav a.active {
   margin-top: 20px;
   padding: 12px 22px;
 
-  background: var(--green);
+  background: var(--blue);
   color: #021C25;
 
   border-radius: 10px;
@@ -161,7 +161,7 @@ nav a.active {
 }
 
 .btn:hover {
-  background: var(--green-light);
+  background: var(--blue-light);
 }
 
 /* =========================
