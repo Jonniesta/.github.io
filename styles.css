@@ -130,3 +130,34 @@ button:hover {
 
   transform: translateY(-2px);
 }
+
+/* =========================
+   SOCIALS
+========================= */
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  margin-bottom: 35px;
+}
+
+.social-links a {
+  text-decoration: none;
+
+  color: #272727;
+  background: #4F98CA;
+
+  padding: 10px 16px;
+
+  border-radius: 12px;
+
+  transition: 0.3s ease;
+  font-size: 14px;
+}
+
+.social-links a:hover {
+  background: #50D890;
+  transform: translateY(-2px);
+}
