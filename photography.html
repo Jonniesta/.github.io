@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Photography | Jonny Calderon</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
+<!-- NAV -->
 <nav>
   <div class="logo">
     <a href="index.html">
@@ -21,67 +23,80 @@
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
+    <li><a href="photography.html" class="active">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
+<!-- HEADER -->
+<section class="photo-header">
+  <h1>Photography</h1>
+  <p>A collection of moments captured through my lens.</p>
+</section>
 
-  <!-- PAGE TITLE -->
-  <section class="photo-header">
-    <h1>Photography</h1>
-    <p>A collection of moments captured through my lens.</p>
-  </section>
+<!-- GALLERY -->
+<section class="gallery">
 
-  <!-- GALLERY -->
-  <section class="gallery">
-    <img src="Daboi copy.JPG" alt="Photo" class="gallery-img">
-    <img src="aquaplant copy.JPG" alt="Photo" class="gallery-img">
-    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
-    <img src="dafish copy.JPG" alt="Photo" class="gallery-img">
-    <img src="Hannah copy.JPG" alt="Photo" class="gallery-img">
-    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
-    <img src="Daboi copy.JPG" alt="Photo" class="gallery-img">
-    <img src="aquaplant copy.JPG" alt="Photo" class="gallery-img">
-    <img src="daboilook copy.JPG" alt="Photo" class="gallery-img">
-  </section>
+  <img src="Daboi copy.JPG" class="gallery-img" alt="Photo">
+  <img src="aquaplant copy.JPG" class="gallery-img" alt="Photo">
+  <img src="daboilook copy.JPG" class="gallery-img" alt="Photo">
+  <img src="dafish copy.JPG" class="gallery-img" alt="Photo">
+  <img src="Hannah copy.JPG" class="gallery-img" alt="Photo">
 
-  <!-- MODAL -->
-  <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImg">
-  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Jonny Calderon
-  </footer>
+<!-- MODAL -->
+<div id="imageModal" class="modal">
 
-  <!-- MODAL SCRIPT -->
-  <script>
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImg");
-    const images = document.querySelectorAll(".gallery-img");
-    const closeBtn = document.querySelector(".close");
+  <span class="close">&times;</span>
 
-    images.forEach(img => {
-      img.addEventListener("click", () => {
-        modal.style.display = "flex";
-        modalImg.src = img.src;
-      });
+  <img class="modal-content" id="modalImg" alt="Expanded photo">
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Jonny Calderon
+</footer>
+
+<!-- SCRIPT (UPDATED FOR CSS SYSTEM) -->
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const images = document.querySelectorAll(".gallery-img");
+  const closeBtn = document.querySelector(".close");
+
+  function openModal(src) {
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+    modalImg.src = src;
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
+  }
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      openModal(img.src);
     });
+  });
 
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+  closeBtn.addEventListener("click", closeModal);
 
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
-  </script>
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+</script>
 
 </body>
-
 </html>
