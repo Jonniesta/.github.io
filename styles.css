@@ -68,25 +68,17 @@ nav a:hover,
 nav a.active {
   color: var(--green);
 }
-.logo img {
-  width: 15px;
-  height: 15px;
-
-  object-fit: cover;
-  border-radius: 50%;
-
-  display: block;
-  padding: 3px;
-
-  border: 2px solid rgba(105, 180, 55, 0.3);
-  box-sizing: content-box;
-
-  transition: 0.3s ease;
+.logo a {
+  display: flex;
+  align-items: center;
 }
 
-.logo img:hover {
-  transform: scale(1.08);
-  border-color: rgba(145, 218, 115, 0.6);
+.logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
 }
 /* =========================
    HERO (AURORA ANIMATION)
