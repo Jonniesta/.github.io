@@ -73,8 +73,10 @@ nav a.active {
   border-radius: 50%;
 
   display: block;
+  padding: 3px;
 
   border: 2px solid rgba(105, 180, 55, 0.3);
+  box-sizing: content-box;
 
   transition: 0.3s ease;
 }
