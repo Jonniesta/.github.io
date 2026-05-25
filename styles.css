@@ -337,7 +337,7 @@ nav a.active {
   width: 100%;
   max-width: 650px;
 
-  background: #171717;
+  background: #9ee7e4;
 
   padding: 50px;
 
@@ -380,7 +380,7 @@ nav a.active {
 }
 
 .contact-info a:hover {
-  background: white;
+  background: #D7F4F1;
   color: black;
 }
 
