@@ -298,83 +298,271 @@ body.modal-open {
   overflow: hidden;
 }
 /* =========================
-   CONTACT
+   CONTACT PAGE
 ========================= */
 
 .contact-section {
   display: flex;
   justify-content: center;
-  padding: 80px 20px;
+  align-items: center;
+
+  padding: 100px 20px;
 }
 
 .contact-box {
-  max-width: 650px;
   width: 100%;
+  max-width: 700px;
 
   background: var(--bg-2);
-  padding: 50px;
 
-  border-radius: 24px;
-  border: 1px solid rgba(105,180,55,0.2);
+  padding: 55px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(105, 180, 55, 0.15);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.35);
+
+  backdrop-filter: blur(10px);
 }
 
+/* top tag */
+.contact-tag {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  padding: 8px 14px;
+
+  background: rgba(105,180,55,0.12);
+
+  border: 1px solid rgba(105,180,55,0.18);
+
+  border-radius: 999px;
+
+  color: var(--green);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* heading */
 .contact-box h2 {
+  font-size: 2.8rem;
+
+  margin-bottom: 16px;
+
   color: var(--text);
+
+  line-height: 1.1;
 }
 
 .contact-box p {
   color: var(--muted);
+
+  margin-bottom: 35px;
+
+  line-height: 1.7;
 }
 
-/* buttons */
+/* =========================
+   CONTACT BUTTONS
+========================= */
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 14px;
+
+  margin-bottom: 24px;
+}
+
 .contact-info a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
   background: var(--teal);
+
   color: var(--text);
-  padding: 12px 18px;
-  border-radius: 12px;
+
+  padding: 14px 20px;
+
+  border-radius: 14px;
+
   text-decoration: none;
+
+  font-weight: 500;
+
+  transition: 0.3s ease;
 }
 
 .contact-info a:hover {
   background: var(--green);
+
   color: #021C25;
+
+  transform: translateY(-2px);
 }
 
-/* social */
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.social-links {
+  display: flex;
+  gap: 12px;
+
+  margin-bottom: 35px;
+}
+
 .social-links a {
   background: var(--surface);
+
   color: var(--text);
-  padding: 10px 14px;
-  border-radius: 10px;
-  border: 1px solid rgba(105,180,55,0.2);
+
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(105,180,55,0.15);
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
 }
 
 .social-links a:hover {
   background: var(--green);
+
   color: #021C25;
+
+  transform: translateY(-2px);
 }
 
-/* form */
-input, textarea {
+/* =========================
+   FORM
+========================= */
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+input,
+textarea {
+  width: 100%;
+
   background: var(--surface);
-  border: 1px solid rgba(105,180,55,0.2);
+
+  border: 1px solid rgba(105,180,55,0.15);
+
   color: var(--text);
-  padding: 16px;
-  border-radius: 14px;
+
+  padding: 18px;
+
+  border-radius: 16px;
+
+  font-size: 1rem;
+
+  font-family: 'Inter', sans-serif;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--green);
+
+  box-shadow:
+    0 0 0 4px rgba(105,180,55,0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 160px;
 }
 
 button {
-  background: var(--green);
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+  );
+
   color: #021C25;
-  padding: 16px;
+
+  padding: 18px;
+
   border: none;
-  border-radius: 14px;
+
+  border-radius: 16px;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
 }
 
 button:hover {
-  background: var(--green-light);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 25px rgba(105,180,55,0.25);
 }
 
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  text-align: center;
+
+  padding: 40px 20px;
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .contact-box {
+    padding: 38px 28px;
+  }
+
+  .contact-box h2 {
+    font-size: 2.2rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .contact-info a {
+    width: 100%;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+  }
+
+}
 /* =========================
    FOOTER
 ========================= */
