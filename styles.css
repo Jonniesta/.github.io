@@ -1,18 +1,11 @@
-/* =========================
-   AURORA PORTFOLIO THEME
-========================= */
-
 :root {
   --bg: #021C25;
   --bg-2: #091E27;
   --surface: #0D3338;
-  --surface-2: #053A3D;
 
   --teal: #165A54;
-  --green-dark: #23643D;
-
-  --accent: #69B437;
-  --accent-light: #91DA73;
+  --green: #69B437;
+  --green-light: #91DA73;
 
   --text: #EAF7F2;
   --muted: #9BB7B0;
@@ -22,10 +15,17 @@
    BASE
 ========================= */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.6;
 }
 
 /* =========================
@@ -33,30 +33,93 @@ body {
 ========================= */
 
 nav {
-  background: rgba(9, 30, 39, 0.85);
+  width: 100%;
+  padding: 20px 60px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  background: rgba(2, 28, 37, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(105, 180, 55, 0.15);
 }
 
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
 nav a {
+  text-decoration: none;
   color: var(--text);
+  transition: 0.3s;
 }
 
 nav a:hover,
 nav a.active {
-  color: var(--accent);
+  color: var(--green);
 }
 
 /* =========================
-   HERO
+   HERO (AURORA ANIMATION)
 ========================= */
 
 .hero {
-  background: linear-gradient(
-    180deg,
-    var(--bg),
-    var(--bg-2)
-  );
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: var(--bg);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(105,180,55,0.25), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(145,218,115,0.18), transparent 60%),
+    radial-gradient(circle at 50% 80%, rgba(63,111,140,0.25), transparent 60%);
+
+  filter: blur(70px);
+  opacity: 0.75;
+
+  animation: auroraMove 18s ease-in-out infinite alternate;
+}
+
+@keyframes auroraMove {
+  0% { transform: translate(-5%, -5%) scale(1); }
+  50% { transform: translate(5%, 3%) scale(1.1); }
+  100% { transform: translate(-3%, 6%) scale(1.05); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
 }
 
 .hero p {
@@ -64,33 +127,70 @@ nav a.active {
 }
 
 .btn {
-  background: var(--accent);
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+
+  background: var(--green);
   color: #021C25;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: var(--accent-light);
+  background: var(--green-light);
 }
 
 /* =========================
    SECTIONS
 ========================= */
 
+.section {
+  padding: 100px 80px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
 .section p {
+  text-align: center;
   color: var(--muted);
 }
 
 /* =========================
-   CARDS
+   GRID
 ========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
 
 .card {
   background: var(--surface);
-  border: 1px solid rgba(105, 180, 55, 0.15);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(105,180,55,0.15);
+  transition: 0.3s;
 }
 
 .card:hover {
-  border-color: var(--accent);
+  transform: translateY(-6px);
+  border-color: var(--green);
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card p {
+  color: var(--muted);
 }
 
 /* =========================
@@ -98,12 +198,20 @@ nav a.active {
 ========================= */
 
 .contact-section {
-  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
 }
 
 .contact-box {
+  max-width: 650px;
+  width: 100%;
+
   background: var(--bg-2);
-  border: 1px solid rgba(105, 180, 55, 0.2);
+  padding: 50px;
+
+  border-radius: 24px;
+  border: 1px solid rgba(105,180,55,0.2);
 }
 
 .contact-box h2 {
@@ -118,10 +226,13 @@ nav a.active {
 .contact-info a {
   background: var(--teal);
   color: var(--text);
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
 }
 
 .contact-info a:hover {
-  background: var(--accent);
+  background: var(--green);
   color: #021C25;
 }
 
@@ -129,33 +240,35 @@ nav a.active {
 .social-links a {
   background: var(--surface);
   color: var(--text);
-  border: 1px solid rgba(105, 180, 55, 0.2);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(105,180,55,0.2);
 }
 
 .social-links a:hover {
-  background: var(--accent);
+  background: var(--green);
   color: #021C25;
 }
 
 /* form */
 input, textarea {
   background: var(--surface);
+  border: 1px solid rgba(105,180,55,0.2);
   color: var(--text);
-  border: 1px solid rgba(105, 180, 55, 0.2);
-}
-
-input:focus, textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(105, 180, 55, 0.15);
+  padding: 16px;
+  border-radius: 14px;
 }
 
 button {
-  background: var(--accent);
+  background: var(--green);
   color: #021C25;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
 }
 
 button:hover {
-  background: var(--accent-light);
+  background: var(--green-light);
 }
 
 /* =========================
@@ -163,6 +276,7 @@ button:hover {
 ========================= */
 
 footer {
+  text-align: center;
+  padding: 30px;
   color: var(--muted);
-  border-top: 1px solid rgba(105, 180, 55, 0.15);
 }
