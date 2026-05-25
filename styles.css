@@ -10,7 +10,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0b0f17;
+  background: #0f1412;
   color: #e5e7eb;
   line-height: 1.6;
   min-height: 100vh;
@@ -32,24 +32,16 @@ nav {
   top: 0;
   z-index: 100;
 
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(15, 20, 18, 0.85);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(47, 111, 78, 0.2);
 }
 
 .logo img {
   width: 70px;
   border-radius: 50%;
-  cursor: pointer;
-  transition: 0.3s ease;
 }
-.logo a {
-  display: inline-block;
-}
-.logo img:hover {
-  transform: scale(1.05);
-  opacity: 0.85;
-}
+
 nav ul {
   display: flex;
   gap: 30px;
@@ -58,14 +50,14 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #cbd5e1;
+  color: #e5e7eb;
   font-size: 16px;
   transition: 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: #bfa46f;
+  color: #2f6f4e;
 }
 
 /* =========================
@@ -94,10 +86,11 @@ nav a.active {
 .hero img {
   width: 180px;
   height: 180px;
+
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 2px solid rgba(244, 241, 234, 0.2);
 }
 
 .hero h1 {
@@ -107,7 +100,7 @@ nav a.active {
 
 .hero p {
   margin-top: 10px;
-  color: #94a3b8;
+  color: #c9d2cc;
   letter-spacing: 2px;
   font-size: 0.95rem;
 }
@@ -117,8 +110,8 @@ nav a.active {
   margin-top: 25px;
   padding: 12px 22px;
 
-  background: #3b82f6;
-  color: white;
+  background: #2f6f4e;
+  color: #f4f1ea;
 
   border-radius: 10px;
   text-decoration: none;
@@ -127,7 +120,7 @@ nav a.active {
 }
 
 .btn:hover {
-  background: #2563eb;
+  background: #3f6f8c;
   transform: translateY(-2px);
 }
 
@@ -143,11 +136,12 @@ nav a.active {
   text-align: center;
   font-size: 2.2rem;
   margin-bottom: 15px;
+  color: #f4f1ea;
 }
 
 .section p {
   text-align: center;
-  color: #94a3b8;
+  color: #c9d2cc;
   margin-bottom: 40px;
 }
 
@@ -204,7 +198,7 @@ nav a.active {
   position: absolute;
   top: 25px;
   right: 40px;
-  color: white;
+  color: #f4f1ea;
   font-size: 45px;
   cursor: pointer;
 }
@@ -218,23 +212,21 @@ nav a.active {
    GRID / CARDS
 ========================= */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
 .card {
-  background: #111827;
+  background: #f4f1ea;
+  color: #1f2a24;
+
   border-radius: 14px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(47, 111, 78, 0.15);
+
   transition: 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(96,165,250,0.3);
+  border-color: rgba(63, 111, 140, 0.4);
 }
 
 .card img {
@@ -252,7 +244,7 @@ nav a.active {
 }
 
 .card p {
-  color: #94a3b8;
+  color: #5b6b63;
   font-size: 0.9rem;
 }
 
@@ -272,11 +264,11 @@ nav a.active {
 }
 
 .about-box p {
-  color: #94a3b8;
+  color: #c9d2cc;
 }
 
 /* =========================
-   CONTACT (EARTHY + PROFESSIONAL)
+   CONTACT
 ========================= */
 
 .contact-section {
@@ -300,9 +292,7 @@ nav a.active {
 
   border: 1px solid rgba(47, 111, 78, 0.2);
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.25),
-    0 0 0 1px rgba(255,255,255,0.4);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 .contact-box h2 {
@@ -351,8 +341,8 @@ nav a.active {
 
 .social-links a {
   text-decoration: none;
-
   color: #1f2a24;
+
   background: rgba(63, 111, 140, 0.15);
 
   padding: 10px 14px;
@@ -366,7 +356,6 @@ nav a.active {
 .social-links a:hover {
   background: #3f6f8c;
   color: #f4f1ea;
-  transform: translateY(-2px);
 }
 
 /* FORM */
@@ -410,6 +399,7 @@ button:hover {
   background: #3f6f8c;
   transform: translateY(-2px);
 }
+
 /* =========================
    FOOTER
 ========================= */
@@ -417,8 +407,8 @@ button:hover {
 footer {
   text-align: center;
   padding: 30px;
-  color: #777;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  color: #c9d2cc;
+  border-top: 1px solid rgba(47, 111, 78, 0.2);
 }
 
 /* =========================
