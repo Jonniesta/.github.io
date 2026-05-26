@@ -1,122 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Photography | Jonny Calderon</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- ================= NAV ================= -->
-<nav>
-  <div class="logo">
-    <img src="gjc.png" alt="Jonny Calderon Logo" />
-  </div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a class="active" href="photography.html">Photography</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ================= HERO ================= -->
-<section class="photo-hero reveal">
-  <div class="photo-glow"></div>
-  <div class="photo-hero-content">
-    <span class="section-tag">PHOTOGRAPHY</span>
-    <h1>Cinematic Visual Storytelling</h1>
-    <p>
-      Capturing emotion, atmosphere, and meaningful moments through light, color, and perspective.
-    </p>
-  </div>
-</section>
-
-<!-- ================= GALLERY ================= -->
-<section class="photo-section">
-  <div class="gallery">
-    <!-- Image Card -->
-    <div class="photo-card reveal">
-      <img loading="lazy" class="gallery-img" onclick="openModal(this.src)" src="Daboi copy.JPG" alt="Photography 1" />
-      <div class="photo-overlay">
-        <h3>Quiet Presence</h3>
-        <p>Natural portrait composition</p>
-      </div>
-    </div>
-    <!-- Image Card -->
-    <div class="photo-card reveal">
-      <img loading="lazy" class="gallery-img" onclick="openModal(this.src)" src="aquaplant copy.JPG" alt="Photography 2" />
-      <div class="photo-overlay">
-        <h3>Still Life</h3>
-        <p>Texture and atmosphere</p>
-      </div>
-    </div>
-    <!-- Image Card -->
-    <div class="photo-card reveal">
-      <img loading="lazy" class="gallery-img" onclick="openModal(this.src)" src="daboilook copy.JPG" alt="Photography 3" />
-      <div class="photo-overlay">
-        <h3>Expression</h3>
-        <p>Cinematic lighting study</p>
-      </div>
-    </div>
-    <!-- Image Card -->
-    <div class="photo-card reveal">
-      <img loading="lazy" class="gallery-img" onclick="openModal(this.src)" src="dafish copy.JPG" alt="Photography 4" />
-      <div class="photo-overlay">
-        <h3>Motion</h3>
-        <p>Visual storytelling through movement</p>
-      </div>
-    </div>
-    <!-- Image Card -->
-    <div class="photo-card reveal">
-      <img loading="lazy" class="gallery-img" onclick="openModal(this.src)" src="Hannah copy.JPG" alt="Photography 5" />
-      <div class="photo-overlay">
-        <h3>Connection</h3>
-        <p>Emotion and human presence</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>© 2026 Jonny Calderon</p>
-</footer>
-
-<!-- ================= MODAL ================= -->
-<div class="modal" id="modal" onclick="closeModal()">
-  <img id="modal-img" />
-</div>
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Reveal animations
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Modal functions
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-
-    window.openModal = (src) => {
-      modal.classList.add("active");
-      modalImg.src = src;
-      document.body.style.overflow = "hidden";
-    };
-    window.closeModal = () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    };
-  });
-</script>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="photography.html" class="active">Photography</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="photography">
+        <div class="container">
+            <h2>My Photography</h2>
+            <p>Gallery of your photographs.</p>
+            <!-- Add images here -->
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
