@@ -4,20 +4,378 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jonny Calderon</title>
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Insert the full CSS styles here */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    :root {
+      --bg: #020617;
+      --surface: #0B1728;
+      --surface-2: #101D31;
+      --green: #7DFF8A;
+      --green-soft: #B6FFBD;
+      --purple: #B05CFF;
+      --blue: #61C8FF;
+      --text: #F5F8FF;
+      --muted: #91A3B7;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 22px;
+      --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      min-height: 100vh;
+      padding-top: 82px;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(176, 92, 255, 0.18), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(125, 255, 138, 0.12), transparent 40%),
+        radial-gradient(circle at 50% 80%, rgba(97, 200, 255, 0.10), transparent 45%);
+      filter: blur(90px);
+      z-index: -2;
+      animation: floatBg 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatBg {
+      from { transform: translate(-3%, -2%) scale(1); }
+      to { transform: translate(4%, 3%) scale(1.08); }
+    }
+
+    /* Navigation styles */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      background: rgba(2, 6, 23, 0.75);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background: rgba(2, 6, 23, 0.92);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--green);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--purple));
+      transition: 0.3s ease;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    .logo img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(125, 255, 138, 0.25);
+    }
+
+    /* Hamburger styles for mobile */
+    .hamburger {
+      display: none;
+      width: 30px;
+      height: 25px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 5px;
+      z-index: 1100;
+    }
+
+    .hamburger .bar {
+      width: 100%;
+      height: 3px;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+                  transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Sections styling */
+    section {
+      padding: 110px 80px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--green), var(--green-soft));
+      color: #07111c;
+      transition: 0.3s ease;
+    }
+    .btn:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Project grid */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: 0.35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 18px;
+    }
+
+    /* Gallery styles */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .gallery-img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Contact styles */
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-box {
+      max-width: 800px;
+      padding: 50px;
+      background: var(--surface);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+    }
+    button[type="submit"] {
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--green), var(--green-soft));
+      color: #07111c;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Modal styles */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 9999;
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #modal-img {
+      max-width: 90%;
+      max-height: 85%;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive styles for mobile */
+    @media(max-width: 768px) {
+      section {
+        padding: 80px 24px;
+      }
+      h1 { font-size: 2.4rem; }
+
+      nav {
+        padding: 0 20px;
+      }
+      /* Hamburger styles */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1100;
+      }
+      .hamburger .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--text);
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+      /* Hide nav links by default, show when active */
+      .nav-links {
+        position: absolute;
+        top: 82px;
+        right: 0;
+        background: var(--surface);
+        flex-direction: column;
+        align-items: center;
+        width: 200px;
+        display: none;
+        padding: 10px 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<!-- STARFIELD BACKGROUND -->
-<canvas id="stars"></canvas>
 
 <!-- ================= NAV ================= -->
 <nav>
   <div class="logo">
-    <img src="gjc.png" alt="logo"/>
+    <img src="gjc.png" alt="Jonny Calderon Logo" />
   </div>
-  <ul>
-    <li><a class="active" href="index.html">Home</a></li>
+  <!-- Hamburger Button -->
+  <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <!-- Navigation Links -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -65,6 +423,14 @@
         <h3>Reflection</h3>
       </div>
     </div>
+    <div class="card">
+      <img src="gjc.png" alt="Human Services" />
+      <div class="card-content">
+        <h3>Human Services Journey</h3>
+        <p>A developing path toward psychology, advocacy, and becoming a future therapist.</p>
+        <a href="contact.html" class="card-link">Connect →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -77,7 +443,7 @@
 
 <!-- ================= FOOTER ================= -->
 <footer>
-  © 2026 Jonny Calderon
+  <p>© 2026 Jonny Calderon</p>
 </footer>
 
 <!-- ================= MODAL ================= -->
@@ -99,19 +465,35 @@
     }, { threshold: 0.15 });
     reveals.forEach(el => observer.observe(el));
 
-    // Modal functionality
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
 
+    function toggleMenu() {
+      navLinks.classList.toggle('active');
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+      hamburger.setAttribute('aria-expanded', String(!expanded));
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+
+    // Modal functions
     window.openModal = (src) => {
-      modal.classList.add("active");
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      modal.classList.add('active');
       modalImg.src = src;
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     };
-
     window.closeModal = () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
+      document.getElementById('modal').classList.remove('active');
+      document.body.style.overflow = 'auto';
     };
   });
 </script>
