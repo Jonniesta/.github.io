@@ -75,19 +75,17 @@ nav a.active {
 }
 
 .logo img {
-  width: 60% !important;
-  height: 100% !important;
-
-
-
+  width: 220px;          /* adjust size */
+  height: auto;          /* keeps proportions correct */
   object-fit: contain;
-  border-radius: 50%;
 
   display: block;
 
   border: 2px solid rgba(105, 180, 55, 0.4);
-  padding: 0;
-  box-sizing: border-box;
+  border-radius: 12px;   /* soft rounded corners instead of oval */
+  padding: 4px;
+
+  background: #000;      /* optional */
 }
 /* =========================
    HERO (AURORA ANIMATION)
