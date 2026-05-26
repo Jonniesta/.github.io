@@ -210,11 +210,11 @@ nav.scrolled {
 
 .logo img {
 
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
 
-  object-fit: cover;
-
+  object-fit: contain;
+   padding: 4px;
   border-radius: 50%;
 
   border: 2px solid rgba(125,255,138,0.35);
