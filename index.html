@@ -3,139 +3,48 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Portfolio</title>
+<title>My Landing Page</title>
 <link rel="stylesheet" href="styles.css" />
-<!-- Optional: Google Fonts -->
+<!-- Optional Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
-<!-- Canvas background -->
-<canvas id="background-canvas"></canvas>
 
-<!-- Header -->
-<header>
-  <div class="container header-container">
-    <div class="logo">MyLogo</div>
-    <nav id="nav-menu" class="nav">
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+<!-- Navbar -->
+<header id="navbar">
+  <div class="container">
+    <h1 class="nav-title">My Portfolio</h1>
   </div>
 </header>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
+<!-- Landing Section -->
+<section class="landing">
   <div class="container">
-    <h1>Hello, I'm [Your Name]</h1>
-    <p>Web Developer | Designer | Innovator</p>
+    <img src="me.png" alt="My Photo" class="profile-pic" />
+    <h2 class="name">Your Name</h2>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about">
+<!-- About Me Section -->
+<section id="about" class="about-me">
   <div class="container">
     <h2>About Me</h2>
-    <p>Brief bio, experience, and skills. Share your story and what makes you unique.</p>
+    <p>Hello! I'm [Your Name], a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <div class="container">
-    <h2>My Projects</h2>
-    <div class="project-cards">
-      <!-- Example project card -->
-      <div class="card">
-        <img src="project1.png" alt="Project 1" />
-        <h3>Project Title 1</h3>
-        <p>A brief description of this project.</p>
-        <a href="#" class="btn">View Details</a>
-      </div>
-      <!-- Repeat for more projects -->
-      <div class="card">
-        <img src="project2.png" alt="Project 2" />
-        <h3>Project Title 2</h3>
-        <p>A brief description of this project.</p>
-        <a href="#" class="btn">View Details</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="skills">
-  <div class="container">
-    <h2>My Skills</h2>
-    <div class="skill">
-      <h3>HTML</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 90%;"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <h3>CSS</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 85%;"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <h3>JavaScript</h3>
-      <div class="progress-bar">
-        <div class="progress" style="width: 75%;"></div>
-      </div>
-    </div>
-    <!-- Add more skills as needed -->
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer>
-  <div class="container footer">
-    <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-    <div class="social-icons">
-      <a href="#"><img src="github.png" alt="GitHub" /></a>
-      <a href="#"><img src="linkedin.png" alt="LinkedIn" /></a>
-      <a href="#"><img src="twitter.png" alt="Twitter" /></a>
-    </div>
-  </div>
-</footer>
-
-<!-- Scripts for background and menu -->
+<!-- Scripts for scroll effects -->
 <script>
-  // Canvas aurora/stars code (reuse from previous)
-  // ... (include the earlier background script here)
-</script>
+  const navbar = document.getElementById('navbar');
 
-<script>
-  // Hamburger menu toggle code
-  document.querySelector('.header-container').insertAdjacentHTML('beforeend', `
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  `);
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('show');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
   });
 </script>
+
 </body>
 </html>
