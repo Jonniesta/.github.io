@@ -1,139 +1,396 @@
+# Refactored `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Jonny Calderon</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Jonny Calderon portfolio featuring psychology, photography, creative work, and human-centered design."
+  />
+
+  <!-- THEME -->
+  <meta name="theme-color" content="#040816" />
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
 </head>
 
 <body>
 
-<!-- PAGE TRANSITION (optional but recommended) -->
-<div class="page-transition"></div>
+  <!-- NOISE TEXTURE -->
+  <div class="noise"></div>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">
-    <img src="gjc.png" alt="logo" >
-  </div>
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition"></div>
 
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+  <!-- NAV -->
+  <nav>
 
-<!-- HERO -->
-<section class="hero">
+    <a href="index.html" class="logo">
 
-  <!-- AURORA BACKGROUND -->
-  <div class="aurora aurora-1"></div>
-  <div class="aurora aurora-2"></div>
-  <div class="aurora aurora-3"></div>
+      <img
+        src="gjc.png"
+        alt="Jonny Calderon Logo"
+      />
 
-  <!-- HERO CONTENT -->
-  <div class="hero-content">
+    </a>
 
-    <!-- CIRCLE IMAGE -->
-    <img src="me.png" alt="Jonny" class="hero-avatar">
+    <ul>
 
-    <!-- NAME -->
-    <h1 class="hero-name">Jonny Calderon</h1>
+      <li>
+        <a href="index.html" class="active">
+          Home
+        </a>
+      </li>
 
-    <!-- TAGLINE -->
+      <li>
+        <a href="projects.html">
+          Projects
+        </a>
+      </li>
+
+      <li>
+        <a href="photography.html">
+          Photography
+        </a>
+      </li>
+
+      <li>
+        <a href="contact.html">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <!-- BACKGROUND -->
+    <div class="hero-glow"></div>
+
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+
+    <!-- HERO CONTENT -->
+    <div class="hero-wrapper">
+
+      <!-- LEFT -->
+      <div class="hero-left">
+
+        <div class="hero-badge">
+          Psychology • Human Services • Creative Work
+        </div>
+
+        <h1 class="hero-name">
+          Jonny Calderon
+        </h1>
+
+        <p class="hero-text">
+          Future therapist focused on empathy,
+          creativity, and helping people feel
+          understood through meaningful
+          human connection.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="projects.html" class="btn">
+            View Work
+          </a>
+
+          <a href="contact.html" class="btn-outline">
+            Contact Me
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="hero-right">
+
+        <div class="hero-image-wrap">
+
+          <div class="hero-ring"></div>
+
+          <img
+            src="me.png"
+            alt="Jonny Calderon"
+            class="hero-avatar"
+          />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section">
+
+    <div class="section-intro">
+
+      <small>About Me</small>
+
+      <div class="section-line"></div>
+
+    </div>
+
+    <h2>
+      Helping People Feel Seen,
+      Heard, and Understood
+    </h2>
+
     <p>
-      Human Services • Creative Work • Future Therapist
+      I’m currently pursuing a bachelor’s degree in Psychology after completing my associate’s in Human Services, with a deep commitment to understanding people and the experiences that shape them.
     </p>
 
-    <!-- CTA BUTTON -->
-    <a href="projects.html" class="btn">View Work</a>
+    <p>
+      My purpose is rooted in helping the next generation feel supported in ways many of us didn’t always have growing up. I hope to become a therapist who creates safe spaces where people can be honest about what they’re carrying and where healing feels possible and real.
+    </p>
 
-  </div>
-</section>
+    <p>
+      Everything I do is guided by empathy, patience, creativity, and the belief that moments of understanding can change someone’s entire direction in life.
+    </p>
 
-<!-- ABOUT -->
-<section>
-  <h2>About Me</h2>
-  <p>
-    I’m currently pursuing a bachelor’s degree in Psychology after completing my associate’s in Human Services, with a deep commitment to understanding people and the experiences that shape them. My purpose is rooted in helping the next generation feel seen, heard, and supported in ways that many of us didn’t always have growing up. I want to become a therapist who creates a safe space where people can be honest about what they’re carrying, and where healing feels possible and real. Everything I do is guided by empathy, patience, and the belief that small moments of understanding can change someone’s entire direction in life.
+  </section>
 
-  </p>
-</section>
+  <!-- FEATURED WORK -->
+  <section class="featured-section">
 
-<!-- FEATURED -->
-<section>
-  <h2>Featured Work</h2>
+    <div class="section-intro">
 
-  <div class="projects">
+      <small>Featured Work</small>
 
-    <div class="card">
-      <img src="assets/images/project1.jpg" alt="project">
-      <div class="card-content">
-        <small>Design</small>
-        <h3>Brand Identity</h3>
-        <p>Logos, typography, and visual systems.</p>
-      </div>
+      <div class="section-line"></div>
+
     </div>
 
-    <div class="card">
-      <img src="assets/images/project2.jpg" alt="project">
-      <div class="card-content">
-        <small>Photography</small>
-        <h3>Cinematic Moments</h3>
-        <p>Lighting and emotional storytelling.</p>
+    <h2>
+      Selected Creative Projects
+    </h2>
+
+    <div class="projects-grid">
+
+      <!-- CARD -->
+      <div class="card">
+
+        <div class="card-image">
+
+          <img
+            src="assets/images/project1.jpg"
+            alt="Brand identity design"
+          />
+
+        </div>
+
+        <div class="card-content">
+
+          <small>Design</small>
+
+          <h3>
+            Brand Identity
+          </h3>
+
+          <p>
+            Logos, typography, and visual systems.
+          </p>
+
+        </div>
+
       </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <div class="card-image">
+
+          <img
+            src="assets/images/project2.jpg"
+            alt="Photography project"
+          />
+
+        </div>
+
+        <div class="card-content">
+
+          <small>Photography</small>
+
+          <h3>
+            Cinematic Moments
+          </h3>
+
+          <p>
+            Lighting and emotional storytelling.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <div class="card-image">
+
+          <img
+            src="me.png"
+            alt="Human behavior and psychology"
+          />
+
+        </div>
+
+        <div class="card-content">
+
+          <small>Growth</small>
+
+          <h3>
+            Human Behavior
+          </h3>
+
+          <p>
+            Reflection, empathy, and psychological insight.
+          </p>
+
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="card">
-      <img src="me.png" alt="project">
-      <div class="card-content">
-        <small>Growth</small>
-        <h3>Human Behavior</h3>
-        <p>Reflection and psychological insight.</p>
-      </div>
+  </section>
+
+  <!-- CONNECT -->
+  <section class="connect-section">
+
+    <div class="section-intro center">
+
+      <small>Connect</small>
+
+      <div class="section-line"></div>
+
     </div>
 
-  </div>
-</section>
+    <h2>
+      Let’s Work Together
+    </h2>
 
-<!-- CONNECT -->
-<section style="text-align:center;">
-  <h2>Let’s Connect</h2>
-  <p>Open to collaboration and creative opportunities.</p>
+    <p>
+      Open to collaboration, creative opportunities,
+      photography work, and meaningful conversation.
+    </p>
 
-  <a href="contact.html" class="btn" style="margin-top:20px; display:inline-block;">
-    Contact Me
-  </a>
-</section>
+    <a href="contact.html" class="btn connect-btn">
+      Contact Me
+    </a>
 
-<!-- FOOTER -->
-<footer>
-  © 2026 Jonny Calderon
-</footer>
+  </section>
 
-<!-- ANIMATION ENGINE -->
-<script>
-/* cursor glow position */
-document.addEventListener("mousemove", (e) => {
-  document.documentElement.style.setProperty("--x", e.clientX + "px");
-  document.documentElement.style.setProperty("--y", e.clientY + "px");
-});
+  <!-- FOOTER -->
+  <footer>
 
-/* nav scroll effect */
-window.addEventListener("scroll", () => {
-  document.querySelector("nav")
-    .classList.toggle("scrolled", window.scrollY > 20);
-});
+    <p>
+      © 2026 Jonny Calderon
+    </p>
 
-/* page transition */
-window.addEventListener("load", () => {
-  const t = document.querySelector(".page-transition");
-  if (t) t.classList.add("hide");
-});
-</script>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+
+    /* =========================
+       CURSOR GLOW
+    ========================= */
+
+    document.addEventListener("mousemove", (e) => {
+
+      document.documentElement.style.setProperty(
+        "--x",
+        e.clientX + "px"
+      );
+
+      document.documentElement.style.setProperty(
+        "--y",
+        e.clientY + "px"
+      );
+
+    });
+
+    /* =========================
+       NAVBAR SCROLL EFFECT
+    ========================= */
+
+    window.addEventListener("scroll", () => {
+
+      document
+        .querySelector("nav")
+        .classList.toggle(
+          "scrolled",
+          window.scrollY > 20
+        );
+
+    });
+
+    /* =========================
+       PAGE TRANSITION
+    ========================= */
+
+    window.addEventListener("load", () => {
+
+      const transition =
+        document.querySelector(".page-transition");
+
+      if (transition) {
+        transition.classList.add("hide");
+      }
+
+    });
+
+  </script>
 
 </body>
+
 </html>
+```
+
+
