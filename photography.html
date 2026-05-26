@@ -1,48 +1,102 @@
+---
+
+## photography.html
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photography - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-            <img src="gjc.png" alt="Logo" class="header-logo" />
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="photography.html" class="active">Photography</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="photography">
-        <div class="container">
-            <h2>My Photography</h2>
-            <p>Gallery of your photographs.</p>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
-    </script>
+  <title>Photography | Jonny Calderon</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.JPG" alt="JC">
+    </a>
+  </div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="photography.html" class="active">Photography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="photo-header">
+  <h1>Photography</h1>
+  <p>A collection of moments captured through my lens.</p>
+</section>
+
+<section class="gallery">
+
+  <img src="Daboi copy.JPG" class="gallery-img" alt="Photo">
+  <img src="aquaplant copy.JPG" class="gallery-img" alt="Photo">
+  <img src="daboilook copy.JPG" class="gallery-img" alt="Photo">
+  <img src="dafish copy.JPG" class="gallery-img" alt="Photo">
+  <img src="Hannah copy.JPG" class="gallery-img" alt="Photo">
+
+</section>
+
+<div id="imageModal" class="modal">
+
+  <span class="close">&times;</span>
+
+  <img class="modal-content" id="modalImg" alt="Expanded photo">
+
+</div>
+
+<footer>
+  © 2026 Jonny Calderon
+</footer>
+
+<script>
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const images = document.querySelectorAll(".gallery-img");
+  const closeBtn = document.querySelector(".close");
+
+  function openModal(src) {
+    modal.classList.add("active");
+    document.body.classList.add("modal-open");
+    modalImg.src = src;
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
+  }
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      openModal(img.src);
+    });
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
+    }
+  });
+</script>
+
 </body>
 </html>
+```
+
