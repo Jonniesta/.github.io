@@ -27,10 +27,10 @@ body {
   color: #fff;
 }
 
-/* Starry overlay via pseudo-element, overlays everything */
+/* Starry overlay via pseudo-element, behind content */
 body::before {
   content: "";
-  position: fixed; /* fixed to stay on top of all content */
+  position: fixed; /* stay on top of all content */
   top: 0; left: 0;
   width: 100%; height: 100%;
   background-image:
@@ -44,8 +44,8 @@ body::before {
   background-size: 100% 100%;
   background-repeat: repeat;
   opacity: 0.8;
-  z-index: 9998; /* high z-index to overlay all content */
-  pointer-events: none; /* allow clicks to pass through */
+  z-index: 0; /* behind content */
+  pointer-events: none;
 }
 
 /* Aurora flow animation */
@@ -55,16 +55,20 @@ body::before {
   100% { background-position: 0% 50%; }
 }
 
-/* Container */
+/* Main content wrapper to layer above background */
+.main-content {
+  position: relative;
+  z-index: 1; /* above background layers */
+}
+
+/* Container styling */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  position: relative;
-  z-index: 1; /* content below overlay effects */
 }
 
-/* Navbar */
+/* Navbar styles */
 #navbar {
   display: flex;
   justify-content: space-between;
@@ -73,34 +77,31 @@ body::before {
   background-color: rgba(255,255,255,0.1);
   position: sticky;
   top: 0;
-  z-index: 10; /* below particle overlay */
+  z-index: 10; /* above background but below overlay buttons */
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-  transition: background-color 0.3s, box-shadow 0.3s;
 }
-
-/* Scrolled navbar style */
 #navbar.scrolled {
   background-color: rgba(255,255,255,0.3);
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Logo */
+/* Logo styling */
 .logo {
   width: 50px; height: 50px;
-  background-color: #ccc; /* Placeholder */
+  background-color: #ccc; /* placeholder logo */
   border-radius: 50%;
   margin-right: 10px;
 }
 
-/* Nav links */
+/* Nav links styling */
 .nav-links a {
   text-decoration: none;
   padding: 8px 12px;
   font-weight: 600;
   border-radius: 4px;
   color: #fff;
-  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+  transition: all 0.3s;
 }
 .nav-links a:hover {
   color: #00ffff;
@@ -108,7 +109,7 @@ body::before {
   transform: scale(1.05);
 }
 
-/* Sections */
+/* Sections styling */
 section {
   padding: 50px 20px;
   text-align: center;
@@ -131,7 +132,7 @@ p {
   line-height: 1.6;
 }
 
-/* Footer */
+/* Footer styling */
 footer {
   background-color: rgba(255,255,255,0.1);
   padding: 20px;
@@ -141,26 +142,24 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Buttons (including theme toggle and back-to-top) */
+/* Overlay Buttons (Back to Top, Theme Toggle) */
 button {
+  position: fixed;
+  z-index: 10000; /* on top of everything */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
   background: linear-gradient(135deg, #00f, #0ff);
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-size: 1em;
   cursor: pointer;
-  margin: 10px;
-  transition: background 0.3s, transform 0.2s;
-  position: fixed; /* position fixed for overlay */
-  z-index: 10000; /* very high to overlay all content */
+  transition: all 0.3s;
 }
 button:hover {
   background: linear-gradient(135deg, #0ff, #00f);
   transform: scale(1.05);
 }
 
-/* Specific IDs for buttons */
+/* Specific button positions */
 #backToTop {
   bottom: 20px;
   right: 20px;
@@ -181,15 +180,13 @@ button:hover {
   transform: translateY(0);
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media(max-width: 768px) {
   #navbar {
     flex-direction: column;
-    align-items: flex-start;
   }
   .nav-links {
     margin-top: 10px;
     flex-direction: column;
-    gap: 10px;
   }
 }
