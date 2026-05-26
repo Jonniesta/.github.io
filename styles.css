@@ -1,30 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================
-   ROOT VARIABLES
-========================= */
 :root {
   --bg: #020617;
   --surface: #0B1728;
   --surface-2: #101D31;
-
   --green: #7DFF8A;
   --green-soft: #B6FFBD;
   --purple: #B05CFF;
   --blue: #61C8FF;
-
   --text: #F5F8FF;
   --muted: #91A3B7;
-
   --border: rgba(255, 255, 255, 0.08);
   --radius: 22px;
-
   --shadow: 0 25px 70px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   RESET
-========================= */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -35,43 +26,50 @@ html {
   scroll-behavior: smooth;
 }
 
-/* =========================
-   BODY & BACKGROUND
-========================= */
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  min-height: 100vh;
-  padding-top: 82px; /* Fixed nav height */
-  position: relative;
-}
-
-/* =========================
-   Aurora Background
-========================= */
+/* Background with animated aurora gradient */
 body::before {
   content: "";
   position: fixed;
   inset: -20%;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(176, 92, 255, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(125, 255, 138, 0.12), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(97, 200, 255, 0.10), transparent 45%);
-  filter: blur(90px);
+  background: linear-gradient(
+    270deg,
+    rgba(125, 255, 138, 0.2),
+    rgba(97, 200, 255, 0.2),
+    rgba(181, 92, 255, 0.2),
+    rgba(125, 255, 138, 0.2)
+  );
+  background-size: 600% 600%;
+  animation: aurora 15s ease-in-out infinite;
+  filter: blur(50px);
   z-index: -2;
-  animation: floatBg 18s ease-in-out infinite alternate;
+  opacity: 0.8; /* semi-transparent for overlay effect */
 }
 
-@keyframes floatBg {
-  from { transform: translate(-3%, -2%) scale(1); }
-  to { transform: translate(4%, 3%) scale(1.08); }
+/* Aurora animation keyframes */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* Body styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: transparent; /* Use transparent to show animated background */
+  color: var(--text);
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-top: 82px;
+  position: relative;
+}
+
+/* Navigation styles */
 nav {
   position: fixed;
   top: 0;
@@ -91,14 +89,12 @@ nav.scrolled {
   background: rgba(2, 6, 23, 0.92);
 }
 
-/* Navigation Links */
 nav ul {
   display: flex;
   gap: 26px;
   list-style: none;
 }
 
-/* Nav Links Style */
 nav a {
   text-decoration: none;
   color: var(--text);
@@ -126,7 +122,6 @@ nav a.active::after {
   width: 100%;
 }
 
-/* Logo styles */
 .logo img {
   width: 56px;
   height: 56px;
@@ -135,49 +130,43 @@ nav a.active::after {
   border: 2px solid rgba(125, 255, 138, 0.25);
 }
 
-/* =========================
-   REVEAL SYSTEM
-========================= */
+/* Hamburger styles for mobile */
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  z-index: 1100;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Reveal animation */
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
               transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* =========================
-   HERO SECTIONS
-========================= */
-.hero,
-.projects-hero,
-.photo-hero,
-.cta-section {
-  min-height: calc(100vh - 82px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
-  position: relative;
+/* Sections styling */
+section {
+  padding: 110px 80px;
 }
 
-/* Hero Avatar */
-.hero-avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 18px;
-  border: 2px solid rgba(125, 255, 138, 0.3);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-}
-
-/* Headings and Paragraphs */
 h1 {
   font-size: 3.2rem;
   font-weight: 800;
@@ -189,7 +178,6 @@ p {
   color: var(--muted);
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -201,26 +189,11 @@ p {
   color: #07111c;
   transition: 0.3s ease;
 }
-
 .btn:hover {
   transform: translateY(-4px);
 }
 
-/* =========================
-   SECTIONS
-========================= */
-section {
-  padding: 110px 80px;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* =========================
-   PROJECT GRID
-========================= */
+/* Project grid styles */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -236,77 +209,61 @@ h2 {
   display: flex;
   flex-direction: column;
 }
-
 .card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow);
 }
-
 .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
 }
-
 .card-content {
   padding: 18px;
 }
-
 .card h3 {
   margin-top: 10px;
   margin-bottom: 8px;
 }
-
 .card p {
   font-size: 0.9rem;
   color: var(--muted);
 }
-
 .card-link {
   display: inline-block;
   margin-top: 10px;
   font-weight: 600;
   color: var(--green);
   text-decoration: none;
-  transition: 0.3s ease;
 }
-
 .card-link:hover {
   text-decoration: underline;
 }
 
-/* =========================
-   GALLERY
-========================= */
+/* Gallery styles */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
 }
-
 .gallery-img {
   width: 100%;
   height: 260px;
   object-fit: cover;
   border-radius: 16px;
-  transition: 0.3s ease;
   cursor: pointer;
+  transition: 0.3s ease;
 }
-
 .gallery-img:hover {
   transform: scale(1.03);
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* Contact styles */
 .contact-section {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .contact-box {
   max-width: 800px;
   padding: 50px;
@@ -315,16 +272,13 @@ h2 {
   border: 1px solid var(--border);
   text-align: center;
 }
-
 form {
   display: flex;
   flex-direction: column;
   gap: 14px;
   margin-top: 20px;
 }
-
-input,
-textarea {
+input, textarea {
   padding: 14px;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -333,7 +287,6 @@ textarea {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
 }
-
 button[type="submit"] {
   padding: 14px 22px;
   border-radius: 14px;
@@ -344,18 +297,15 @@ button[type="submit"] {
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 button[type="submit"]:hover {
   transform: translateY(-2px);
 }
 
-/* =========================
-   MODAL
-========================= */
+/* Modal styles */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -364,12 +314,10 @@ button[type="submit"]:hover {
   transition: opacity 0.3s ease;
   z-index: 9999;
 }
-
 .modal.active {
   opacity: 1;
   pointer-events: auto;
 }
-
 #modal-img {
   max-width: 90%;
   max-height: 85%;
@@ -378,9 +326,7 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* Footer styles */
 footer {
   text-align: center;
   padding: 40px;
@@ -388,22 +334,16 @@ footer {
   font-size: 0.9rem;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* Responsive adjustments for mobile */
 @media(max-width: 768px) {
   section {
     padding: 80px 24px;
   }
-
-  h1 {
-    font-size: 2.4rem;
-  }
+  h1 { font-size: 2.4rem; }
 
   nav {
     padding: 0 20px;
   }
-
   /* Hamburger styles */
   .hamburger {
     display: flex;
@@ -415,7 +355,6 @@ footer {
     padding: 5px;
     z-index: 1100;
   }
-
   .hamburger .bar {
     width: 100%;
     height: 3px;
@@ -423,8 +362,7 @@ footer {
     border-radius: 2px;
     transition: 0.3s;
   }
-
-  /* Hide nav links by default on mobile, show when active */
+  /* Hide nav links by default, show when active */
   .nav-links {
     position: absolute;
     top: 82px;
@@ -438,7 +376,6 @@ footer {
     border: 1px solid var(--border);
     border-radius: var(--radius);
   }
-
   .nav-links.active {
     display: flex;
   }
