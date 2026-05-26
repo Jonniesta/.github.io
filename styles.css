@@ -9,7 +9,8 @@
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4; /* Light background, can change to your preferred look */
+    /* Gradient background from purple to green */
+    background: linear-gradient(135deg, #8e44ad, #27ae60);
     color: #333;
 }
 
