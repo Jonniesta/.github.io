@@ -1,48 +1,38 @@
-/* Reset some default styles for consistency */
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* Remove height restriction to allow scrolling */
+/* HTML & Body */
 html {
   height: auto;
 }
-
-/* Body with animated aurora and stars overlay */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  /* Remove height: 100vh; to allow full content height */
-  overflow: auto; /* Enable scrolling if needed */
-
-  /* Base background with layered gradients for aurora glow */
+  overflow: auto;
+  position: relative;
+  /* Aurora background with animated flow */
   background: radial-gradient(circle at bottom, #0f2027, transparent),
               linear-gradient(135deg, #0f2027, #203a43, #2c5364, #1e3c72, #2a5298);
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: overlay;
   animation: auroraFlow 30s ease infinite;
-  color: #fff; /* default text color for contrast */
+  color: #fff;
 }
 
-/* Create star field overlay with pseudo-element */
+/* Starry overlay via pseudo-element */
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  z-index: 0;
-  pointer-events: none;
-
-  /* Generate stars at random positions with tiny dots */
-  background-image: 
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image:
     radial-gradient(1px 1px at 10% 20%, #fff, transparent),
     radial-gradient(1px 1px at 30% 40%, #fff, transparent),
     radial-gradient(1px 1px at 50% 60%, #fff, transparent),
@@ -53,37 +43,32 @@ body::before {
   background-size: 100% 100%;
   background-repeat: repeat;
   opacity: 0.8;
+  z-index: 0;
 }
 
-/* Animate the aurora colors for a flowing effect */
+/* Aurora flow animation */
 @keyframes auroraFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Container for consistent width */
+/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  z-index: 1; /* stay above stars and background */
+  z-index: 1;
 }
 
-/* Navbar styles */
+/* Navbar */
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255,255,255,0.1);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -92,116 +77,68 @@ body::before {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Style when scrolled (optional) */
 #navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255,255,255,0.3);
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Left side: Logo styles */
-.nav-left {
-  display: flex;
-  align-items: center;
-}
-
+/* Logo */
 .logo {
-  width: 50px;
-  height: 50px;
-  background-color: #ccc; /* Placeholder for logo image */
+  width: 50px; height: 50px;
+  background-color: #ccc; /* Placeholder */
   border-radius: 50%;
   margin-right: 10px;
 }
 
-/* Title styles */
-.nav-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* Navigation links with vibrant colors */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
+/* Nav links */
 .nav-links a {
   text-decoration: none;
   padding: 8px 12px;
   font-weight: 600;
-  transition: color 0.3s, background-color 0.3s, transform 0.2s;
   border-radius: 4px;
-  color: #fff; /* base color */
+  color: #fff;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
 }
-
 .nav-links a:hover {
-  color: #00ffff; /* bright cyan for hover */
-  background-color: rgba(0, 255, 255, 0.2);
+  color: #00ffff;
+  background-color: rgba(0,255,255,0.2);
   transform: scale(1.05);
 }
 
-/* Landing section styles */
-.landing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* Sections */
+section {
   padding: 50px 20px;
   text-align: center;
 }
-
-.profile-pic {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 4px solid #fff;
-}
-
-.name {
-  font-size: 2em;
-  font-weight: bold;
-  color: #fff;
-}
-
-/* About Me section styles */
-.about-me {
-  padding: 50px 20px;
-  background-color: rgba(255, 255, 255, 0.1);
+#about, #projects, #photography, #contact {
+  background-color: rgba(255,255,255,0.1);
   border-radius: 10px;
   margin: 40px 0;
   color: #fff;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-
-.about-me h2 {
+h2 {
   margin-bottom: 20px;
   font-size: 2em;
-  text-align: center;
 }
-
-.about-me p {
+p {
+  max-width: 800px;
+  margin: 0 auto;
   font-size: 1.1em;
   line-height: 1.6;
-  text-align: center;
 }
 
-/* Footer styles */
+/* Footer */
 footer {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255,255,255,0.1);
   padding: 20px;
-  text-align: center;
   margin-top: 40px;
   font-size: 0.9em;
   color: #fff;
   border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Buttons styling */
+/* Buttons */
 button {
   background: linear-gradient(135deg, #00f, #0ff);
   color: #fff;
@@ -210,16 +147,27 @@ button {
   border-radius: 6px;
   font-size: 1em;
   cursor: pointer;
+  margin: 10px;
   transition: background 0.3s, transform 0.2s;
 }
-
 button:hover {
   background: linear-gradient(135deg, #0ff, #00f);
   transform: scale(1.05);
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
+/* Fade-in elements */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media(max-width: 768px) {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -228,11 +176,5 @@ button:hover {
     margin-top: 10px;
     flex-direction: column;
     gap: 10px;
-  }
-  .landing {
-    padding: 30px 20px;
-  }
-  .about-me {
-    padding: 30px 20px;
   }
 }
