@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+
+  <title>Contact | Jonny Calderon</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- =========================
+     NAV
+========================= -->
 <nav>
+
   <div class="logo">
-    <img src="gjc.png">
+    <img src="gjc.png" alt="logo">
   </div>
 
   <ul>
@@ -20,31 +26,93 @@
     <li><a href="photography.html">Photography</a></li>
     <li><a class="active" href="contact.html">Contact</a></li>
   </ul>
+
 </nav>
 
-<section class="reveal contact-box">
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+<section class="contact-section reveal">
 
-  <h1>Contact Me</h1>
+  <div class="contact-box">
 
-  <form action="https://formspree.io/f/mbjpalvn" method="POST">
+    <span class="section-tag">
+      CONTACT
+    </span>
 
-    <input type="hidden" name="_subject" value="New Portfolio Message">
-    <input type="hidden" name="_next" value="success.html">
+    <h1>
+      Let’s Connect
+    </h1>
 
-    <input name="name" placeholder="Your Name" required>
-    <input name="email" type="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Message" required></textarea>
+    <p>
+      Open to conversations, collaboration,
+      and creative opportunities.
+    </p>
 
-    <button class="btn" type="submit">Send Message</button>
+    <!-- FORMSPREE -->
+    <form
+      action="https://formspree.io/f/mbjpalvn"
+      method="POST"
+    >
 
-  </form>
+      <!-- subject -->
+      <input
+        type="hidden"
+        name="_subject"
+        value="New Portfolio Message"
+      >
+
+      <!-- IMPORTANT FIX -->
+      <!-- replace with your REAL domain -->
+      <input
+        type="hidden"
+        name="_next"
+        value="https://yourdomain.com/success.html"
+      >
+
+      <!-- name -->
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
+
+      <!-- email -->
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <!-- message -->
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        required
+      ></textarea>
+
+      <!-- button -->
+      <button type="submit">
+        Send Message
+      </button>
+
+    </form>
+
+  </div>
 
 </section>
 
-<footer>© 2026 Jonny Calderon</footer>
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+  © 2026 Jonny Calderon
+</footer>
 
+<!-- reveal animation -->
 <script src="app.js"></script>
-<div class="cat-loader"></div>
 
 </body>
 </html>
