@@ -14,8 +14,9 @@
   --bg-2: #081221;
   --bg-3: #0B1728;
 
-  --surface: rgba(11, 20, 35, 0.82);
-  --surface-solid: #0E1727;
+  --surface: #0A1322;
+  --surface-2: #111C2D;
+  --surface-3: #162338;
 
   --green: #7DFF8A;
   --green-light: #A8FFAE;
@@ -61,19 +62,19 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(176,92,255,0.18),
+      rgba(176,92,255,0.16),
       transparent 30%
     ),
 
     radial-gradient(
       circle at bottom left,
-      rgba(125,255,138,0.12),
+      rgba(125,255,138,0.10),
       transparent 35%
     ),
 
     radial-gradient(
       circle at right center,
-      rgba(80,180,255,0.12),
+      rgba(80,180,255,0.10),
       transparent 35%
     ),
 
@@ -105,7 +106,7 @@ body::before {
 
   background-size: 180px 180px;
 
-  opacity: 0.12;
+  opacity: 0.08;
 
   pointer-events: none;
 
@@ -144,27 +145,6 @@ body::after {
 }
 
 /* =========================
-   PAGE TRANSITION
-========================= */
-
-.page-transition {
-
-  position: fixed;
-  inset: 0;
-
-  background: #040816;
-
-  z-index: 9999;
-
-  transition: opacity 1s ease;
-}
-
-.page-transition.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* =========================
    NAVBAR
 ========================= */
 
@@ -183,7 +163,7 @@ nav {
 
   z-index: 1000;
 
-  background: rgba(4,8,22,0.55);
+  background: rgba(4,8,22,0.82);
 
   backdrop-filter: blur(18px);
 
@@ -194,7 +174,7 @@ nav {
 
 nav.scrolled {
 
-  background: rgba(4,8,22,0.82);
+  background: rgba(4,8,22,0.95);
 
   border-bottom: 1px solid rgba(255,255,255,0.06);
 }
@@ -210,18 +190,20 @@ nav.scrolled {
 
 .logo img {
 
-  width: 78px;
-  height: 78px;
+  width: 72px;
+  height: 72px;
 
   object-fit: contain;
-   padding: 4px;
+
+  padding: 4px;
+
   border-radius: 50%;
 
-  border: 2px solid rgba(125,255,138,0.35);
+  border: 2px solid rgba(125,255,138,0.30);
 
   box-shadow:
-    0 0 25px rgba(125,255,138,0.18),
-    0 0 50px rgba(176,92,255,0.08);
+    0 0 25px rgba(125,255,138,0.12),
+    0 0 40px rgba(176,92,255,0.06);
 
   transition: 0.35s ease;
 }
@@ -251,8 +233,6 @@ nav a {
 
   font-size: 0.98rem;
   font-weight: 600;
-
-  letter-spacing: 0.2px;
 
   position: relative;
 
@@ -309,10 +289,6 @@ nav a.active::after {
   padding: 120px 24px 80px;
 }
 
-/* =========================
-   HERO OVERLAY
-========================= */
-
 .hero::after {
 
   content: "";
@@ -323,130 +299,12 @@ nav a.active::after {
   background:
     linear-gradient(
       to bottom,
-      rgba(0,0,0,0.12),
+      rgba(0,0,0,0.15),
       rgba(0,0,0,0.35)
     );
 
   z-index: 1;
 }
-
-/* =========================
-   CURSOR GLOW
-========================= */
-
-.hero::before {
-
-  content: "";
-
-  position: absolute;
-
-  width: 650px;
-  height: 650px;
-
-  left: var(--x);
-  top: var(--y);
-
-  transform: translate(-50%, -50%);
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(125,255,138,0.18),
-      transparent 60%
-    );
-
-  filter: blur(100px);
-
-  opacity: 0.7;
-
-  pointer-events: none;
-}
-
-/* =========================
-   AURORA
-========================= */
-
-.aurora {
-
-  position: absolute;
-  inset: -20%;
-
-  z-index: 1;
-
-  mix-blend-mode: screen;
-}
-
-.aurora-1 {
-
-  background:
-    radial-gradient(
-      ellipse at 20% 70%,
-      rgba(125,255,138,0.55),
-      transparent 45%
-    ),
-
-    radial-gradient(
-      ellipse at 50% 55%,
-      rgba(80,255,190,0.45),
-      transparent 40%
-    );
-
-  filter: blur(80px);
-
-  animation: auroraFloat1 18s ease-in-out infinite alternate;
-}
-
-.aurora-2 {
-
-  background:
-    radial-gradient(
-      ellipse at 35% 20%,
-      rgba(176,92,255,0.45),
-      transparent 45%
-    ),
-
-    radial-gradient(
-      ellipse at 70% 30%,
-      rgba(90,140,255,0.25),
-      transparent 35%
-    );
-
-  filter: blur(100px);
-
-  animation: auroraFloat2 22s ease-in-out infinite alternate;
-}
-
-.aurora-3 {
-
-  position: absolute;
-
-  width: 35%;
-  height: 160%;
-
-  left: 32%;
-  top: -35%;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      rgba(255,255,255,0.02) 20%,
-      rgba(125,255,138,0.16) 50%,
-      transparent 100%
-    );
-
-  filter: blur(45px);
-
-  opacity: 0.65;
-
-  transform: rotate(-8deg);
-
-  animation: auroraBeam 16s ease-in-out infinite alternate;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
 
 .hero-content {
 
@@ -471,7 +329,7 @@ nav a.active::after {
 
   border-radius: 50%;
 
-  border: 3px solid rgba(125,255,138,0.4);
+  border: 3px solid rgba(125,255,138,0.35);
 
   box-shadow:
     0 0 0 8px rgba(255,255,255,0.02),
@@ -521,7 +379,7 @@ nav a.active::after {
 }
 
 /* =========================
-   BUTTON
+   BUTTONS
 ========================= */
 
 .btn,
@@ -539,7 +397,11 @@ button {
 
   cursor: pointer;
 
-  background: var(--green);
+  background: linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+  );
 
   color: #07111C;
 
@@ -558,8 +420,6 @@ button {
 button:hover {
 
   transform: translateY(-4px);
-
-  background: var(--green-light);
 
   box-shadow:
     0 20px 55px rgba(125,255,138,0.28);
@@ -619,144 +479,6 @@ section p {
 }
 
 /* =========================
-   PROJECT GRID
-========================= */
-
-.projects {
-
-  margin-top: 50px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
-
-  gap: 28px;
-}
-
-/* =========================
-   CARDS
-========================= */
-
-.card {
-
-  position: relative;
-
-  overflow: hidden;
-
-  background: var(--surface);
-
-  backdrop-filter: blur(18px);
-
-  border-radius: var(--radius);
-
-  border: 1px solid var(--border);
-
-  transition: 0.45s ease;
-}
-
-.card::before {
-
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.04),
-      transparent
-    );
-
-  pointer-events: none;
-}
-
-.card:hover {
-
-  transform: translateY(-10px);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.45),
-    0 0 50px rgba(176,92,255,0.08);
-}
-
-.card img {
-
-  width: 100%;
-  height: 240px;
-
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 28px;
-}
-
-.card-content small {
-
-  color: var(--green);
-
-  font-size: 0.8rem;
-
-  letter-spacing: 1px;
-
-  text-transform: uppercase;
-}
-
-.card-content h3 {
-
-  margin: 14px 0;
-
-  font-size: 1.5rem;
-}
-
-.card-content p {
-  color: var(--muted);
-}
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-
-  margin-top: 50px;
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
-
-  gap: 24px;
-}
-
-.gallery-img {
-
-  width: 100%;
-  height: 340px;
-
-  object-fit: cover;
-
-  border-radius: 24px;
-
-  border: 1px solid rgba(255,255,255,0.06);
-
-  transition: 0.45s ease;
-}
-
-.gallery-img:hover {
-
-  transform:
-    translateY(-8px)
-    scale(1.02);
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.45),
-    0 0 40px rgba(176,92,255,0.1);
-}
-
-/* =========================
    CONTACT SECTION
 ========================= */
 
@@ -792,22 +514,16 @@ section p {
 
   border-radius: 34px;
 
-  background: #0B1423;
+  background: #0A1322;
 
-  border: 1px solid rgba(125,255,138,0.08);
-
-  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.08);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,0.55),
-    0 0 40px rgba(125,255,138,0.05);
+    0 35px 90px rgba(0,0,0,0.70),
+    0 0 0 1px rgba(125,255,138,0.04);
 
   overflow: hidden;
 }
-
-/* =========================
-   GLOW BORDER
-========================= */
 
 .contact-box::before {
 
@@ -823,8 +539,8 @@ section p {
   background:
     linear-gradient(
       135deg,
-      rgba(125,255,138,0.16),
-      rgba(176,92,255,0.14),
+      rgba(125,255,138,0.18),
+      rgba(176,92,255,0.15),
       transparent 70%
     );
 
@@ -840,34 +556,11 @@ section p {
 }
 
 /* =========================
-   HEADER
+   CONTACT HEADER
 ========================= */
 
 .contact-header {
   margin-bottom: 42px;
-}
-
-.contact-tag {
-
-  display: inline-flex;
-  align-items: center;
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  background: rgba(125,255,138,0.08);
-
-  border: 1px solid rgba(125,255,138,0.14);
-
-  color: var(--green);
-
-  font-size: 0.78rem;
-  font-weight: 700;
-
-  letter-spacing: 2px;
-
-  margin-bottom: 24px;
 }
 
 .contact-box h2 {
@@ -887,7 +580,7 @@ section p {
 
 .contact-line {
 
-  width: 90px;
+  width: 120px;
   height: 4px;
 
   border-radius: 999px;
@@ -946,12 +639,7 @@ section p {
 
   border-radius: 22px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.03),
-      rgba(255,255,255,0.015)
-    );
+  background: #111C2D;
 
   border: 1px solid rgba(255,255,255,0.06);
 
@@ -968,19 +656,10 @@ section p {
 
   border-color: rgba(125,255,138,0.22);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(125,255,138,0.06),
-      rgba(255,255,255,0.02)
-    );
+  background: #162338;
 
   box-shadow:
     0 16px 40px rgba(0,0,0,0.35);
-}
-
-.contact-card * {
-  text-decoration: none !important;
 }
 
 .contact-icon {
@@ -1006,27 +685,13 @@ section p {
   flex-shrink: 0;
 }
 
-.contact-icon i {
-
-  font-size: 1.1rem;
-
-  color: white;
-}
-
-.contact-card div:last-child {
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .contact-card h3 {
 
   color: #F5F9FF;
 
   font-size: 1rem;
 
-  margin: 0 0 6px;
+  margin-bottom: 6px;
 }
 
 .contact-card span {
@@ -1062,7 +727,7 @@ section p {
 
   border-radius: 14px;
 
-  background: rgba(255,255,255,0.03);
+  background: #111C2D;
 
   border: 1px solid rgba(255,255,255,0.06);
 
@@ -1081,7 +746,7 @@ section p {
 
   border-color: rgba(125,255,138,0.22);
 
-  background: rgba(125,255,138,0.06);
+  background: #162338;
 }
 
 /* =========================
@@ -1095,10 +760,6 @@ section p {
 
   gap: 26px;
 }
-
-/* =========================
-   INPUT GROUPS
-========================= */
 
 .input-group {
 
@@ -1125,7 +786,7 @@ textarea {
 
   width: 100%;
 
-  background: #111C2D;
+  background: #0F1A2B;
 
   border: 1px solid rgba(255,255,255,0.08);
 
@@ -1149,7 +810,7 @@ textarea::placeholder {
 input:hover,
 textarea:hover {
 
-  border-color: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.14);
 }
 
 input:focus,
@@ -1174,7 +835,7 @@ textarea {
 }
 
 /* =========================
-   BUTTON
+   SUBMIT BUTTON
 ========================= */
 
 .contact-form button {
@@ -1230,42 +891,6 @@ textarea {
 }
 
 /* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  .contact-box {
-
-    padding: 42px 24px;
-
-    border-radius: 28px;
-  }
-
-  .contact-box h2 {
-    font-size: 2.5rem;
-  }
-
-  .contact-actions {
-    grid-template-columns: 1fr;
-  }
-
-  .social-links {
-    flex-direction: column;
-  }
-
-  .social-links a {
-
-    width: 100%;
-
-    justify-content: center;
-  }
-
-  .contact-card {
-    padding: 18px;
-  }
-}
-/* =========================
    FOOTER
 ========================= */
 
@@ -1296,45 +921,6 @@ footer {
   }
 }
 
-@keyframes auroraFloat1 {
-
-  0% {
-    transform: translate(-4%, -2%) scale(1);
-  }
-
-  100% {
-    transform: translate(5%, 4%) scale(1.12);
-  }
-}
-
-@keyframes auroraFloat2 {
-
-  0% {
-    transform: translate(3%, -4%) scale(1);
-  }
-
-  100% {
-    transform: translate(-5%, 5%) scale(1.18);
-  }
-}
-
-@keyframes auroraBeam {
-
-  0% {
-    transform:
-      rotate(-10deg)
-      translateY(-2%)
-      scaleY(1);
-  }
-
-  100% {
-    transform:
-      rotate(5deg)
-      translateY(4%)
-      scaleY(1.15);
-  }
-}
-
 /* =========================
    MOBILE
 ========================= */
@@ -1362,16 +948,33 @@ footer {
     height: 145px;
   }
 
-  .projects,
-  .gallery {
+  .contact-box {
+
+    padding: 42px 24px;
+
+    border-radius: 28px;
+  }
+
+  .contact-box h2 {
+    font-size: 2.5rem;
+  }
+
+  .contact-actions {
     grid-template-columns: 1fr;
   }
 
-  .contact-box {
-    padding: 45px 24px;
+  .social-links {
+    flex-direction: column;
   }
 
-  .card-content {
-    padding: 22px;
+  .social-links a {
+
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .contact-card {
+    padding: 18px;
   }
 }
