@@ -75,8 +75,8 @@ nav a.active {
 }
 
 .logo img {
-  width: 40px;          /* adjust size */
-  height: 35px;          /* keeps proportions correct */
+  width: 70px;          /* adjust size */
+  height: 65px;          /* keeps proportions correct */
   object-fit: cover;
 
   display: block;
