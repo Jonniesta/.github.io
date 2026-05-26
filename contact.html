@@ -8,8 +8,6 @@
 
   <title>Contact | Jonny Calderon</title>
 
-  <meta name="description" content="Contact Jonny Calderon for collaborations, creative work, photography, and opportunities." />
-
   <meta name="theme-color" content="#040816" />
 
   <link rel="stylesheet" href="styles.css">
@@ -41,6 +39,19 @@
 
   </nav>
 
+  <!-- 🐾 LOADING SCREEN -->
+  <div class="loading-overlay" id="loadingOverlay">
+
+    <div class="paw-loader">
+      <div class="paw"></div>
+      <div class="paw"></div>
+      <div class="paw"></div>
+    </div>
+
+    <p>Sending your message...</p>
+
+  </div>
+
   <!-- CONTACT SECTION -->
   <section class="contact-section">
 
@@ -55,7 +66,6 @@
         <p>Send a message and I’ll respond as soon as possible.</p>
       </div>
 
-      <!-- CONTACT LINKS -->
       <div class="contact-info-bar">
 
         <a href="mailto:jonniesta@gmail.com">
@@ -89,9 +99,7 @@
       >
 
         <input type="text" name="name" placeholder="Your Name" required>
-
         <input type="email" name="email" placeholder="Your Email" required>
-
         <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
 
         <button type="submit" id="submitBtn">
@@ -110,13 +118,18 @@
     © 2026 Jonny Calderon
   </footer>
 
-  <!-- REDIRECT SCRIPT (WORKING) -->
+  <!-- SCRIPT -->
   <script>
+
     const form = document.getElementById("contactForm");
     const btn = document.getElementById("submitBtn");
+    const overlay = document.getElementById("loadingOverlay");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      // show paw loader
+      overlay.classList.add("active");
 
       btn.disabled = true;
       btn.innerHTML = "Sending...";
@@ -133,17 +146,23 @@
         });
 
         if (res.ok) {
-          window.location.href = "success.html";
+          setTimeout(() => {
+            window.location.href = "success.html";
+          }, 1200);
         } else {
-          btn.innerHTML = "Try Again";
+          overlay.classList.remove("active");
           btn.disabled = false;
+          btn.innerHTML = "Try Again";
         }
 
       } catch (err) {
-        btn.innerHTML = "Error - Try Again";
+        overlay.classList.remove("active");
         btn.disabled = false;
+        btn.innerHTML = "Error - Try Again";
       }
+
     });
+
   </script>
 
 </body>
