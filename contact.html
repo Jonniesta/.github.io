@@ -1,153 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact | Jonny Calderon</title>
-
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<!-- NAV -->
+<!-- ================= NAV ================= -->
 <nav>
-
   <div class="logo">
-    <img src="gjc.png" alt="logo">
+    <img src="gjc.png" alt="logo" />
   </div>
-
   <ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a class="active" href="contact.html">Contact</a></li>
   </ul>
-
 </nav>
 
-<!-- CONTACT -->
-<section class="contact-section reveal active">
-
+<!-- ================= CONTACT ================= -->
+<section class="contact-section reveal">
   <div class="contact-box">
-
     <span class="section-tag">CONTACT</span>
-
     <h1>Let’s Connect</h1>
-
     <p>
-      Open to collaboration, creative work,
-      and meaningful conversations.
+      Open to collaboration, creative work, and meaningful conversations.
     </p>
-
     <form action="https://formspree.io/f/mbjpalvn" method="POST">
-
-      <input type="hidden" name="_subject" value="New Portfolio Message">
-
-      <!-- IMPORTANT FIX -->
-      <!-- replace with real domain or remove if broken -->
-      <input type="hidden" name="_next" value="success.html">
-
-      <input name="name" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
+      <input type="hidden" name="_subject" value="New Portfolio Message" />
+      <!-- IMPORTANT FIX: replace with real domain or remove if broken -->
+      <input type="hidden" name="_next" value="success.html" />
+      <input name="name" placeholder="Your Name" required />
+      <input name="email" type="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Message" required></textarea>
-
       <button type="submit">Send Message</button>
-
     </form>
-
   </div>
-
 </section>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer>
-  © 2026 Jonny Calderon
+  <p>© 2026 Jonny Calderon</p>
 </footer>
 
-<!-- MODAL (optional but keep consistent across site) -->
+<!-- ================= MODAL ================= -->
 <div class="modal" id="modal" onclick="closeModal()">
-  <img id="modalImg">
+  <img id="modal-img" />
 </div>
 
-<script src="app.js"></script>
+<!-- ================= SCRIPTS ================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Reveal animations
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Contact | Jonny Calderon</title>
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-
-  <div class="logo">
-    <img src="gjc.png" alt="logo">
-  </div>
-
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a class="active" href="contact.html">Contact</a></li>
-  </ul>
-
-</nav>
-
-<!-- CONTACT -->
-<section class="contact-section reveal active">
-
-  <div class="contact-box">
-
-    <span class="section-tag">CONTACT</span>
-
-    <h1>Let’s Connect</h1>
-
-    <p>
-      Open to collaboration, creative work,
-      and meaningful conversations.
-    </p>
-
-    <form action="https://formspree.io/f/mbjpalvn" method="POST">
-
-      <input type="hidden" name="_subject" value="New Portfolio Message">
-
-      <!-- IMPORTANT FIX -->
-      <!-- replace with real domain or remove if broken -->
-      <input type="hidden" name="_next" value="success.html">
-
-      <input name="name" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
-
-      <button type="submit">Send Message</button>
-
-    </form>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Jonny Calderon
-</footer>
-
-<!-- MODAL (optional but keep consistent across site) -->
-<div class="modal" id="modal" onclick="closeModal()">
-  <img id="modalImg">
-</div>
-
-<script src="app.js"></script>
-
+    // Modal functions
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    window.openModal = (src) => {
+      modal.classList.add("active");
+      modalImg.src = src;
+      document.body.style.overflow = "hidden";
+    };
+    window.closeModal = () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    };
+  });
+</script>
 </body>
 </html>
