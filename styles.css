@@ -1,59 +1,104 @@
-/* Reset & base styles */
+/* Reset some default styles for consistency */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
+/* Body font and background */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   color: #333;
+}
+
+/* Container class for consistent width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Navbar styles */
 #navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 15px 20px;
-  background-color: rgba(0, 0, 0, 0.2); /* transparent initially */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
-  z-index: 999;
+  padding: 10px 20px;
+  background-color: #fff;
+  position: sticky; /* Keeps the navbar on top when scrolling */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
+/* Change style when scrolled (optional) */
 #navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7); /* darker on scroll */
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+/* Left side: Logo styles */
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background-color: #ccc; /* Placeholder color, replace with logo image if available */
+  border-radius: 50%;
+  /* Optional: add background-image instead of color */
+  /* background-image: url('logo.png'); */
+  /* background-size: cover; */
+  margin-right: 10px;
+}
+
+/* Title styles */
 .nav-title {
-  color: #fff;
   font-size: 1.5em;
+  font-weight: bold;
+}
+
+/* Navigation links styles */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 12px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+  background-color: rgba(0, 123, 255, 0.1);
+  border-radius: 4px;
 }
 
 /* Landing section styles */
 .landing {
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #f0f0f0;
   text-align: center;
-  padding-top: 80px; /* offset for fixed navbar */
 }
 
 .profile-pic {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 4px solid green;
+  object-fit: cover;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .name {
@@ -63,35 +108,49 @@ body {
 
 /* About Me section styles */
 .about-me {
-  padding: 80px 20px;
+  padding: 50px 20px;
   background-color: #fff;
-  max-width: 800px;
-  margin: 0 auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-top: -40px; /* slight overlap for smooth transition */
 }
 
 .about-me h2 {
   margin-bottom: 20px;
-  text-align: center;
   font-size: 2em;
+  text-align: center;
 }
 
 .about-me p {
+  max-width: 800px;
+  margin: 0 auto;
   font-size: 1.1em;
   line-height: 1.6;
   text-align: center;
 }
 
-/* Responsive adjustments */
-@media(max-width: 600px) {
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-  }
+/* Footer styles */
+footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #555;
+}
 
-  .name {
-    font-size: 1.5em;
+/* Responsive adjustments (optional) */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .landing {
+    padding: 30px 20px;
+  }
+  .about-me {
+    padding: 30px 20px;
   }
 }
