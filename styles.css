@@ -13,6 +13,8 @@ body {
     background: linear-gradient(135deg, #8e44ad, #27ae60);
     color: #333;
     margin: 0;
+    /* Add top padding to avoid content being hidden behind fixed header */
+    padding-top: 80px;
 }
 
 /* Container for layout */
@@ -23,11 +25,14 @@ body {
     padding: 20px 0;
 }
 
-/* Header styles */
+/* Header styles - fixed at the top */
 header {
     background-color: rgba(0, 0, 50, 0.7); /* Dark blue transparent */
     padding: 20px 0;
-    position: relative;
+    position: fixed; /* Fixed position at top */
+    top: 0;
+    width: 100%;
+    z-index: 999; /* Stay on top */
     display: flex;
     align-items: center;
     justify-content: space-between;
