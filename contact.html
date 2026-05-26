@@ -1,3 +1,6 @@
+# Refactored `contact.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,11 +18,11 @@
   <!-- SEO -->
   <meta
     name="description"
-    content="Contact Jonny Calderon for collaborations, creative work, photography, and professional opportunities."
+    content="Contact Jonny Calderon for collaborations, photography work, creative projects, psychology-focused opportunities, and professional inquiries."
   />
 
   <!-- THEME -->
-  <meta name="theme-color" content="#020814" />
+  <meta name="theme-color" content="#040816" />
 
   <!-- STYLES -->
   <link rel="stylesheet" href="styles.css">
@@ -38,7 +41,7 @@
     rel="stylesheet"
   >
 
-  <!-- ICONS -->
+  <!-- FONT AWESOME -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -48,7 +51,10 @@
 
 <body>
 
-  <!-- NAVBAR -->
+  <!-- PAGE TRANSITION -->
+  <div class="page-transition"></div>
+
+  <!-- NAVIGATION -->
   <nav>
 
     <a href="index.html" class="logo">
@@ -103,23 +109,27 @@
       <!-- HEADER -->
       <div class="contact-header">
 
-        <h2>
+        <div class="hero-badge">
           Let’s Connect
-        </h2>
+        </div>
+
+        <h1>
+          Reach Out
+        </h1>
 
         <div class="contact-line"></div>
 
         <p>
           Whether you want to collaborate,
-          ask a question,
           discuss creative work,
-          or simply connect —
+          connect professionally,
+          or simply start a conversation,
           I’d love to hear from you.
         </p>
 
       </div>
 
-      <!-- CONTACT INFO BAR -->
+      <!-- CONTACT INFO -->
       <div class="contact-info-bar">
 
         <!-- EMAIL -->
@@ -176,7 +186,7 @@
 
       </div>
 
-      <!-- CONTACT FORM -->
+      <!-- FORM -->
       <form
         action="https://formspree.io/f/mbjpalvn"
         method="POST"
@@ -201,16 +211,16 @@
         <div class="input-group">
 
           <label for="name">
-            Your Name
+            Full Name
           </label>
 
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Enter your name"
-            required
+            placeholder="Enter your full name"
             autocomplete="name"
+            required
           >
 
         </div>
@@ -226,9 +236,26 @@
             type="email"
             id="email"
             name="email"
-            placeholder="Enter your email"
-            required
+            placeholder="Enter your email address"
             autocomplete="email"
+            required
+          >
+
+        </div>
+
+        <!-- SUBJECT -->
+        <div class="input-group">
+
+          <label for="subject">
+            Subject
+          </label>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="What would you like to discuss?"
+            required
           >
 
         </div>
@@ -243,14 +270,14 @@
           <textarea
             id="message"
             name="message"
-            placeholder="Write your message..."
-            rows="7"
+            placeholder="Write your message here..."
+            rows="8"
             required
           ></textarea>
 
         </div>
 
-        <!-- SUBMIT BUTTON -->
+        <!-- BUTTON -->
         <button type="submit">
 
           <span>
@@ -270,19 +297,14 @@
   <!-- FOOTER -->
   <footer>
 
-    <p>
-      © 2026 Jonny Calderon
-    </p>
+    © 2026 Jonny Calderon
 
   </footer>
 
   <!-- SCRIPT -->
   <script>
 
-    /* =========================
-       NAV SCROLL EFFECT
-    ========================= */
-
+    /* NAV SCROLL EFFECT */
     window.addEventListener("scroll", () => {
 
       document
@@ -294,10 +316,21 @@
 
     });
 
-    /* =========================
-       CURSOR GLOW
-    ========================= */
+    /* PAGE TRANSITION */
+    window.addEventListener("load", () => {
 
+      const transition =
+        document.querySelector(
+          ".page-transition"
+        );
+
+      if (transition) {
+        transition.classList.add("hide");
+      }
+
+    });
+
+    /* CURSOR POSITION */
     document.addEventListener("mousemove", (e) => {
 
       document.documentElement.style.setProperty(
@@ -315,5 +348,5 @@
   </script>
 
 </body>
-
 </html>
+
