@@ -1,184 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Portfolio</title>
-<link rel="stylesheet" href="styles.css" />
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonny Calderon</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<!-- Particle Canvas for star overlay -->
-<canvas id="particle-canvas"></canvas>
+<nav>
+  <div class="logo">
+    <a href="index.html"><img src="logo.JPG"></a>
+  </div>
 
-<!-- Star overlay pseudo-element will be in CSS -->
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="photography.html">Photography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-<!-- Main content wrapper to layer above background -->
-<div class="main-content">
+<section class="hero">
+  <div class="hero-content">
+    <img src="me.png">
+    <h1>Jonny Calderon</h1>
+    <p>Human Services • Creative Work • Future Therapist</p>
+    <a class="btn" href="projects.html">View Work</a>
+  </div>
+</section>
 
-  <!-- Back to Top Button -->
-  <button id="backToTop">Top</button>
+<section class="section">
+  <h2>About Me</h2>
+  <p>I help people grow, understand themselves, and build meaningful lives through empathy and structure.</p>
+</section>
 
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+<section class="section">
+  <h2>Featured Work</h2>
 
-  <!-- Navbar -->
-  <header id="navbar">
-    <div class="container" style="display:flex; justify-content: space-between; align-items: center; width: 100%;">
-      <!-- Left: Logo -->
-      <div class="nav-left">
-        <div class="logo"></div>
+  <div class="grid">
+
+    <div class="card">
+      <img src="slate.jpg">
+      <div class="card-content">
+        <h3>Creative Work</h3>
+        <p>Design + reflection + identity.</p>
       </div>
-      <!-- Navigation Links -->
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#photography">Photography</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-  </header>
 
-  <!-- Landing Section -->
-  <section class="landing">
-    <div class="container" style="text-align: center; padding: 50px 20px;">
-      <img src="me.png" alt="My Photo" class="profile-pic fade-in" />
-      <h2 class="name fade-in">Your Name</h2>
+    <div class="card">
+      <img src="slate1.jpg">
+      <div class="card-content">
+        <h3>Photography</h3>
+        <p>Calm, natural moments.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- About Me -->
-  <section id="about" class="about-me fade-in">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Hello! I'm [Your Name], a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
+    <div class="card">
+      <img src="me.png">
+      <div class="card-content">
+        <h3>Growth</h3>
+        <p>Human behavior + learning.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Projects -->
-  <section id="projects" class="fade-in">
-    <div class="container">
-      <h2>My Projects</h2>
-      <p>Here are some of my recent works...</p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Photography -->
-  <section id="photography" class="fade-in">
-    <div class="container">
-      <h2>Photography</h2>
-      <p>Some of my favorite photos...</p>
-    </div>
-  </section>
+<section class="section">
+  <h2>Let’s Connect</h2>
+  <p>Open to collaboration and conversation.</p>
 
-  <!-- Contact -->
-  <section id="contact" class="fade-in">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <p>You can reach me at: email@example.com</p>
-    </div>
-  </section>
+  <div style="text-align:center;margin-top:20px;">
+    <a class="btn" href="contact.html">Contact Me</a>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Your Name. All rights reserved.</p>
-  </footer>
-</div>
+<footer>
+  © 2026 Jonny Calderon
+</footer>
 
-<!-- Scripts -->
-<script>
-  // Scroll reveal
-  const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0, rootMargin: "0px 0px -50px 0px" };
-  const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
-
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // Back to top button
-  const backToTopBtn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.style.display = 'block';
-    } else {
-      backToTopBtn.style.display = 'none';
-    }
-  });
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  // Theme toggle
-  const themeBtn = document.getElementById('theme-toggle');
-  themeBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-theme');
-  });
-
-  // Particle background
-  const canvas = document.getElementById('particle-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initParticles();
-  }
-  window.addEventListener('resize', resizeCanvas);
-
-  class Particle {
-    constructor() {
-      this.x = Math.random() * window.innerWidth;
-      this.y = Math.random() * window.innerHeight;
-      this.size = Math.random() * 2 + 1;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > window.innerWidth) this.speedX *= -1;
-      if (this.y < 0 || this.y > window.innerHeight) this.speedY *= -1;
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'white';
-      ctx.fill();
-    }
-  }
-
-  let particlesArray = [];
-
-  function initParticles() {
-    particlesArray = [];
-    for (let i = 0; i < 200; i++) {
-      particlesArray.push(new Particle());
-    }
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-    particlesArray.forEach(p => {
-      p.update();
-      p.draw();
-    });
-    requestAnimationFrame(animate);
-  }
-
-  resizeCanvas();
-  animate();
-</script>
+</body>
+</html>
