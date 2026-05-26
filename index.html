@@ -3,22 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Landing Page</title>
+<title>My Portfolio</title>
 <link rel="stylesheet" href="styles.css" />
-<!-- Optional Google Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+<!-- Particle Canvas for stars -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- Back to Top Button -->
+<button id="backToTop">Top</button>
+
+<!-- Theme Toggle Button -->
+<button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+
 <!-- Navbar -->
 <header id="navbar">
   <div class="container" style="display:flex; justify-content: space-between; align-items: center; width: 100%;">
-    <!-- Left side: Logo -->
+    <!-- Left: Logo -->
     <div class="nav-left">
-      <div class="logo"></div> <!-- Placeholder for logo image -->
+      <div class="logo"></div>
     </div>
-    <!-- Right side: Navigation links -->
+    <!-- Navigation Links -->
     <nav class="nav-links">
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#photography">Photography</a>
       <a href="#contact">Contact</a>
@@ -29,35 +39,141 @@
 <!-- Landing Section -->
 <section class="landing">
   <div class="container" style="text-align: center; padding: 50px 20px;">
-    <img src="me.png" alt="My Photo" class="profile-pic" />
-    <h2 class="name">Jonny Calderon</h2>
+    <img src="me.png" alt="My Photo" class="profile-pic fade-in" />
+    <h2 class="name fade-in">Your Name</h2>
   </div>
 </section>
 
-<!-- About Me Section -->
-<section id="about" class="about-me" style="padding: 50px 20px;">
+<!-- About Me -->
+<section id="about" class="about-me fade-in">
   <div class="container">
     <h2>About Me</h2>
-    <p>Hello! I'm Jonny, a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
+    <p>Hello! I'm [Your Name], a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="fade-in">
+  <div class="container">
+    <h2>My Projects</h2>
+    <p>Here are some of my recent works...</p>
+  </div>
+</section>
+
+<!-- Photography -->
+<section id="photography" class="fade-in">
+  <div class="container">
+    <h2>Photography</h2>
+    <p>Some of my favorite photos...</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="fade-in">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p>You can reach me at: email@example.com</p>
   </div>
 </section>
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2026 Jonny Calderon. All rights reserved.</p>
+  <p>&copy; 2024 Your Name. All rights reserved.</p>
 </footer>
 
-<!-- Scripts for scroll effects -->
+<!-- Scripts -->
 <script>
-  const navbar = document.getElementById('navbar');
+  // Scroll reveal
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
 
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
     } else {
-      navbar.classList.remove('scrolled');
+      backToTopBtn.style.display = 'none';
     }
   });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Theme toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  themeBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+  });
+
+  // Particle background
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let particlesArray;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles();
+  }
+  window.addEventListener('resize', resizeCanvas);
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * window.innerWidth;
+      this.y = Math.random() * window.innerHeight;
+      this.size = Math.random() * 2 + 1;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+    }
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0 || this.x > window.innerWidth) this.speedX *= -1;
+      if (this.y < 0 || this.y > window.innerHeight) this.speedY *= -1;
+    }
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = 'white';
+      ctx.fill();
+    }
+  }
+
+  function initParticles() {
+    particlesArray = [];
+    for (let i = 0; i < 200; i++) {
+      particlesArray.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    particlesArray.forEach(p => {
+      p.update();
+      p.draw();
+    });
+    requestAnimationFrame(animate);
+  }
+
+  resizeCanvas();
+  animate();
 </script>
 
 </body>
