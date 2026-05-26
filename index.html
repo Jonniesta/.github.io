@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<!-- Particle Canvas for stars -->
+<!-- Particle Canvas for star overlay -->
 <canvas id="particle-canvas"></canvas>
 
 <!-- Back to Top Button -->
@@ -125,7 +125,6 @@
   // Particle background
   const canvas = document.getElementById('particle-canvas');
   const ctx = canvas.getContext('2d');
-  let particlesArray;
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -155,6 +154,8 @@
       ctx.fill();
     }
   }
+
+  let particlesArray = [];
 
   function initParticles() {
     particlesArray = [];
