@@ -5,12 +5,39 @@
   padding: 0;
 }
 
-/* Body font and background */
+/* Body with Aurora Borealis-inspired animated background */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
-  background-color: #ffffff;
-  color: #333;
+  margin: 0;
+  padding: 0;
+  
+  /* Aurora-like animated gradient background */
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364,
+    #1e3c72,
+    #2a5298,
+    #0f2027
+  );
+  background-size: 400% 400%;
+  animation: aurora 15s ease infinite;
+  color: #fff; /* default text color for contrast */
+}
+
+/* Animation for flowing background */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Container class for consistent width */
@@ -26,18 +53,19 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #fff;
-  position: sticky; /* Keeps the navbar on top when scrolling */
+  background-color: rgba(255, 255, 255, 0.1); /* semi-transparent for effect */
+  position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px); /* optional blur effect for background */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 /* Change style when scrolled (optional) */
 #navbar.scrolled {
-  background-color: #f8f8f8;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 /* Left side: Logo styles */
@@ -61,6 +89,7 @@ body {
 .nav-title {
   font-size: 1.5em;
   font-weight: bold;
+  color: #fff; /* ensure text is visible over background */
 }
 
 /* Navigation links styles */
@@ -71,25 +100,25 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #fff;
   font-weight: 600;
   padding: 8px 12px;
   transition: color 0.2s, background-color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #007BFF;
-  background-color: rgba(0, 123, 255, 0.1);
+  color: #00ffff;
+  background-color: rgba(0, 255, 255, 0.2);
   border-radius: 4px;
 }
 
 /* Landing section styles */
 .landing {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 50px 20px;
-  background-color: #f0f0f0;
   text-align: center;
 }
 
@@ -99,17 +128,26 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 20px;
+  border: 4px solid #fff; /* optional border for contrast */
 }
 
 .name {
   font-size: 2em;
   font-weight: bold;
+  color: #fff;
 }
 
 /* About Me section styles */
 .about-me {
   padding: 50px 20px;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: 40px 0;
+  color: #fff;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .about-me h2 {
@@ -119,8 +157,6 @@ body {
 }
 
 .about-me p {
-  max-width: 800px;
-  margin: 0 auto;
   font-size: 1.1em;
   line-height: 1.6;
   text-align: center;
@@ -128,15 +164,16 @@ body {
 
 /* Footer styles */
 footer {
-  background-color: #f4f4f4;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   text-align: center;
   margin-top: 40px;
   font-size: 0.9em;
-  color: #555;
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Responsive adjustments (optional) */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   #navbar {
     flex-direction: column;
