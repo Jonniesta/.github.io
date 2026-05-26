@@ -1,458 +1,190 @@
-/* =========================
-   FONT
-========================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================
-   DESIGN TOKENS
-========================= */
-
 :root {
-  --bg: #040816;
-  --bg-2: #081221;
+  --bg:#040816;
+  --surface:#0A1322;
+  --surface-2:#111C2D;
 
-  --surface: #0A1322;
-  --surface-2: #111C2D;
-  --surface-3: #162338;
+  --green:#7DFF8A;
+  --purple:#B05CFF;
 
-  --green: #7DFF8A;
-  --green-light: #A8FFAE;
+  --text:#F3F7FF;
+  --muted:#91A3B7;
 
-  --purple: #B05CFF;
-  --blue: #69B7FF;
+  --border:rgba(255,255,255,0.08);
 
-  --text: #F3F7FF;
-  --muted: #91A3B7;
-
-  --border: rgba(255,255,255,0.08);
-
-  --shadow: 0 20px 60px rgba(0,0,0,0.45);
-
-  --radius: 24px;
+  --radius:20px;
 }
 
-/* =========================
-   RESET
-========================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  overflow-x: hidden;
-
-  min-height: 100vh;
-
-  background:
-    radial-gradient(circle at top left, rgba(176,92,255,0.14), transparent 35%),
-    radial-gradient(circle at bottom left, rgba(125,255,138,0.10), transparent 40%),
-    radial-gradient(circle at right center, rgba(80,180,255,0.08), transparent 40%),
-    linear-gradient(180deg, #040816 0%, #081221 55%, #070f1d 100%);
-
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  background:rgba(4,8,22,0.9);
+  backdrop-filter:blur(12px);
+  z-index:1000;
+  border-bottom:1px solid var(--border);
 }
 
-@keyframes fadeIn {
-  to { opacity: 1; }
+nav ul{
+  display:flex;
+  gap:24px;
+  list-style:none;
 }
 
-/* =========================
-   NAVBAR (CLEAN + FIXED)
-========================= */
-
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px 50px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background: rgba(4, 8, 22, 0.82);
-  backdrop-filter: blur(16px);
-
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-
-  z-index: 1000;
-  transition: 0.3s ease;
-}
-
-nav.scrolled {
-  background: rgba(4, 8, 22, 0.95);
-}
-
-/* NAV LINKS */
-
-nav ul {
-  display: flex;
-  gap: 28px;
-  list-style: none;
-}
-
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
-  position: relative;
-  transition: 0.25s ease;
+nav a{
+  color:var(--text);
+  text-decoration:none;
+  font-weight:600;
 }
 
 nav a:hover,
-nav a.active {
-  color: var(--green);
+nav a.active{
+  color:var(--green);
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  background: var(--green);
-  transition: 0.3s ease;
+/* LOGO */
+.logo img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
 }
 
-nav a:hover::after,
-nav a.active::after {
-  width: 100%;
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding-top:100px;
 }
 
-/* =========================
-   LOGO (FIXED SIZE ISSUE)
-========================= */
-
-.logo img {
-  width: 58px;
-  height: 58px;
-  object-fit: contain;
-  border-radius: 50%;
-  border: 2px solid rgba(125,255,138,0.25);
-  padding: 3px;
-  transition: 0.3s ease;
+.hero-avatar{
+  width:130px;
+  border-radius:50%;
+  margin-bottom:15px;
 }
 
-.logo img:hover {
-  transform: scale(1.05);
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 22px;
+  background:linear-gradient(135deg,var(--green),#A8FFAE);
+  color:#000;
+  font-weight:700;
+  border-radius:14px;
+  text-decoration:none;
 }
 
-/* =========================
-   LAYOUT UTILITIES
-========================= */
-
-section {
-  padding: 120px 20px;
+/* SECTIONS */
+section{
+  padding:100px 20px;
 }
 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:18px;
 }
 
-.hero-avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 18px;
-  border: 3px solid rgba(125,255,138,0.3);
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
 }
 
-.hero-name {
-  font-size: 3rem;
-  font-weight: 800;
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
 }
 
-/* =========================
-   BUTTONS (UNIFIED)
-========================= */
-
-.btn,
-.home-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-
-  padding: 14px 26px;
-  border-radius: 16px;
-
-  background: linear-gradient(135deg, var(--green), var(--green-light));
-  color: #07111C;
-
-  font-weight: 700;
-  text-decoration: none;
-
-  transition: 0.25s ease;
+.card-content{
+  padding:16px;
 }
 
-.btn:hover,
-.home-btn:hover {
-  transform: translateY(-3px);
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:12px;
 }
 
-/* =========================
-   PROJECTS (IMPROVED GRID)
-========================= */
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
+.gallery-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:14px;
+  cursor:pointer;
+  transition:0.2s;
 }
 
-.card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  transition: 0.3s ease;
+.gallery-img:hover{
+  transform:scale(1.03);
 }
 
-.card:hover {
-  transform: translateY(-6px);
+/* CONTACT */
+.contact-section{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:120px 20px;
 }
 
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+.contact-box{
+  width:100%;
+  max-width:800px;
+  background:var(--surface);
+  padding:50px;
+  border-radius:24px;
+  border:1px solid var(--border);
 }
 
-.card-content {
-  padding: 16px;
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
 }
 
-/* =========================
-   GALLERY (FAST + CLEAN)
-========================= */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+input,textarea{
+  padding:14px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:var(--surface-2);
+  color:white;
 }
 
-.gallery-img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: 0.25s ease;
-  will-change: transform;
-}
-
-.gallery-img:hover {
-  transform: scale(1.03);
-}
-
-/* =========================
-   CONTACT + SUCCESS BOX
-========================= */
-
-.contact-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contact-box {
-  width: 100%;
-  max-width: 850px;
-  padding: 60px;
-
-  background: var(--surface);
-  border-radius: 30px;
-
-  text-align: center;
-
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-/* =========================
-   HEADINGS
-========================= */
-
-h2 {
-  font-size: 2.8rem;
-}
-
-.contact-line {
-  width: 110px;
-  height: 4px;
-  margin: 14px auto;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), var(--purple));
-}
-
-p {
-  color: var(--muted);
-  max-width: 520px;
-  margin: 0 auto 28px;
-  line-height: 1.8;
-}
-
-/* =========================
-   CONTACT INFO
-========================= */
-
-.contact-info-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
-  margin: 30px 0;
-}
-
-.contact-info-bar a {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-
-  padding: 16px;
-  border-radius: 16px;
-
-  background: var(--surface-2);
-  color: var(--text);
-
-  text-decoration: none;
-
-  transition: 0.25s ease;
-}
-
-.contact-info-bar a:hover {
-  transform: translateY(-4px);
-  border: 1px solid rgba(125,255,138,0.25);
-}
-
-/* =========================
-   SUCCESS ANIMATION (CAT)
-========================= */
-
-.success-animation {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 120px;
-  pointer-events: none;
-}
-
-/* CAT */
-.success-cat {
-  position: absolute;
-  bottom: 20px;
-  left: -80px;
-
-  width: 60px;
-  height: 40px;
-
-  background: #0b0f1a;
-  border-radius: 20px;
-
-  animation: run 4s linear forwards;
-}
-
-@keyframes run {
-  to { left: 110%; }
-}
-
-/* PAW TRAIL */
-.success-paw {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  background: var(--green);
-  border-radius: 50%;
-  opacity: 0;
-  animation: paw 4s ease forwards;
-}
-
-.success-paw:nth-child(1){ left: 10%; animation-delay: .2s; }
-.success-paw:nth-child(2){ left: 30%; animation-delay: .6s; }
-.success-paw:nth-child(3){ left: 50%; animation-delay: 1s; }
-.success-paw:nth-child(4){ left: 70%; animation-delay: 1.4s; }
-.success-paw:nth-child(5){ left: 85%; animation-delay: 1.8s; }
-
-@keyframes paw {
-  0% { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0.4; }
-}
-
-/* CAT BUBBLE */
-.cat-bubble {
-  position: absolute;
-  bottom: 80px;
-  left: 20px;
-
-  padding: 10px 14px;
-  border-radius: 12px;
-
-  background: var(--surface);
-  border: 1px solid rgba(125,255,138,0.25);
-  color: var(--green);
-
-  font-weight: 600;
-
-  animation: bubble 4s ease forwards;
-}
-
-@keyframes bubble {
-  0% { opacity: 0; transform: translateY(10px); }
-  20% { opacity: 1; transform: translateY(0); }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  text-align: center;
-  padding: 40px;
-  color: var(--muted);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 768px) {
-
-  nav {
-    padding: 16px 20px;
-  }
-
-  nav ul {
-    gap: 14px;
-  }
-
-  .hero-name {
-    font-size: 2.2rem;
-  }
-
-  .contact-box {
-    padding: 40px 22px;
-  }
+/* SUCCESS */
+.success-box{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  padding:60px;
+  background:var(--surface);
+  border-radius:24px;
 }
