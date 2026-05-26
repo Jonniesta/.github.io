@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Message Sent | Jonny Calderon</title>
+
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Your message has been successfully sent to Jonny Calderon."
+  />
+
+  <!-- THEME -->
+  <meta name="theme-color" content="#020814" />
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+
+      --bg:#040816;
+      --bg-2:#081221;
+
+      --surface:#0A1322;
+      --surface-2:#111C2D;
+      --surface-3:#162338;
+
+      --green:#7DFF8A;
+      --green-light:#A8FFAE;
+
+      --purple:#B05CFF;
+
+      --text:#F3F7FF;
+      --muted:#9FB3C8;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+
+      min-height:100vh;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      overflow:hidden;
+
+      font-family:'Inter',sans-serif;
+
+      position:relative;
+
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(176,92,255,0.16),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at bottom left,
+          rgba(125,255,138,0.10),
+          transparent 35%
+        ),
+
+        radial-gradient(
+          circle at right center,
+          rgba(80,180,255,0.10),
+          transparent 35%
+        ),
+
+        linear-gradient(
+          180deg,
+          #040816 0%,
+          #081221 45%,
+          #07111D 100%
+        );
+
+      color:white;
+    }
+
+    /* =========================
+       STAR FIELD
+    ========================= */
+
+    body::before{
+
+      content:"";
+
+      position:fixed;
+      inset:0;
+
+      background-image:
+        radial-gradient(
+          rgba(255,255,255,0.8) 1px,
+          transparent 1px
+        );
+
+      background-size:180px 180px;
+
+      opacity:0.08;
+
+      pointer-events:none;
+
+      z-index:-3;
+    }
+
+    /* =========================
+       GLOBAL GLOW
+    ========================= */
+
+    body::after{
+
+      content:"";
+
+      position:fixed;
+      inset:0;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(176,92,255,0.08),
+          transparent 30%
+        ),
+
+        radial-gradient(
+          circle at 70% 80%,
+          rgba(125,255,138,0.08),
+          transparent 30%
+        );
+
+      filter:blur(80px);
+
+      pointer-events:none;
+
+      z-index:-2;
+    }
+
+    /* =========================
+       SUCCESS BOX
+    ========================= */
+
+    .success-box{
+
+      position:relative;
+
+      width:90%;
+      max-width:760px;
+
+      padding:70px 55px;
+
+      border-radius:34px;
+
+      background:#0A1322;
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      box-shadow:
+        0 35px 90px rgba(0,0,0,0.70),
+        0 0 0 1px rgba(125,255,138,0.04);
+
+      overflow:hidden;
+
+      text-align:center;
+    }
+
+    .success-box::before{
+
+      content:"";
+
+      position:absolute;
+      inset:0;
+
+      border-radius:inherit;
+
+      padding:1px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(125,255,138,0.18),
+          rgba(176,92,255,0.15),
+          transparent 70%
+        );
+
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+      -webkit-mask-composite:xor;
+
+      mask-composite:exclude;
+
+      pointer-events:none;
+    }
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .success-icon{
+
+      width:95px;
+      height:95px;
+
+      margin:0 auto 34px;
+
+      border-radius:50%;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--green),
+          var(--green-light)
+        );
+
+      color:#07111C;
+
+      font-size:2.2rem;
+
+      box-shadow:
+        0 20px 45px rgba(125,255,138,0.22);
+    }
+
+    /* =========================
+       TEXT
+    ========================= */
+
+    h1{
+
+      font-size:clamp(2.8rem,6vw,4.5rem);
+
+      font-weight:800;
+
+      letter-spacing:-2px;
+
+      margin-bottom:20px;
+    }
+
+    .success-line{
+
+      width:120px;
+      height:4px;
+
+      margin:0 auto 30px;
+
+      border-radius:999px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--green),
+          var(--purple)
+        );
+    }
+
+    p{
+
+      color:var(--muted);
+
+      line-height:1.9;
+
+      font-size:1.05rem;
+
+      max-width:560px;
+
+      margin:0 auto 40px;
+    }
+
+    /* =========================
+       CONTACT INFO
+    ========================= */
+
+    .success-contact{
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(auto-fit,minmax(240px,1fr));
+
+      gap:18px;
+
+      margin-bottom:28px;
+    }
+
+    .success-contact a{
+
+      display:flex;
+      align-items:center;
+
+      gap:14px;
+
+      padding:18px 20px;
+
+      border-radius:20px;
+
+      background:#111C2D;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      color:#E7EEF8;
+
+      text-decoration:none;
+
+      transition:0.35s ease;
+    }
+
+    .success-contact a:hover{
+
+      transform:translateY(-4px);
+
+      background:#162338;
+
+      border-color:rgba(125,255,138,0.20);
+
+      box-shadow:
+        0 16px 40px rgba(0,0,0,0.35);
+    }
+
+    .success-contact i{
+
+      width:46px;
+      height:46px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(125,255,138,0.20),
+          rgba(176,92,255,0.20)
+        );
+
+      color:white;
+
+      flex-shrink:0;
+    }
+
+    /* =========================
+       SOCIALS
+    ========================= */
+
+    .success-socials{
+
+      display:flex;
+      justify-content:center;
+
+      gap:18px;
+
+      margin-bottom:42px;
+
+      flex-wrap:wrap;
+    }
+
+    .success-socials a{
+
+      width:60px;
+      height:60px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:18px;
+
+      background:#111C2D;
+
+      border:1px solid rgba(255,255,255,0.06);
+
+      color:white;
+
+      text-decoration:none;
+
+      font-size:1.2rem;
+
+      transition:0.35s ease;
+    }
+
+    .success-socials a:hover{
+
+      transform:translateY(-4px);
+
+      background:#162338;
+
+      border-color:rgba(125,255,138,0.22);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.35);
+    }
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    .home-btn{
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      gap:12px;
+
+      padding:18px 34px;
+
+      border-radius:20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--green),
+          var(--green-light)
+        );
+
+      color:#07111C;
+
+      text-decoration:none;
+
+      font-weight:700;
+
+      transition:0.35s ease;
+
+      box-shadow:
+        0 20px 45px rgba(125,255,138,0.18);
+    }
+
+    .home-btn:hover{
+
+      transform:translateY(-4px);
+
+      box-shadow:
+        0 25px 55px rgba(125,255,138,0.28);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width:768px){
+
+      .success-box{
+
+        padding:50px 28px;
+      }
+
+      .success-contact{
+
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:2.5rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="success-box">
+
+    <!-- ICON -->
+    <div class="success-icon">
+      <i class="fa-solid fa-check"></i>
+    </div>
+
+    <!-- TITLE -->
+    <h1>
+      Message Sent
+    </h1>
+
+    <div class="success-line"></div>
+
+    <!-- TEXT -->
+    <p>
+      Thanks for reaching out.
+      Your message has been successfully delivered,
+      and I’ll get back to you as soon as possible.
+    </p>
+
+    <!-- CONTACT -->
+    <div class="success-contact">
+
+      <a href="mailto:jonniesta@gmail.com">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        <span>
+          jonniesta@gmail.com
+        </span>
+
+      </a>
+
+      <a href="tel:+13172134147">
+
+        <i class="fa-solid fa-phone"></i>
+
+        <span>
+          (317) 213-4147
+        </span>
+
+      </a>
+
+    </div>
+
+    <!-- SOCIALS -->
+    <div class="success-socials">
+
+      <a
+        href="https://linkedin.com/in/jonny-calderon"
+        target="_blank"
+      >
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a
+        href="https://github.com/Jonniesta"
+        target="_blank"
+      >
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+    </div>
+
+    <!-- BUTTON -->
+    <a
+      href="index.html"
+      class="home-btn"
+    >
+
+      Return Home
+
+      <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+  </div>
+
+</body>
+
+</html>
