@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Jonny Calderon</title>
 
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- ================= NAV ================= -->
+  <!-- =========================
+       NAVBAR
+  ========================== -->
   <nav>
+
     <div class="logo">
-      <img src="gjc.png" alt="logo" />
+      <img src="gjc.png" alt="Jonny Calderon Logo" />
     </div>
 
     <ul>
@@ -22,49 +31,259 @@
       <li><a href="photography.html">Photography</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+
   </nav>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero reveal">
-    <div>
-      <img src="gjc.png" alt="avatar" class="hero-avatar" />
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero">
 
-      <h1>Jonny Calderon</h1>
-      <p>Human Services • Psychology • Creative Work</p>
+    <!-- floating glow -->
+    <div class="hero-glow"></div>
 
-      <a href="projects.html" class="btn">View Work</a>
-    </div>
-  </section>
+    <div class="hero-content reveal">
 
-  <!-- ================= ABOUT ================= -->
-  <section class="reveal">
-    <h2>About Me</h2>
-    <p>
-      I am passionate about helping people, psychology, and creative storytelling through design and photography.
-    </p>
-  </section>
+      <!-- profile image -->
+      <img
+        src="gjc.png"
+        alt="Jonny Calderon"
+        class="hero-avatar"
+      />
 
-  <!-- ================= FEATURED ================= -->
-  <section class="reveal">
-    <h2>Featured Work</h2>
+      <!-- name -->
+      <h1>
+        Jonny Calderon
+      </h1>
 
-    <div class="gallery">
-      <div class="card">
-        <img src="assets/images/project1.jpg" alt="Project 1" />
+      <!-- subtitle -->
+      <p class="hero-subtitle">
+        Human Services • Psychology • Creative Work
+      </p>
+
+      <!-- description -->
+      <p class="hero-description">
+        Building meaningful experiences through empathy,
+        creativity, and human connection.
+      </p>
+
+      <!-- buttons -->
+      <div class="hero-buttons">
+
+        <a href="projects.html" class="btn">
+          View Work
+        </a>
+
+        <a href="contact.html" class="btn secondary-btn">
+          Contact Me
+        </a>
+
       </div>
 
-      <div class="card">
-        <img src="assets/images/project2.jpg" alt="Project 2" />
-      </div>
     </div>
+
   </section>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =========================
+       ABOUT
+  ========================== -->
+  <section class="about-section reveal">
+
+    <div class="section-header">
+      <span class="section-tag">
+        ABOUT
+      </span>
+
+      <h2>
+        Helping People Through Creativity & Psychology
+      </h2>
+
+      <p>
+        I’m passionate about helping people grow,
+        understand themselves, and feel genuinely seen.
+        My work blends human services, psychology,
+        photography, and creative storytelling into one vision.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FEATURED WORK
+  ========================== -->
+  <section class="featured-section reveal">
+
+    <div class="section-header">
+
+      <span class="section-tag">
+        FEATURED
+      </span>
+
+      <h2>
+        Selected Work
+      </h2>
+
+      <p>
+        A collection of creative projects,
+        photography, and visual storytelling.
+      </p>
+
+    </div>
+
+    <div class="projects">
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="assets/images/project1.jpg"
+          alt="Creative Design"
+        />
+
+        <div class="card-content">
+
+          <small>
+            Design
+          </small>
+
+          <h3>
+            Creative Identity
+          </h3>
+
+          <p>
+            Branding systems, visuals,
+            and modern storytelling.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="assets/images/project2.jpg"
+          alt="Photography"
+        />
+
+        <div class="card-content">
+
+          <small>
+            Photography
+          </small>
+
+          <h3>
+            Cinematic Moments
+          </h3>
+
+          <p>
+            Emotion-driven photography
+            and atmospheric lighting.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
+
+        <img
+          src="gjc.png"
+          alt="Growth"
+        />
+
+        <div class="card-content">
+
+          <small>
+            Growth
+          </small>
+
+          <h3>
+            Human Connection
+          </h3>
+
+          <p>
+            Reflection, empathy,
+            and meaningful conversations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       CTA SECTION
+  ========================== -->
+  <section class="cta-section reveal">
+
+    <div class="cta-box">
+
+      <span class="section-tag">
+        CONNECT
+      </span>
+
+      <h2>
+        Let’s Build Something Meaningful
+      </h2>
+
+      <p>
+        Open to collaboration,
+        creative opportunities,
+        and conversations about psychology,
+        design, and growth.
+      </p>
+
+      <a href="contact.html" class="btn">
+        Get In Touch
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
-    © 2026 Jonny Calderon
+
+    <p>
+      © 2026 Jonny Calderon
+    </p>
+
   </footer>
 
-  <script src="app.js"></script>
+  <!-- =========================
+       REVEAL ANIMATION
+  ========================== -->
+  <script>
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+
+      });
+
+    }, {
+      threshold: 0.15
+    });
+
+    reveals.forEach(el => {
+      observer.observe(el);
+    });
+
+  </script>
 
 </body>
 </html>
