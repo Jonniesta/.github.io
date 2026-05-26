@@ -49,13 +49,14 @@
 
     <div class="contact-box">
 
+      <!-- HEADER -->
       <div class="contact-header">
         <h2>Let’s Connect</h2>
         <div class="contact-line"></div>
         <p>Send a message and I’ll respond as soon as possible.</p>
       </div>
 
-      <!-- CONTACT INFO -->
+      <!-- CONTACT LINKS -->
       <div class="contact-info-bar">
 
         <a href="mailto:jonniesta@gmail.com">
@@ -82,23 +83,21 @@
 
       <!-- FORM -->
       <form
-        id="contactForm"
         action="https://formspree.io/f/mbjpalvn"
         method="POST"
         class="contact-form"
       >
 
-        <!-- NAME -->
+        <!-- ✅ WORKING REDIRECT -->
+        <input type="hidden" name="_next" value="success.html">
+
         <input type="text" name="name" placeholder="Your Name" required>
 
-        <!-- EMAIL -->
         <input type="email" name="email" placeholder="Your Email" required>
 
-        <!-- MESSAGE -->
         <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
 
-        <!-- BUTTON -->
-        <button type="submit" id="submitBtn">
+        <button type="submit">
           Send Message
           <i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -113,42 +112,6 @@
   <footer>
     © 2026 Jonny Calderon
   </footer>
-
-  <!-- FREE REDIRECT SCRIPT -->
-  <script>
-    const form = document.getElementById("contactForm");
-    const btn = document.getElementById("submitBtn");
-
-    form.addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      btn.disabled = true;
-      btn.innerHTML = "Sending...";
-
-      const formData = new FormData(form);
-
-      try {
-        const res = await fetch("https://formspree.io/f/mbjpalvn", {
-          method: "POST",
-          body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
-
-        if (res.ok) {
-          window.location.href = "success.html";
-        } else {
-          btn.innerHTML = "Try Again";
-          btn.disabled = false;
-        }
-
-      } catch (error) {
-        btn.innerHTML = "Error - Try Again";
-        btn.disabled = false;
-      }
-    });
-  </script>
 
 </body>
 
