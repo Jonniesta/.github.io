@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | Jonny Calderon</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="photography.html">Photography</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="success.html" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required />
 
-<!-- ================= NAV ================= -->
-<nav>
-  <div class="logo">
-    <img src="gjc.png" alt="logo" />
-  </div>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a class="active" href="contact.html">Contact</a></li>
-  </ul>
-</nav>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
 
-<!-- ================= CONTACT ================= -->
-<section class="contact-section reveal">
-  <div class="contact-box">
-    <span class="section-tag">CONTACT</span>
-    <h1>Let’s Connect</h1>
-    <p>
-      Open to collaboration, creative work, and meaningful conversations.
-    </p>
-    <form action="https://formspree.io/f/mbjpalvn" method="POST">
-      <input type="hidden" name="_subject" value="New Portfolio Message" />
-      <!-- IMPORTANT FIX: replace with real domain or remove if broken -->
-      <input type="hidden" name="_next" value="success.html" />
-      <input name="name" placeholder="Your Name" required />
-      <input name="email" type="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>© 2026 Jonny Calderon</p>
-</footer>
-
-<!-- ================= MODAL ================= -->
-<div class="modal" id="modal" onclick="closeModal()">
-  <img id="modal-img" />
-</div>
-
-<!-- ================= SCRIPTS ================= -->
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Reveal animations
-    const reveals = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        }
-      });
-    }, { threshold: 0.15 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Modal functions
-    const modal = document.getElementById("modal");
-    const modalImg = document.getElementById("modal-img");
-    window.openModal = (src) => {
-      modal.classList.add("active");
-      modalImg.src = src;
-      document.body.style.overflow = "hidden";
-    };
-    window.closeModal = () => {
-      modal.classList.remove("active");
-      document.body.style.overflow = "auto";
-    };
-  });
-</script>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
