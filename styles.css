@@ -5,28 +5,31 @@
   padding: 0;
 }
 
+/* Remove height restriction to allow scrolling */
+html {
+  height: auto;
+}
+
 /* Body with animated aurora and stars overlay */
 body {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  /* Remove height: 100vh; to allow full content height */
+  overflow: auto; /* Enable scrolling if needed */
 
-  /* Base background with multiple layers for aurora glow */
+  /* Base background with layered gradients for aurora glow */
   background: radial-gradient(circle at bottom, #0f2027, transparent),
               linear-gradient(135deg, #0f2027, #203a43, #2c5364, #1e3c72, #2a5298);
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  overflow: hidden;
-  
-  /* Add animated flowing gradient for aurora colors */
   background-blend-mode: overlay;
   animation: auroraFlow 30s ease infinite;
-  color: #fff;
+  color: #fff; /* default text color for contrast */
 }
 
-/* Stars overlay using pseudo-element */
+/* Create star field overlay with pseudo-element */
 body::before {
   content: "";
   position: fixed;
@@ -38,7 +41,7 @@ body::before {
   z-index: 0;
   pointer-events: none;
 
-  /* Generate star dots with multiple layers for depth */
+  /* Generate stars at random positions with tiny dots */
   background-image: 
     radial-gradient(1px 1px at 10% 20%, #fff, transparent),
     radial-gradient(1px 1px at 30% 40%, #fff, transparent),
@@ -71,7 +74,7 @@ body::before {
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
-  z-index: 1; /* to stay above stars and background */
+  z-index: 1; /* stay above stars and background */
 }
 
 /* Navbar styles */
@@ -89,7 +92,7 @@ body::before {
   transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-/* Change style when scrolled (optional) */
+/* Style when scrolled (optional) */
 #navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
@@ -104,7 +107,7 @@ body::before {
 .logo {
   width: 50px;
   height: 50px;
-  background-color: #ccc; /* Placeholder color, replace with logo image if available */
+  background-color: #ccc; /* Placeholder for logo image */
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -116,7 +119,7 @@ body::before {
   color: #fff;
 }
 
-/* Navigation links styles with vibrant colors */
+/* Navigation links with vibrant colors */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -128,10 +131,11 @@ body::before {
   font-weight: 600;
   transition: color 0.3s, background-color 0.3s, transform 0.2s;
   border-radius: 4px;
+  color: #fff; /* base color */
 }
 
 .nav-links a:hover {
-  color: #00ffff;
+  color: #00ffff; /* bright cyan for hover */
   background-color: rgba(0, 255, 255, 0.2);
   transform: scale(1.05);
 }
@@ -197,7 +201,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Buttons - styled to match the theme */
+/* Buttons styling */
 button {
   background: linear-gradient(135deg, #00f, #0ff);
   color: #fff;
