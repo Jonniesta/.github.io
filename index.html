@@ -9,16 +9,19 @@
 
 <body>
 
+<!-- PAGE TRANSITION (optional but recommended) -->
+<div class="page-transition"></div>
+
+<!-- NAV -->
 <nav>
   <div class="logo">
-    <a href="index.html">
-      <img src="logonew.png" alt="logo">
-    </a>
+    <img src="logonew.png" alt="logo">
   </div>
 
   <ul>
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
+    <li><a href="design.html">Design</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
@@ -26,90 +29,110 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content reveal">
-    <img src="me.png" class="reveal">
-    <h1 class="reveal">Jonny Calderon</h1>
-    <p class="reveal">Human Services • Creative Work • Future Therapist</p>
-    <a class="btn reveal" href="projects.html">View Work</a>
+
+  <!-- AURORA BACKGROUND -->
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+
+  <!-- HERO CONTENT -->
+  <div class="hero-content">
+
+    <!-- CIRCLE IMAGE -->
+    <img src="me.png" alt="Jonny" class="hero-avatar">
+
+    <!-- NAME -->
+    <h1 class="hero-name">Jonny Calderon</h1>
+
+    <!-- TAGLINE -->
+    <p>
+      Human Services • Creative Work • Future Therapist
+    </p>
+
+    <!-- CTA BUTTON -->
+    <a href="projects.html" class="btn">View Work</a>
+
   </div>
 </section>
 
 <!-- ABOUT -->
-<section class="section">
-  <h2 class="reveal">About Me</h2>
-  <p class="reveal">
-    I help people grow, understand themselves, and build meaningful lives through empathy and structure.
+<section>
+  <h2>About Me</h2>
+  <p>
+    I’m currently pursuing a bachelor’s degree in Psychology after completing my associate’s in Human Services, with a deep commitment to understanding people and the experiences that shape them. My purpose is rooted in helping the next generation feel seen, heard, and supported in ways that many of us didn’t always have growing up. I want to become a therapist who creates a safe space where people can be honest about what they’re carrying, and where healing feels possible and real. Everything I do is guided by empathy, patience, and the belief that small moments of understanding can change someone’s entire direction in life.
+
   </p>
 </section>
 
-<!-- FEATURED WORK -->
-<section class="section">
-  <h2 class="reveal">Featured Work</h2>
+<!-- FEATURED -->
+<section>
+  <h2>Featured Work</h2>
 
-  <div class="grid projects">
+  <div class="projects">
 
-    <div class="card reveal">
-      <img src="slate.jpg">
+    <div class="card">
+      <img src="assets/images/project1.jpg" alt="project">
       <div class="card-content">
-        <h3>Creative Work</h3>
-        <p>Design + reflection + identity.</p>
+        <small>Design</small>
+        <h3>Brand Identity</h3>
+        <p>Logos, typography, and visual systems.</p>
       </div>
     </div>
 
-    <div class="card reveal">
-      <img src="slate1.jpg">
+    <div class="card">
+      <img src="assets/images/project2.jpg" alt="project">
       <div class="card-content">
-        <h3>Photography</h3>
-        <p>Calm, natural moments.</p>
+        <small>Photography</small>
+        <h3>Cinematic Moments</h3>
+        <p>Lighting and emotional storytelling.</p>
       </div>
     </div>
 
-    <div class="card reveal">
-      <img src="me.png">
+    <div class="card">
+      <img src="me.png" alt="project">
       <div class="card-content">
-        <h3>Growth</h3>
-        <p>Human behavior + learning.</p>
+        <small>Growth</small>
+        <h3>Human Behavior</h3>
+        <p>Reflection and psychological insight.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section">
-  <h2 class="reveal">Let’s Connect</h2>
-  <p class="reveal">Open to collaboration and conversation.</p>
+<!-- CONNECT -->
+<section style="text-align:center;">
+  <h2>Let’s Connect</h2>
+  <p>Open to collaboration and creative opportunities.</p>
 
-  <div style="text-align:center;margin-top:20px;">
-    <a class="btn reveal" href="contact.html">Contact Me</a>
-  </div>
+  <a href="contact.html" class="btn" style="margin-top:20px; display:inline-block;">
+    Contact Me
+  </a>
 </section>
 
-<footer class="reveal">
+<!-- FOOTER -->
+<footer>
   © 2026 Jonny Calderon
 </footer>
 
-<!-- =========================
-     ANIMATION ENGINE (IMPORTANT)
-========================= -->
+<!-- ANIMATION ENGINE -->
 <script>
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, {
-  threshold: 0.15
+/* cursor glow position */
+document.addEventListener("mousemove", (e) => {
+  document.documentElement.style.setProperty("--x", e.clientX + "px");
+  document.documentElement.style.setProperty("--y", e.clientY + "px");
 });
 
-document.querySelectorAll(".reveal").forEach(el => {
-  observer.observe(el);
-});
-
+/* nav scroll effect */
 window.addEventListener("scroll", () => {
-  const nav = document.querySelector("nav");
-  nav.classList.toggle("scrolled", window.scrollY > 20);
+  document.querySelector("nav")
+    .classList.toggle("scrolled", window.scrollY > 20);
+});
+
+/* page transition */
+window.addEventListener("load", () => {
+  const t = document.querySelector(".page-transition");
+  if (t) t.classList.add("hide");
 });
 </script>
 
