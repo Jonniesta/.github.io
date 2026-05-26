@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jonny Calderon</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">
-    <img src="gjc.png" alt="logo">
-  </div>
-
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<section class="reveal">
-  <h1>Jonny Calderon</h1>
-  <p>Human Services • Psychology • Creative Work</p>
-  <a href="projects.html" class="btn">View Work</a>
-</section>
-
-<section class="reveal">
-  <h2>About Me</h2>
-  <p>
-    I am passionate about helping people, psychology, and creative storytelling through design and photography.
-  </p>
-</section>
-
-<section class="reveal">
-  <h2>Featured Work</h2>
-
-  <div class="gallery">
-    <div class="card">
-      <img src="assets/images/project1.jpg">
+  <!-- ================= NAV ================= -->
+  <nav>
+    <div class="logo">
+      <img src="gjc.png" alt="logo" />
     </div>
 
-    <div class="card">
-      <img src="assets/images/project2.jpg">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero reveal">
+    <div>
+      <img src="gjc.png" alt="avatar" class="hero-avatar" />
+
+      <h1>Jonny Calderon</h1>
+      <p>Human Services • Psychology • Creative Work</p>
+
+      <a href="projects.html" class="btn">View Work</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>© 2026 Jonny Calderon</footer>
+  <!-- ================= ABOUT ================= -->
+  <section class="reveal">
+    <h2>About Me</h2>
+    <p>
+      I am passionate about helping people, psychology, and creative storytelling through design and photography.
+    </p>
+  </section>
 
-<script src="app.js"></script>
-<div class="cat-loader"></div>
+  <!-- ================= FEATURED ================= -->
+  <section class="reveal">
+    <h2>Featured Work</h2>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="assets/images/project1.jpg" alt="Project 1" />
+      </div>
+
+      <div class="card">
+        <img src="assets/images/project2.jpg" alt="Project 2" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    © 2026 Jonny Calderon
+  </footer>
+
+  <script src="app.js"></script>
 
 </body>
 </html>
