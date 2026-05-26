@@ -8,9 +8,19 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>My Portfolio</h1>
-            <nav>
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+            <!-- Logo Image -->
+            <img src="gjc.png" alt="Logo" class="header-logo" />
+
+            <!-- Hamburger menu for mobile -->
+            <div class="hamburger" id="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- Navigation menu -->
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="projects.html">Projects</a></li>
@@ -37,5 +47,14 @@
             <p>&copy; 2024 My Portfolio. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
