@@ -1,48 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projects - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    <header>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
-            <img src="gjc.png" alt="Logo" class="header-logo" />
-            <div class="hamburger" id="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <nav id="nav-menu">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="photography.html">Photography</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section class="projects">
-        <div class="container">
-            <h2>My Projects</h2>
-            <p>Details about your projects go here.</p>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
+    <li><a href="photography.html">Photography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
-    </script>
-</body>
-</html>
+<section class="photo-header">
+  <h1>Projects</h1>
+  <p>Creative work, ideas, and personal growth projects.</p>
+</section>
+
+<section class="section">
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="slate.jpg" alt="Portfolio Project">
+
+      <div class="card-content">
+        <h3>Portfolio Website</h3>
+
+        <p>
+          A fully custom personal portfolio built with HTML, CSS,
+          and modern UI styling.
+        </p>
+
+        <a href="#" class="btn">View Project</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="slate1.jpg" alt="Photography Project">
+
+      <div class="card-content">
+        <h3>Photography Collection</h3>
+
+        <p>
+          A visual gallery focused on atmosphere, nature,
+          and storytelling.
+        </p>
+
+        <a href="photography.html" class="btn">Open Gallery</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="me.png" alt="Mental Health Project">
+
+      <div class="card-content">
+        <h3>Human Services Journey</h3>
+
+        <p>
+          Exploring psychology, empathy, and creating meaningful
+          support for others.
+        </p>
+
+        <a href="contact.html" class="btn">Connect</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Jonny Calderon
+</footer>
