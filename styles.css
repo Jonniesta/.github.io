@@ -1,192 +1,282 @@
-/* Reset */
+:root {
+  --bg: #021C25;
+  --bg-2: #091E27;
+  --surface: #0D3338;
+
+  --teal: #165A54;
+  --green: #69B437;
+  --green-light: #91DA73;
+
+  --text: #EAF7F2;
+  --muted: #9BB7B0;
+}
+
+/* =========================
+   BASE
+========================= */
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-/* HTML & Body */
-html {
-  height: auto;
-}
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  overflow: auto;
-  position: relative;
-
-  /* Aurora background with animated flow */
-  background: radial-gradient(circle at bottom, #0f2027, transparent),
-              linear-gradient(135deg, #0f2027, #203a43, #2c5364, #1e3c72, #2a5298);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: overlay;
-  animation: auroraFlow 30s ease infinite;
-  color: #fff;
 }
 
-/* Starry overlay via pseudo-element, behind content */
-body::before {
-  content: "";
-  position: fixed; /* stay on top of all content */
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-image:
-    radial-gradient(1px 1px at 10% 20%, #fff, transparent),
-    radial-gradient(1px 1px at 30% 40%, #fff, transparent),
-    radial-gradient(1px 1px at 50% 60%, #fff, transparent),
-    radial-gradient(1px 1px at 70% 80%, #fff, transparent),
-    radial-gradient(1px 1px at 80% 10%, #fff, transparent),
-    radial-gradient(1px 1px at 20% 70%, #fff, transparent),
-    radial-gradient(1px 1px at 90% 50%, #fff, transparent);
-  background-size: 100% 100%;
-  background-repeat: repeat;
-  opacity: 0.8;
-  z-index: 0; /* behind content */
-  pointer-events: none;
-}
+/* =========================
+   NAV
+========================= */
 
-/* Aurora flow animation */
-@keyframes auroraFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+nav {
+  width: 100%;
+  padding: 20px 60px;
 
-/* Main content wrapper to layer above background */
-.main-content {
-  position: relative;
-  z-index: 1; /* above background layers */
-}
-
-/* Container styling */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Navbar styles */
-#navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: rgba(255,255,255,0.1);
+
   position: sticky;
   top: 0;
-  z-index: 10; /* above background but below overlay buttons */
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-#navbar.scrolled {
-  background-color: rgba(255,255,255,0.3);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 100;
+
+  background: rgba(2, 28, 37, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(105, 180, 55, 0.15);
 }
 
-/* Logo styling */
-.logo {
-  width: 50px; height: 50px;
-  background-color: #ccc; /* placeholder logo */
-  border-radius: 50%;
-  margin-right: 10px;
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
 }
 
-/* Nav links styling */
-.nav-links a {
+nav a {
   text-decoration: none;
-  padding: 8px 12px;
-  font-weight: 600;
-  border-radius: 4px;
-  color: #fff;
-  transition: all 0.3s;
-}
-.nav-links a:hover {
-  color: #00ffff;
-  background-color: rgba(0,255,255,0.2);
-  transform: scale(1.05);
+  color: var(--text);
+  transition: 0.3s;
 }
 
-/* Sections styling */
-section {
-  padding: 50px 20px;
+nav a:hover,
+nav a.active {
+  color: var(--green);
+}
+
+/* =========================
+   HERO (AURORA ANIMATION)
+========================= */
+
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
+  background: var(--bg);
 }
-#about, #projects, #photography, #contact {
-  background-color: rgba(255,255,255,0.1);
-  border-radius: 10px;
-  margin: 40px 0;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+
+  background:
+    radial-gradient(circle at 30% 30%, rgba(105,180,55,0.25), transparent 60%),
+    radial-gradient(circle at 70% 60%, rgba(145,218,115,0.18), transparent 60%),
+    radial-gradient(circle at 50% 80%, rgba(63,111,140,0.25), transparent 60%);
+
+  filter: blur(70px);
+  opacity: 0.75;
+
+  animation: auroraMove 18s ease-in-out infinite alternate;
 }
-h2 {
+
+@keyframes auroraMove {
+  0% { transform: translate(-5%, -5%) scale(1); }
+  50% { transform: translate(5%, 3%) scale(1.1); }
+  100% { transform: translate(-3%, 6%) scale(1.05); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
   margin-bottom: 20px;
-  font-size: 2em;
-}
-p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1em;
-  line-height: 1.6;
 }
 
-/* Footer styling */
-footer {
-  background-color: rgba(255,255,255,0.1);
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #fff;
-  border-top: 1px solid rgba(255,255,255,0.2);
+.hero h1 {
+  font-size: 3.5rem;
 }
 
-/* Overlay Buttons (Back to Top, Theme Toggle) */
+.hero p {
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+
+  background: var(--green);
+  color: #021C25;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--green-light);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+  padding: 100px 80px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.section p {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(105,180,55,0.15);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--green);
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.contact-box {
+  max-width: 650px;
+  width: 100%;
+
+  background: var(--bg-2);
+  padding: 50px;
+
+  border-radius: 24px;
+  border: 1px solid rgba(105,180,55,0.2);
+}
+
+.contact-box h2 {
+  color: var(--text);
+}
+
+.contact-box p {
+  color: var(--muted);
+}
+
+/* buttons */
+.contact-info a {
+  background: var(--teal);
+  color: var(--text);
+  padding: 12px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  background: var(--green);
+  color: #021C25;
+}
+
+/* social */
+.social-links a {
+  background: var(--surface);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(105,180,55,0.2);
+}
+
+.social-links a:hover {
+  background: var(--green);
+  color: #021C25;
+}
+
+/* form */
+input, textarea {
+  background: var(--surface);
+  border: 1px solid rgba(105,180,55,0.2);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 14px;
+}
+
 button {
-  position: fixed;
-  z-index: 10000; /* on top of everything */
-  padding: 10px 20px;
+  background: var(--green);
+  color: #021C25;
+  padding: 16px;
   border: none;
-  border-radius: 6px;
-  background: linear-gradient(135deg, #00f, #0ff);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s;
+  border-radius: 14px;
 }
+
 button:hover {
-  background: linear-gradient(135deg, #0ff, #00f);
-  transform: scale(1.05);
+  background: var(--green-light);
 }
 
-/* Specific button positions */
-#backToTop {
-  bottom: 20px;
-  right: 20px;
-}
-#theme-toggle {
-  top: 20px;
-  right: 20px;
-}
+/* =========================
+   FOOTER
+========================= */
 
-/* Fade-in elements for scroll reveal */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive adjustments */
-@media(max-width: 768px) {
-  #navbar {
-    flex-direction: column;
-  }
-  .nav-links {
-    margin-top: 10px;
-    flex-direction: column;
-  }
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--muted);
 }
