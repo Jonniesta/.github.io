@@ -1,395 +1,44 @@
-# Refactored `photography.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>Photography | Jonny Calderon</title>
-
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Explore the photography portfolio of Jonny Calderon featuring cinematic photography, emotional storytelling, lighting studies, and visual atmosphere."
-  >
-
-  <!-- THEME -->
-  <meta name="theme-color" content="#040816">
-
-  <!-- STYLES -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
 </head>
 
 <body>
 
-  <!-- PAGE TRANSITION -->
-  <div class="page-transition"></div>
-
-  <!-- NAVIGATION -->
-  <nav>
-
-    <a href="index.html" class="logo">
-
-      <img
-        src="gjc.png"
-        alt="Jonny Calderon Logo"
-      >
-
-    </a>
-
-    <ul>
-
-      <li>
-        <a href="index.html">
-          Home
-        </a>
-      </li>
-
-      <li>
-        <a href="projects.html">
-          Projects
-        </a>
-      </li>
-
-      <li>
-        <a href="photography.html" class="active">
-          Photography
-        </a>
-      </li>
-
-      <li>
-        <a href="contact.html">
-          Contact
-        </a>
-      </li>
-
-    </ul>
-
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <!-- AURORA -->
-    <div class="aurora aurora-1"></div>
-    <div class="aurora aurora-2"></div>
-
-    <div class="hero-wrapper">
-
-      <!-- LEFT -->
-      <div class="hero-left">
-
-        <div class="hero-badge">
-          Visual Storytelling
-        </div>
-
-        <h1 class="hero-name">
-          Photography
-        </h1>
-
-        <p class="hero-text">
-          A collection of moments captured through light,
-          emotion, atmosphere, and perspective.
-          My photography focuses on cinematic feeling,
-          emotional realism, and visual storytelling.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a
-            href="#gallery"
-            class="btn"
-          >
-            Explore Gallery
-          </a>
-
-         
-
-        </div>
-
-      </div>
-
-      <!-- RIGHT -->
-    
-
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-
-    <div class="section-intro center">
-
-      <small>
-        Featured Collection
-      </small>
-
-      <h2>
-        Photo Gallery
-      </h2>
-
-      <p>
-        A curated collection of photography exploring
-        emotion, texture, natural atmosphere,
-        perspective, and visual mood.
-      </p>
-
-      <div class="section-line"></div>
-
-    </div>
-
-    <!-- PHOTO GRID -->
-    <div class="photo-grid">
-
-      <!-- PHOTO 1 -->
-      <div class="photo-card">
-
-        <img
-          src="Daboi copy.JPG"
-          class="gallery-img"
-          alt="Portrait photography"
-        >
-
-      </div>
-
-      <!-- PHOTO 2 -->
-      <div class="photo-card">
-
-        <img
-          src="aquaplant copy.JPG"
-          class="gallery-img"
-          alt="Aquatic plant photography"
-        >
-
-      </div>
-
-      <!-- PHOTO 3 -->
-      <div class="photo-card">
-
-        <img
-          src="daboilook copy.JPG"
-          class="gallery-img"
-          alt="Cinematic portrait photography"
-        >
-
-      </div>
-
-      <!-- PHOTO 4 -->
-      <div class="photo-card">
-
-        <img
-          src="dafish copy.JPG"
-          class="gallery-img"
-          alt="Fish photography"
-        >
-
-      </div>
-
-      <!-- PHOTO 5 -->
-      <div class="photo-card">
-
-        <img
-          src="Hannah copy.JPG"
-          class="gallery-img"
-          alt="Portrait photo session"
-        >
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CTA -->
-  <section>
-
-    <div class="section-intro center">
-
-      <small>
-        Creative Work
-      </small>
-
-      <h2>
-        Let’s Capture Something Real
-      </h2>
-
-      <p>
-        Open to photography collaborations,
-        portrait sessions, creative projects,
-        and cinematic visual storytelling.
-      </p>
-
-      <div class="section-line"></div>
-
-    </div>
-
-    <div
-      style="
-        display:flex;
-        justify-content:center;
-        margin-top:40px;
-      "
-    >
-
-      <a
-        href="contact.html"
-        class="btn"
-      >
-        Contact Me
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- MODAL -->
-  <div id="imageModal" class="modal">
-
-    <span class="close">
-      &times;
-    </span>
-
-    <img
-      class="modal-content"
-      id="modalImg"
-      alt="Expanded photography image"
-    >
+<nav>
+  <div class="logo">
+    <img src="gjc.png">
+  </div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a class="active" href="photography.html">Photography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section>
+
+  <h2>Photography</h2>
+
+  <div class="gallery">
+
+    <img loading="lazy" src="Daboi copy.JPG" class="gallery-img">
+    <img loading="lazy" src="aquaplant copy.JPG" class="gallery-img">
+    <img loading="lazy" src="daboilook copy.JPG" class="gallery-img">
+    <img loading="lazy" src="dafish copy.JPG" class="gallery-img">
+    <img loading="lazy" src="Hannah copy.JPG" class="gallery-img">
 
   </div>
 
-  <!-- FOOTER -->
-  <footer>
+</section>
 
-    © 2026 Jonny Calderon
-
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-
-    /* NAV SCROLL */
-    window.addEventListener("scroll", () => {
-
-      document
-        .querySelector("nav")
-        .classList.toggle(
-          "scrolled",
-          window.scrollY > 20
-        );
-
-    });
-
-    /* PAGE TRANSITION */
-    window.addEventListener("load", () => {
-
-      const transition =
-        document.querySelector(
-          ".page-transition"
-        );
-
-      if (transition) {
-        transition.classList.add("hide");
-      }
-
-    });
-
-    /* PHOTO MODAL */
-    const modal =
-      document.getElementById(
-        "imageModal"
-      );
-
-    const modalImg =
-      document.getElementById(
-        "modalImg"
-      );
-
-    const images =
-      document.querySelectorAll(
-        ".gallery-img"
-      );
-
-    const closeBtn =
-      document.querySelector(
-        ".close"
-      );
-
-    function openModal(src) {
-
-      modal.classList.add("active");
-
-      document.body.classList.add(
-        "modal-open"
-      );
-
-      modalImg.src = src;
-    }
-
-    function closeModal() {
-
-      modal.classList.remove("active");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-    }
-
-    images.forEach((img) => {
-
-      img.addEventListener("click", () => {
-        openModal(img.src);
-      });
-
-    });
-
-    closeBtn.addEventListener(
-      "click",
-      closeModal
-    );
-
-    modal.addEventListener("click", (e) => {
-
-      if (e.target === modal) {
-        closeModal();
-      }
-
-    });
-
-    document.addEventListener(
-      "keydown",
-      (e) => {
-
-        if (e.key === "Escape") {
-          closeModal();
-        }
-
-      }
-    );
-
-  </script>
+<footer>© 2026 Jonny Calderon</footer>
 
 </body>
 </html>
-
