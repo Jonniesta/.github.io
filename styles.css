@@ -75,13 +75,12 @@ nav a.active {
 }
 
 .logo img {
-  width: 10px !important;
-  height: 10px !important;
+  width: 100% !important;
+  height: 100% !important;
 
-  min-width: 60px;
-  min-height: 60px;
 
-  object-fit: cover;
+
+  object-fit: contain;
   border-radius: 50%;
 
   display: block;
