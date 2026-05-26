@@ -39,13 +39,23 @@
 
   </nav>
 
-  <!-- 🐾 LOADING SCREEN -->
+  <!-- 🐈‍⬛ LOADING OVERLAY -->
   <div class="loading-overlay" id="loadingOverlay">
 
-    <div class="paw-loader">
-      <div class="paw"></div>
-      <div class="paw"></div>
-      <div class="paw"></div>
+    <div class="cat-loader">
+
+      <!-- BLACK CAT -->
+      <div class="cat"></div>
+
+      <!-- PAW TRAIL -->
+      <div class="paw-trail">
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+        <div class="paw"></div>
+      </div>
+
     </div>
 
     <p>Sending your message...</p>
@@ -122,15 +132,13 @@
   <script>
 
     const form = document.getElementById("contactForm");
-    const btn = document.getElementById("submitBtn");
     const overlay = document.getElementById("loadingOverlay");
+    const btn = document.getElementById("submitBtn");
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      // show paw loader
       overlay.classList.add("active");
-
       btn.disabled = true;
       btn.innerHTML = "Sending...";
 
