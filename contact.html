@@ -44,10 +44,8 @@
 
     <div class="cat-loader">
 
-      <!-- BLACK CAT -->
       <div class="cat"></div>
 
-      <!-- PAW TRAIL -->
       <div class="paw-trail">
         <div class="paw"></div>
         <div class="paw"></div>
@@ -70,12 +68,19 @@
 
     <div class="contact-box">
 
+      <!-- HEADER -->
       <div class="contact-header">
+
         <h2>Let’s Connect</h2>
         <div class="contact-line"></div>
-        <p>Send a message and I’ll respond as soon as possible.</p>
+
+        <p>
+          Send a message and I’ll respond as soon as possible.
+        </p>
+
       </div>
 
+      <!-- CONTACT INFO -->
       <div class="contact-info-bar">
 
         <a href="mailto:jonniesta@gmail.com">
@@ -148,9 +153,7 @@
         const res = await fetch("https://formspree.io/f/mbjpalvn", {
           method: "POST",
           body: formData,
-          headers: {
-            "Accept": "application/json"
-          }
+          headers: { "Accept": "application/json" }
         });
 
         if (res.ok) {
