@@ -1,6 +1,3 @@
-# Refactored `contact.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,17 +5,14 @@
 
   <meta charset="UTF-8" />
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact | Jonny Calderon</title>
 
   <!-- SEO -->
   <meta
     name="description"
-    content="Contact Jonny Calderon for collaborations, photography work, creative projects, psychology-focused opportunities, and professional inquiries."
+    content="Contact Jonny Calderon for collaborations, creative work, photography, and professional opportunities."
   />
 
   <!-- THEME -->
@@ -29,19 +23,14 @@
 
   <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <!-- FONT AWESOME -->
+  <!-- ICONS -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -51,80 +40,39 @@
 
 <body>
 
-  <!-- PAGE TRANSITION -->
-  <div class="page-transition"></div>
-
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
 
     <a href="index.html" class="logo">
-
-      <img
-        src="gjc.png"
-        alt="Jonny Calderon Logo"
-      >
-
+      <img src="gjc.png" alt="Jonny Calderon Logo">
     </a>
 
     <ul>
-
-      <li>
-        <a href="index.html">
-          Home
-        </a>
-      </li>
-
-      <li>
-        <a href="projects.html">
-          Projects
-        </a>
-      </li>
-
-      <li>
-        <a href="photography.html">
-          Photography
-        </a>
-      </li>
-
-      <li>
-        <a href="contact.html" class="active">
-          Contact
-        </a>
-      </li>
-
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
 
   </nav>
 
-  <!-- CONTACT SECTION -->
+  <!-- CONTACT -->
   <section class="contact-section">
 
-    <!-- AURORA -->
     <div class="aurora aurora-1"></div>
     <div class="aurora aurora-2"></div>
 
-    <!-- CONTACT BOX -->
     <div class="contact-box">
 
       <!-- HEADER -->
       <div class="contact-header">
 
-        <div class="hero-badge">
-          Let’s Connect
-        </div>
-
-        <h1>
-          Reach Out
-        </h1>
+        <h2>Let’s Connect</h2>
 
         <div class="contact-line"></div>
 
         <p>
-          Whether you want to collaborate,
-          discuss creative work,
-          connect professionally,
-          or simply start a conversation,
-          I’d love to hear from you.
+          Whether you want to collaborate, ask a question, or work together — I’d love to hear from you.
         </p>
 
       </div>
@@ -132,56 +80,24 @@
       <!-- CONTACT INFO -->
       <div class="contact-info-bar">
 
-        <!-- EMAIL -->
         <a href="mailto:jonniesta@gmail.com">
-
           <i class="fa-solid fa-envelope"></i>
-
-          <span>
-            jonniesta@gmail.com
-          </span>
-
+          <span>Email</span>
         </a>
 
-        <!-- PHONE -->
         <a href="tel:+13172134147">
-
           <i class="fa-solid fa-phone"></i>
-
-          <span>
-            (317) 213-4147
-          </span>
-
+          <span>Call</span>
         </a>
 
-        <!-- LINKEDIN -->
-        <a
-          href="https://linkedin.com/in/jonny-calderon"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
+        <a href="https://linkedin.com/in/jonny-calderon" target="_blank">
           <i class="fa-brands fa-linkedin"></i>
-
-          <span>
-            LinkedIn
-          </span>
-
+          <span>LinkedIn</span>
         </a>
 
-        <!-- GITHUB -->
-        <a
-          href="https://github.com/Jonniesta"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-
+        <a href="https://github.com/Jonniesta" target="_blank">
           <i class="fa-brands fa-github"></i>
-
-          <span>
-            GitHub
-          </span>
-
+          <span>GitHub</span>
         </a>
 
       </div>
@@ -193,14 +109,14 @@
         class="contact-form"
       >
 
-        <!-- SUCCESS REDIRECT -->
+        <!-- ✅ FIXED REDIRECT (THIS IS THE IMPORTANT PART) -->
         <input
           type="hidden"
-          name="_next"
+          name="_redirect"
           value="success.html"
         >
 
-        <!-- EMAIL SUBJECT -->
+        <!-- SUBJECT -->
         <input
           type="hidden"
           name="_subject"
@@ -209,83 +125,26 @@
 
         <!-- NAME -->
         <div class="input-group">
-
-          <label for="name">
-            Full Name
-          </label>
-
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your full name"
-            autocomplete="name"
-            required
-          >
-
+          <label>Your Name</label>
+          <input type="text" name="name" required>
         </div>
 
         <!-- EMAIL -->
         <div class="input-group">
-
-          <label for="email">
-            Email Address
-          </label>
-
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email address"
-            autocomplete="email"
-            required
-          >
-
-        </div>
-
-        <!-- SUBJECT -->
-        <div class="input-group">
-
-          <label for="subject">
-            Subject
-          </label>
-
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="What would you like to discuss?"
-            required
-          >
-
+          <label>Email Address</label>
+          <input type="email" name="email" required>
         </div>
 
         <!-- MESSAGE -->
         <div class="input-group">
-
-          <label for="message">
-            Message
-          </label>
-
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Write your message here..."
-            rows="8"
-            required
-          ></textarea>
-
+          <label>Message</label>
+          <textarea name="message" rows="7" required></textarea>
         </div>
 
-        <!-- BUTTON -->
+        <!-- SUBMIT -->
         <button type="submit">
-
-          <span>
-            Send Message
-          </span>
-
+          Send Message
           <i class="fa-solid fa-arrow-right"></i>
-
         </button>
 
       </form>
@@ -296,57 +155,16 @@
 
   <!-- FOOTER -->
   <footer>
-
     © 2026 Jonny Calderon
-
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- NAV SCRIPT -->
   <script>
-
-    /* NAV SCROLL EFFECT */
     window.addEventListener("scroll", () => {
-
-      document
-        .querySelector("nav")
-        .classList.toggle(
-          "scrolled",
-          window.scrollY > 20
-        );
-
+      document.querySelector("nav")
+        .classList.toggle("scrolled", window.scrollY > 20);
     });
-
-    /* PAGE TRANSITION */
-    window.addEventListener("load", () => {
-
-      const transition =
-        document.querySelector(
-          ".page-transition"
-        );
-
-      if (transition) {
-        transition.classList.add("hide");
-      }
-
-    });
-
-    /* CURSOR POSITION */
-    document.addEventListener("mousemove", (e) => {
-
-      document.documentElement.style.setProperty(
-        "--x",
-        e.clientX + "px"
-      );
-
-      document.documentElement.style.setProperty(
-        "--y",
-        e.clientY + "px"
-      );
-
-    });
-
   </script>
 
 </body>
 </html>
-
