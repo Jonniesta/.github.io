@@ -75,8 +75,8 @@ nav a.active {
 }
 
 .logo img {
-  width: 50px;          /* adjust size */
-  height: 65px;          /* keeps proportions correct */
+  width: 100%;
+  height: auto;        /* keeps proportions correct */
   object-fit: cover;
 
   display: block;
@@ -148,9 +148,9 @@ nav a.active {
   margin-top: 20px;
   padding: 12px 22px;
 
-  background: var( --teal);
+  background: rgba(2, 28, 37, 0.85);
   color: white;
-  border: 2px solid rgba(2, 28, 37, 0.85);
+  border: 2px solid var( --teal);
   border-radius: 10px;
   text-decoration: none;
 
@@ -158,8 +158,8 @@ nav a.active {
 }
 
 .btn:hover {
-  background: rgba(2, 28, 37, 0.85);
-  border: 2px solid var( --teal);
+  background: var( --teal);
+  border: 2px solid rgba(2, 28, 37, 0.85);
   transform: translateY(-2px);
 }
 
