@@ -83,9 +83,8 @@ nav a.active {
 
   border: 2px solid rgba(105, 180, 55, 0.4);
   border-radius: 12px;   /* soft rounded corners instead of oval */
-  padding: 4px;
+  padding: 1px;
 
-  background: #000;      /* optional */
 }
 /* =========================
    HERO (AURORA ANIMATION)
