@@ -1,144 +1,66 @@
-# Refactored `success.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Message Sent | Jonny Calderon</title>
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Your message has been successfully sent to Jonny Calderon. Thank you for reaching out."
-  />
-
-  <!-- THEME -->
   <meta name="theme-color" content="#040816" />
 
-  <!-- STYLES -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- FONT AWESOME -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-  <!-- PAGE TRANSITION -->
-  <div class="page-transition"></div>
-
-  <!-- NAVIGATION -->
+  <!-- NAV -->
   <nav>
 
     <a href="index.html" class="logo">
-      <img src="gjc.png" alt="Jonny Calderon Logo" />
+      <img src="gjc.png" alt="Logo">
     </a>
 
     <ul>
-
       <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="photography.html">Photography</a></li>
       <li><a href="contact.html">Contact</a></li>
-
     </ul>
 
   </nav>
 
   <!-- SUCCESS SECTION -->
-  <section class="success-section">
+  <section class="contact-section">
 
-    <!-- AURORA BACKGROUND -->
     <div class="aurora aurora-1"></div>
     <div class="aurora aurora-2"></div>
 
-    <!-- SUCCESS CARD -->
-    <div class="success-box">
+    <div class="contact-box" style="text-align:center;">
 
-      <!-- ICON -->
       <div class="success-icon">
         <i class="fa-solid fa-check"></i>
       </div>
 
-      <!-- TITLE -->
-      <h1>
-        Message Sent
-      </h1>
+      <h2>Message Sent</h2>
 
-      <div class="success-line"></div>
+      <div class="contact-line"></div>
 
-      <!-- MESSAGE -->
       <p>
-        Thank you for reaching out.
-        Your message has been successfully delivered,
-        and I’ll get back to you as soon as possible.
+        Your message has been delivered successfully.
+        I’ll get back to you as soon as possible.
       </p>
 
-      <!-- CONTACT INFO -->
-      <div class="success-contact">
-
-        <a href="mailto:jonniesta@gmail.com">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Email</span>
-        </a>
-
-        <a href="tel:+13172134147">
-          <i class="fa-solid fa-phone"></i>
-          <span>Call</span>
-        </a>
-
-      </div>
-
-      <!-- SOCIAL LINKS -->
-      <div class="success-socials">
-
-        <a
-          href="https://linkedin.com/in/jonny-calderon"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-
-        <a
-          href="https://github.com/Jonniesta"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-github"></i>
-        </a>
-
-      </div>
-
-      <!-- CTA BUTTON -->
-      <a href="index.html" class="btn home-btn">
+      <a class="home-btn" href="index.html">
         Return Home
         <i class="fa-solid fa-arrow-right"></i>
       </a>
@@ -147,35 +69,28 @@
 
   </section>
 
+  <!-- 🐈‍⬛ CAT ANIMATION -->
+  <div class="success-animation">
+
+    <div class="success-cat"></div>
+
+    <div class="cat-bubble">Yay! 🐈</div>
+
+    <div class="success-trail">
+      <div class="success-paw"></div>
+      <div class="success-paw"></div>
+      <div class="success-paw"></div>
+      <div class="success-paw"></div>
+      <div class="success-paw"></div>
+    </div>
+
+  </div>
+
   <!-- FOOTER -->
   <footer>
     © 2026 Jonny Calderon
   </footer>
 
-  <!-- SCRIPT -->
-  <script>
-
-    /* NAV SCROLL EFFECT */
-    window.addEventListener("scroll", () => {
-      document
-        .querySelector("nav")
-        .classList.toggle("scrolled", window.scrollY > 20);
-    });
-
-    /* PAGE TRANSITION */
-    window.addEventListener("load", () => {
-      const t = document.querySelector(".page-transition");
-      if (t) t.classList.add("hide");
-    });
-
-    /* CURSOR GLOW POSITION */
-    document.addEventListener("mousemove", (e) => {
-      document.documentElement.style.setProperty("--x", e.clientX + "px");
-      document.documentElement.style.setProperty("--y", e.clientY + "px");
-    });
-
-  </script>
-
 </body>
-</html>
 
+</html>
