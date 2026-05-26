@@ -2,116 +2,312 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Contact | Jonny Calderon</title>
 
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Contact Jonny Calderon for collaborations, creative work, photography, and professional opportunities."
+  />
+
+  <!-- THEME -->
+  <meta name="theme-color" content="#020814" />
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="styles.css">
 
   <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- ICONS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="logo">
-    <a href="index.html">
-      <img src="logonew.png" alt="Jonny Calderon Logo">
+  <!-- BACKGROUND GLOW -->
+  <div class="bg-grid"></div>
+
+  <!-- NAVBAR -->
+  <nav>
+
+    <a href="index.html" class="logo">
+
+      <img
+        src="logonew.png"
+        alt="Jonny Calderon Logo"
+      >
+
+      <span>Jonny Calderon</span>
+
     </a>
-  </div>
 
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a href="contact.html" class="active">Contact</a></li>
-  </ul>
-</nav>
+    <ul>
 
-<!-- CONTACT SECTION -->
-<section class="contact-section">
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
 
-  <div class="contact-box">
+      <li>
+        <a href="projects.html">
+          Projects
+        </a>
+      </li>
 
-    <span class="contact-tag">CONTACT</span>
+      <li>
+        <a href="photography.html">
+          Photography
+        </a>
+      </li>
 
-    <h2>Let’s Connect</h2>
+      <li>
+        <a href="contact.html" class="active">
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </nav>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+
+    <!-- AURORA -->
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+
+    <div class="contact-box">
+
+      <!-- TOP -->
+      <div class="contact-header">
+
+        <span class="contact-tag">
+          CONTACT
+        </span>
+
+        <h1>
+          Let’s Connect
+        </h1>
+
+        <div class="contact-line"></div>
+
+        <p>
+          Whether you want to collaborate,
+          ask a question, discuss creative work,
+          or simply connect —
+          I’d love to hear from you.
+        </p>
+
+      </div>
+
+      <!-- QUICK ACTIONS -->
+      <div class="contact-actions">
+
+        <a
+          href="mailto:jonniesta@gmail.com"
+          class="contact-card"
+        >
+
+          <div class="contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+
+          <div>
+
+            <h3>Email</h3>
+
+            <span>
+              jonniesta@gmail.com
+            </span>
+
+          </div>
+
+        </a>
+
+        <a
+          href="tel:+13172134147"
+          class="contact-card"
+        >
+
+          <div class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+
+          <div>
+
+            <h3>Phone</h3>
+
+            <span>
+              Call or Text
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+      <!-- SOCIAL -->
+      <div class="social-links">
+
+        <a
+          href="https://linkedin.com/in/jonny-calderon"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/Jonniesta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-github"></i>
+          GitHub
+        </a>
+
+      </div>
+
+      <!-- FORM -->
+      <form
+        action="https://formspree.io/f/mbjpalvn"
+        method="POST"
+        class="contact-form"
+      >
+
+        <!-- NAME -->
+        <div class="input-group">
+
+          <label for="name">
+            Your Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+            autocomplete="name"
+          >
+
+        </div>
+
+        <!-- EMAIL -->
+        <div class="input-group">
+
+          <label for="email">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            autocomplete="email"
+          >
+
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="input-group">
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message..."
+            rows="7"
+            required
+          ></textarea>
+
+        </div>
+
+        <!-- BUTTON -->
+        <button type="submit">
+
+          <span>
+            Send Message
+          </span>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
 
     <p>
-      Whether you want to collaborate, ask a question,
-      or simply connect — I’d love to hear from you.
+      © 2026 Jonny Calderon
     </p>
 
-    <!-- QUICK LINKS -->
-    <div class="contact-info">
+  </footer>
 
-      <a href="mailto:jonniesta@gmail.com">
-        📧 Email Me
-      </a>
+  <!-- SCRIPT -->
+  <script>
 
-      <a href="tel:+13172134147">
-        📱 Call / Text
-      </a>
+    /* NAV SCROLL EFFECT */
+    window.addEventListener("scroll", () => {
 
+      document
+        .querySelector("nav")
+        .classList.toggle(
+          "scrolled",
+          window.scrollY > 20
+        );
 
-    </div>
+    });
 
-    <!-- SOCIAL LINKS -->
-    <div class="social-links">
+    /* CURSOR GLOW */
+    document.addEventListener("mousemove", (e) => {
 
-      <a href="https://linkedin.com/in/jonny-calderon" target="_blank">
-        LinkedIn
-      </a>
+      document.documentElement.style.setProperty(
+        "--x",
+        e.clientX + "px"
+      );
 
-      <a href="https://github.com/Jonniesta" target="_blank">
-        GitHub
-      </a>
+      document.documentElement.style.setProperty(
+        "--y",
+        e.clientY + "px"
+      );
 
-    </div>
+    });
 
-    <!-- CONTACT FORM -->
-    <form action="https://formspree.io/f/mbjpalvn" method="POST">
-
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        required
-      >
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        required
-      >
-
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="6"
-        required
-      ></textarea>
-
-      <button type="submit">
-        Send Message
-      </button>
-
-    </form>
-
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-  © 2026 Jonny Calderon
-</footer>
+  </script>
 
 </body>
 </html>
