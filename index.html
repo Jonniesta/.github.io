@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jonny Calderon</title>
-
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
 <!-- STARFIELD BACKGROUND -->
@@ -18,7 +16,6 @@
   <div class="logo">
     <img src="gjc.png" alt="logo"/>
   </div>
-
   <ul>
     <li><a class="active" href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -29,74 +26,53 @@
 
 <!-- ================= HERO ================= -->
 <section class="hero reveal">
-
   <div class="hero-content">
-
-    <img src="gjc.png" alt="avatar" class="hero-avatar"/>
-
+    <img src="gjc.png" alt="avatar" class="hero-avatar" />
     <h1>Jonny Calderon</h1>
-
     <p>Human Services • Psychology • Creative Work</p>
-
     <a href="projects.html" class="btn">View Work</a>
-
   </div>
-
 </section>
 
 <!-- ================= ABOUT ================= -->
 <section class="reveal">
-
   <h2>About Me</h2>
-
   <p>
     I am passionate about helping people grow, understand themselves,
     and build meaningful lives through empathy, structure, and creativity.
   </p>
-
 </section>
 
 <!-- ================= FEATURED ================= -->
 <section class="reveal">
-
   <h2>Featured Work</h2>
-
   <div class="projects">
-
     <div class="card">
       <img src="assets/images/project1.jpg" alt="Project 1"/>
       <div class="card-content">
         <h3>Creative Design</h3>
       </div>
     </div>
-
     <div class="card">
       <img src="assets/images/project2.jpg" alt="Project 2"/>
       <div class="card-content">
         <h3>Photography</h3>
       </div>
     </div>
-
     <div class="card">
       <img src="assets/images/project3.jpg" alt="Project 3"/>
       <div class="card-content">
         <h3>Reflection</h3>
       </div>
     </div>
-
   </div>
-
 </section>
 
 <!-- ================= CTA ================= -->
 <section class="reveal">
-
   <h2>Let’s Connect</h2>
-
   <p>Open to collaboration and creative work.</p>
-
   <a class="btn" href="contact.html">Contact Me</a>
-
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -104,8 +80,41 @@
   © 2026 Jonny Calderon
 </footer>
 
-<!-- SCRIPTS -->
-<script src="app.js"></script>
+<!-- ================= MODAL ================= -->
+<div class="modal" id="modal" onclick="closeModal()">
+  <img id="modal-img" />
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Reveal animations
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Modal functionality
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+
+    window.openModal = (src) => {
+      modal.classList.add("active");
+      modalImg.src = src;
+      document.body.style.overflow = "hidden";
+    };
+
+    window.closeModal = () => {
+      modal.classList.remove("active");
+      document.body.style.overflow = "auto";
+    };
+  });
+</script>
 
 </body>
 </html>
