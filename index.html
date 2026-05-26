@@ -13,73 +13,79 @@
 <!-- Particle Canvas for star overlay -->
 <canvas id="particle-canvas"></canvas>
 
-<!-- Back to Top Button -->
-<button id="backToTop">Top</button>
+<!-- Star overlay pseudo-element will be in CSS -->
 
-<!-- Theme Toggle Button -->
-<button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+<!-- Main content wrapper to layer above background -->
+<div class="main-content">
 
-<!-- Navbar -->
-<header id="navbar">
-  <div class="container" style="display:flex; justify-content: space-between; align-items: center; width: 100%;">
-    <!-- Left: Logo -->
-    <div class="nav-left">
-      <div class="logo"></div>
+  <!-- Back to Top Button -->
+  <button id="backToTop">Top</button>
+
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-btn">Toggle Theme</button>
+
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="container" style="display:flex; justify-content: space-between; align-items: center; width: 100%;">
+      <!-- Left: Logo -->
+      <div class="nav-left">
+        <div class="logo"></div>
+      </div>
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#photography">Photography</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-    <!-- Navigation Links -->
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#photography">Photography</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<!-- Landing Section -->
-<section class="landing">
-  <div class="container" style="text-align: center; padding: 50px 20px;">
-    <img src="me.png" alt="My Photo" class="profile-pic fade-in" />
-    <h2 class="name fade-in">Your Name</h2>
-  </div>
-</section>
+  <!-- Landing Section -->
+  <section class="landing">
+    <div class="container" style="text-align: center; padding: 50px 20px;">
+      <img src="me.png" alt="My Photo" class="profile-pic fade-in" />
+      <h2 class="name fade-in">Your Name</h2>
+    </div>
+  </section>
 
-<!-- About Me -->
-<section id="about" class="about-me fade-in">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>Hello! I'm [Your Name], a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
-  </div>
-</section>
+  <!-- About Me -->
+  <section id="about" class="about-me fade-in">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Hello! I'm [Your Name], a passionate developer with expertise in web development, design, and creating engaging user experiences. Welcome to my portfolio!</p>
+    </div>
+  </section>
 
-<!-- Projects -->
-<section id="projects" class="fade-in">
-  <div class="container">
-    <h2>My Projects</h2>
-    <p>Here are some of my recent works...</p>
-  </div>
-</section>
+  <!-- Projects -->
+  <section id="projects" class="fade-in">
+    <div class="container">
+      <h2>My Projects</h2>
+      <p>Here are some of my recent works...</p>
+    </div>
+  </section>
 
-<!-- Photography -->
-<section id="photography" class="fade-in">
-  <div class="container">
-    <h2>Photography</h2>
-    <p>Some of my favorite photos...</p>
-  </div>
-</section>
+  <!-- Photography -->
+  <section id="photography" class="fade-in">
+    <div class="container">
+      <h2>Photography</h2>
+      <p>Some of my favorite photos...</p>
+    </div>
+  </section>
 
-<!-- Contact -->
-<section id="contact" class="fade-in">
-  <div class="container">
-    <h2>Contact Me</h2>
-    <p>You can reach me at: email@example.com</p>
-  </div>
-</section>
+  <!-- Contact -->
+  <section id="contact" class="fade-in">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>You can reach me at: email@example.com</p>
+    </div>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2024 Your Name. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Your Name. All rights reserved.</p>
+  </footer>
+</div>
 
 <!-- Scripts -->
 <script>
@@ -176,6 +182,3 @@
   resizeCanvas();
   animate();
 </script>
-
-</body>
-</html>
