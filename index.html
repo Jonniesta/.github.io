@@ -1,394 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jonny Calderon</title>
-
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Jonny Calderon portfolio featuring psychology, photography, creative work, and human-centered design."
-  />
-
-  <!-- THEME -->
-  <meta name="theme-color" content="#040816" />
-
-  <!-- STYLES -->
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ICONS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- NOISE TEXTURE -->
-  <div class="noise"></div>
+<nav>
+  <div class="logo">
+    <img src="gjc.png" alt="logo">
+  </div>
 
-  <!-- PAGE TRANSITION -->
-  <div class="page-transition"></div>
+  <ul>
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="photography.html">Photography</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- NAV -->
-  <nav>
+<section class="hero">
 
-    <a href="index.html" class="logo">
+  <div>
+    <img src="me.png" class="hero-avatar" alt="me">
 
-      <img
-        src="gjc.png"
-        alt="Jonny Calderon Logo"
-      />
+    <h1>Jonny Calderon</h1>
 
-    </a>
+    <p>Human Services • Creative Work • Future Therapist</p>
 
-    <ul>
+    <a href="projects.html" class="btn">View Work</a>
+  </div>
 
-      <li>
-        <a href="index.html" class="active">
-          Home
-        </a>
-      </li>
+</section>
 
-      <li>
-        <a href="projects.html">
-          Projects
-        </a>
-      </li>
+<section>
+  <h2>About Me</h2>
+  <p>
+    I’m studying psychology and human services with a goal of becoming a therapist focused on helping people feel seen and supported.
+  </p>
+</section>
 
-      <li>
-        <a href="photography.html">
-          Photography
-        </a>
-      </li>
+<section>
+  <h2>Featured Work</h2>
 
-      <li>
-        <a href="contact.html">
-          Contact
-        </a>
-      </li>
+  <div class="projects">
 
-    </ul>
-
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-
-    <!-- BACKGROUND -->
-    <div class="hero-glow"></div>
-
-    <div class="aurora aurora-1"></div>
-    <div class="aurora aurora-2"></div>
-    <div class="aurora aurora-3"></div>
-
-    <!-- HERO CONTENT -->
-    <div class="hero-wrapper">
-
-      <!-- LEFT -->
-      <div class="hero-left">
-
-        <div class="hero-badge">
-          Psychology • Human Services • Creative Work
-        </div>
-
-        <h1 class="hero-name">
-          Jonny Calderon
-        </h1>
-
-        <p class="hero-text">
-          Future therapist focused on empathy,
-          creativity, and helping people feel
-          understood through meaningful
-          human connection.
-        </p>
-
-        <div class="hero-buttons">
-
-          <a href="projects.html" class="btn">
-            View Work
-          </a>
-
-          <a href="contact.html" class="btn-outline">
-            Contact Me
-          </a>
-
-        </div>
-
+    <div class="card">
+      <img src="assets/images/project1.jpg">
+      <div class="card-content">
+        <h3>Brand Identity</h3>
       </div>
-
-      <!-- RIGHT -->
-      <div class="hero-right">
-
-        <div class="hero-image-wrap">
-
-          <div class="hero-ring"></div>
-
-          <img
-            src="me.png"
-            alt="Jonny Calderon"
-            class="hero-avatar"
-          />
-
-        </div>
-
-      </div>
-
     </div>
 
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about-section">
-
-    <div class="section-intro">
-
-      <small>About Me</small>
-
-      <div class="section-line"></div>
-
-    </div>
-
-    <h2>
-      Helping People Feel Seen,
-      Heard, and Understood
-    </h2>
-
-    <p>
-      I’m currently pursuing a bachelor’s degree in Psychology after completing my associate’s in Human Services, with a deep commitment to understanding people and the experiences that shape them.
-    </p>
-
-    <p>
-      My purpose is rooted in helping the next generation feel supported in ways many of us didn’t always have growing up. I hope to become a therapist who creates safe spaces where people can be honest about what they’re carrying and where healing feels possible and real.
-    </p>
-
-    <p>
-      Everything I do is guided by empathy, patience, creativity, and the belief that moments of understanding can change someone’s entire direction in life.
-    </p>
-
-  </section>
-
-  <!-- FEATURED WORK -->
-  <section class="featured-section">
-
-    <div class="section-intro">
-
-      <small>Featured Work</small>
-
-      <div class="section-line"></div>
-
-    </div>
-
-    <h2>
-      Selected Creative Projects
-    </h2>
-
-    <div class="projects-grid">
-
-      <!-- CARD -->
-      <div class="card">
-
-        <div class="card-image">
-
-          <img
-            src="assets/images/project1.jpg"
-            alt="Brand identity design"
-          />
-
-        </div>
-
-        <div class="card-content">
-
-          <small>Design</small>
-
-          <h3>
-            Brand Identity
-          </h3>
-
-          <p>
-            Logos, typography, and visual systems.
-          </p>
-
-        </div>
-
+    <div class="card">
+      <img src="assets/images/project2.jpg">
+      <div class="card-content">
+        <h3>Photography</h3>
       </div>
-
-      <!-- CARD -->
-      <div class="card">
-
-        <div class="card-image">
-
-          <img
-            src="assets/images/project2.jpg"
-            alt="Photography project"
-          />
-
-        </div>
-
-        <div class="card-content">
-
-          <small>Photography</small>
-
-          <h3>
-            Cinematic Moments
-          </h3>
-
-          <p>
-            Lighting and emotional storytelling.
-          </p>
-
-        </div>
-
-      </div>
-
-      <!-- CARD -->
-      <div class="card">
-
-        <div class="card-image">
-
-          <img
-            src="me.png"
-            alt="Human behavior and psychology"
-          />
-
-        </div>
-
-        <div class="card-content">
-
-          <small>Growth</small>
-
-          <h3>
-            Human Behavior
-          </h3>
-
-          <p>
-            Reflection, empathy, and psychological insight.
-          </p>
-
-        </div>
-
-      </div>
-
     </div>
 
-  </section>
+  </div>
+</section>
 
-  <!-- CONNECT -->
-  <section class="connect-section">
+<section style="text-align:center;">
+  <h2>Let’s Connect</h2>
+  <a class="btn" href="contact.html">Contact Me</a>
+</section>
 
-    <div class="section-intro center">
-
-      <small>Connect</small>
-
-      <div class="section-line"></div>
-
-    </div>
-
-    <h2>
-      Let’s Work Together
-    </h2>
-
-    <p>
-      Open to collaboration, creative opportunities,
-      photography work, and meaningful conversation.
-    </p>
-
-    <a href="contact.html" class="btn connect-btn">
-      Contact Me
-    </a>
-
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-
-    <p>
-      © 2026 Jonny Calderon
-    </p>
-
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-
-    /* =========================
-       CURSOR GLOW
-    ========================= */
-
-    document.addEventListener("mousemove", (e) => {
-
-      document.documentElement.style.setProperty(
-        "--x",
-        e.clientX + "px"
-      );
-
-      document.documentElement.style.setProperty(
-        "--y",
-        e.clientY + "px"
-      );
-
-    });
-
-    /* =========================
-       NAVBAR SCROLL EFFECT
-    ========================= */
-
-    window.addEventListener("scroll", () => {
-
-      document
-        .querySelector("nav")
-        .classList.toggle(
-          "scrolled",
-          window.scrollY > 20
-        );
-
-    });
-
-    /* =========================
-       PAGE TRANSITION
-    ========================= */
-
-    window.addEventListener("load", () => {
-
-      const transition =
-        document.querySelector(".page-transition");
-
-      if (transition) {
-        transition.classList.add("hide");
-      }
-
-    });
-
-  </script>
+<footer>
+  © 2026 Jonny Calderon
+</footer>
 
 </body>
-
 </html>
-```
-
-
