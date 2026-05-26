@@ -4,37 +4,22 @@
 <head>
 
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Contact | Jonny Calderon</title>
 
-  <!-- SEO -->
-  <meta
-    name="description"
-    content="Contact Jonny Calderon for collaborations, creative work, photography, and professional opportunities."
-  />
+  <meta name="description" content="Contact Jonny Calderon for collaborations, creative work, photography, and opportunities." />
 
-  <!-- THEME -->
   <meta name="theme-color" content="#040816" />
 
-  <!-- STYLES -->
   <link rel="stylesheet" href="styles.css">
 
-  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
@@ -44,7 +29,7 @@
   <nav>
 
     <a href="index.html" class="logo">
-      <img src="gjc.png" alt="Jonny Calderon Logo">
+      <img src="gjc.png" alt="Logo">
     </a>
 
     <ul>
@@ -56,7 +41,7 @@
 
   </nav>
 
-  <!-- CONTACT -->
+  <!-- CONTACT SECTION -->
   <section class="contact-section">
 
     <div class="aurora aurora-1"></div>
@@ -64,17 +49,10 @@
 
     <div class="contact-box">
 
-      <!-- HEADER -->
       <div class="contact-header">
-
         <h2>Let’s Connect</h2>
-
         <div class="contact-line"></div>
-
-        <p>
-          Whether you want to collaborate, ask a question, or work together — I’d love to hear from you.
-        </p>
-
+        <p>Send a message and I’ll respond as soon as possible.</p>
       </div>
 
       <!-- CONTACT INFO -->
@@ -104,41 +82,23 @@
 
       <!-- FORM -->
       <form
+        id="contactForm"
         action="https://formspree.io/f/mbjpalvn"
         method="POST"
         class="contact-form"
       >
 
-        <!-- ✅ FIXED REDIRECT (THIS IS THE IMPORTANT PART) -->
-      <input type="hidden" name="_next" value="success.html">
-
-        <!-- SUBJECT -->
-        <input
-          type="hidden"
-          name="_subject"
-          value="New Portfolio Contact Message"
-        >
-
         <!-- NAME -->
-        <div class="input-group">
-          <label>Your Name</label>
-          <input type="text" name="name" required>
-        </div>
+        <input type="text" name="name" placeholder="Your Name" required>
 
         <!-- EMAIL -->
-        <div class="input-group">
-          <label>Email Address</label>
-          <input type="email" name="email" required>
-        </div>
+        <input type="email" name="email" placeholder="Your Email" required>
 
         <!-- MESSAGE -->
-        <div class="input-group">
-          <label>Message</label>
-          <textarea name="message" rows="7" required></textarea>
-        </div>
+        <textarea name="message" rows="7" placeholder="Your Message" required></textarea>
 
-        <!-- SUBMIT -->
-        <button type="submit">
+        <!-- BUTTON -->
+        <button type="submit" id="submitBtn">
           Send Message
           <i class="fa-solid fa-arrow-right"></i>
         </button>
@@ -154,13 +114,42 @@
     © 2026 Jonny Calderon
   </footer>
 
-  <!-- NAV SCRIPT -->
+  <!-- FREE REDIRECT SCRIPT -->
   <script>
-    window.addEventListener("scroll", () => {
-      document.querySelector("nav")
-        .classList.toggle("scrolled", window.scrollY > 20);
+    const form = document.getElementById("contactForm");
+    const btn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      btn.disabled = true;
+      btn.innerHTML = "Sending...";
+
+      const formData = new FormData(form);
+
+      try {
+        const res = await fetch("https://formspree.io/f/mbjpalvn", {
+          method: "POST",
+          body: formData,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        if (res.ok) {
+          window.location.href = "success.html";
+        } else {
+          btn.innerHTML = "Try Again";
+          btn.disabled = false;
+        }
+
+      } catch (error) {
+        btn.innerHTML = "Error - Try Again";
+        btn.disabled = false;
+      }
     });
   </script>
 
 </body>
+
 </html>
