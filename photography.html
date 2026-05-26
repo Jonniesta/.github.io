@@ -22,23 +22,30 @@
   </ul>
 </nav>
 
-<section>
+<section class="reveal">
+  <h1>Photography</h1>
+  <p>Captured moments and visual storytelling.</p>
+</section>
 
-  <h2>Photography</h2>
+<section class="gallery">
 
-  <div class="gallery">
-
-    <img loading="lazy" src="Daboi copy.JPG" class="gallery-img">
-    <img loading="lazy" src="aquaplant copy.JPG" class="gallery-img">
-    <img loading="lazy" src="daboilook copy.JPG" class="gallery-img">
-    <img loading="lazy" src="dafish copy.JPG" class="gallery-img">
-    <img loading="lazy" src="Hannah copy.JPG" class="gallery-img">
-
-  </div>
+  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="Daboi copy.JPG">
+  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="aquaplant copy.JPG">
+  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="daboilook copy.JPG">
+  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="dafish copy.JPG">
+  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="Hannah copy.JPG">
 
 </section>
 
+<!-- MODAL -->
+<div class="modal" onclick="closeModal()">
+  <img>
+</div>
+
 <footer>© 2026 Jonny Calderon</footer>
+
+<script src="app.js"></script>
+<div class="cat-loader"></div>
 
 </body>
 </html>
