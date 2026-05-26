@@ -3,15 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photography</title>
+
+  <title>Photography | Jonny Calderon</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- =========================
+     NAVIGATION
+========================= -->
 <nav>
+
   <div class="logo">
-    <img src="gjc.png">
+    <img src="gjc.png" alt="Jonny Calderon Logo">
   </div>
 
   <ul>
@@ -20,32 +26,230 @@
     <li><a class="active" href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+
 </nav>
 
-<section class="reveal">
-  <h1>Photography</h1>
-  <p>Captured moments and visual storytelling.</p>
+<!-- =========================
+     HERO
+========================= -->
+<section class="photo-hero">
+
+  <!-- background glow -->
+  <div class="photo-glow"></div>
+
+  <div class="photo-hero-content reveal">
+
+    <span class="section-tag">
+      PHOTOGRAPHY
+    </span>
+
+    <h1>
+      Cinematic Visual Storytelling
+    </h1>
+
+    <p>
+      Capturing emotion, atmosphere,
+      and meaningful moments through light,
+      color, and perspective.
+    </p>
+
+  </div>
+
 </section>
 
-<section class="gallery">
+<!-- =========================
+     GALLERY
+========================= -->
+<section class="photo-section">
 
-  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="Daboi copy.JPG">
-  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="aquaplant copy.JPG">
-  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="daboilook copy.JPG">
-  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="dafish copy.JPG">
-  <img loading="lazy" class="gallery-img reveal" onclick="openModal(this.src)" src="Hannah copy.JPG">
+  <div class="gallery">
+
+    <!-- IMAGE -->
+    <div class="photo-card reveal">
+      <img
+        loading="lazy"
+        class="gallery-img"
+        onclick="openModal(this.src)"
+        src="Daboi copy.JPG"
+        alt="Photography 1"
+      >
+
+      <div class="photo-overlay">
+        <h3>
+          Quiet Presence
+        </h3>
+
+        <p>
+          Natural portrait composition
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="photo-card reveal">
+      <img
+        loading="lazy"
+        class="gallery-img"
+        onclick="openModal(this.src)"
+        src="aquaplant copy.JPG"
+        alt="Photography 2"
+      >
+
+      <div class="photo-overlay">
+        <h3>
+          Still Life
+        </h3>
+
+        <p>
+          Texture and atmosphere
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="photo-card reveal">
+      <img
+        loading="lazy"
+        class="gallery-img"
+        onclick="openModal(this.src)"
+        src="daboilook copy.JPG"
+        alt="Photography 3"
+      >
+
+      <div class="photo-overlay">
+        <h3>
+          Expression
+        </h3>
+
+        <p>
+          Cinematic lighting study
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="photo-card reveal">
+      <img
+        loading="lazy"
+        class="gallery-img"
+        onclick="openModal(this.src)"
+        src="dafish copy.JPG"
+        alt="Photography 4"
+      >
+
+      <div class="photo-overlay">
+        <h3>
+          Motion
+        </h3>
+
+        <p>
+          Visual storytelling through movement
+        </p>
+      </div>
+    </div>
+
+    <!-- IMAGE -->
+    <div class="photo-card reveal">
+      <img
+        loading="lazy"
+        class="gallery-img"
+        onclick="openModal(this.src)"
+        src="Hannah copy.JPG"
+        alt="Photography 5"
+      >
+
+      <div class="photo-overlay">
+        <h3>
+          Connection
+        </h3>
+
+        <p>
+          Emotion and human presence
+        </p>
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
-<!-- MODAL -->
-<div class="modal" onclick="closeModal()">
-  <img>
+<!-- =========================
+     MODAL
+========================= -->
+<div class="modal" id="modal" onclick="closeModal()">
+
+  <span class="close-modal">
+    ×
+  </span>
+
+  <img id="modal-img">
+
 </div>
 
-<footer>© 2026 Jonny Calderon</footer>
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
 
-<script src="app.js"></script>
-<div class="cat-loader"></div>
+  <p>
+    © 2026 Jonny Calderon
+  </p>
+
+</footer>
+
+<!-- =========================
+     SCRIPTS
+========================= -->
+<script>
+
+  /* =========================
+     REVEAL ANIMATION
+  ========================= */
+
+  const reveals = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+
+    });
+
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(el => {
+    observer.observe(el);
+  });
+
+  /* =========================
+     MODAL
+  ========================= */
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+
+  function openModal(src) {
+
+    modal.classList.add("active");
+
+    modalImg.src = src;
+
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "auto";
+  }
+
+</script>
 
 </body>
 </html>
