@@ -493,6 +493,222 @@ button {
   cursor: pointer;
 }
 
+/* =========================
+   LOADING OVERLAY
+========================= */
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 22, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   CAT + TRAIL WRAPPER
+========================= */
+
+.cat-loader {
+  position: relative;
+  width: 260px;
+  height: 120px;
+}
+
+/* =========================
+   WALKING BLACK CAT
+========================= */
+
+.cat {
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+
+  width: 60px;
+  height: 40px;
+
+  background: #0b0f1a;
+  border-radius: 20px;
+
+  box-shadow:
+    0 0 20px rgba(0,0,0,0.8),
+    0 0 30px rgba(125,255,138,0.15);
+
+  animation: catWalk 2s infinite linear;
+}
+
+/* head */
+.cat::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: -10px;
+
+  width: 28px;
+  height: 28px;
+
+  background: #0b0f1a;
+  border-radius: 50%;
+
+  box-shadow: inset 0 0 0 2px rgba(125,255,138,0.08);
+}
+
+/* tail */
+.cat::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: 8px;
+
+  width: 28px;
+  height: 6px;
+
+  background: #0b0f1a;
+  border-radius: 10px;
+
+  transform-origin: left center;
+  animation: tailWag 0.6s infinite ease-in-out;
+}
+
+/* walking motion */
+@keyframes catWalk {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(180px);
+  }
+}
+
+/* tail wiggle */
+@keyframes tailWag {
+  0%, 100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+}
+
+/* =========================
+   PAW TRAILS
+========================= */
+
+.paw-trail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+/* base paw */
+.paw {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+
+  background: #7DFF8A;
+  border-radius: 50%;
+
+  opacity: 0;
+  transform: scale(0.6);
+
+  box-shadow: 0 0 18px rgba(125,255,138,0.25);
+
+  animation: pawAppear 2s infinite;
+}
+
+/* toe pads */
+.paw::before,
+.paw::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 10px;
+  background: #7DFF8A;
+  border-radius: 50%;
+  top: -10px;
+}
+
+.paw::before {
+  left: -6px;
+}
+
+.paw::after {
+  right: -6px;
+}
+
+/* paw positions along path */
+.paw:nth-child(1) {
+  left: 10px;
+  animation-delay: 0s;
+}
+
+.paw:nth-child(2) {
+  left: 60px;
+  animation-delay: 0.4s;
+}
+
+.paw:nth-child(3) {
+  left: 110px;
+  animation-delay: 0.8s;
+}
+
+.paw:nth-child(4) {
+  left: 160px;
+  animation-delay: 1.2s;
+}
+
+.paw:nth-child(5) {
+  left: 210px;
+  animation-delay: 1.6s;
+}
+
+/* fade in/out trail effect */
+@keyframes pawAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1) translateY(-4px);
+  }
+  60% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.6) translateY(0);
+  }
+}
+
+/* =========================
+   LOADING TEXT
+========================= */
+
+.loading-overlay p {
+  color: #A8FFAE;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 1.05rem;
+  text-shadow: 0 0 20px rgba(125,255,138,0.15);
+}
 
 /* =========================
    SUCCESS PAGE
