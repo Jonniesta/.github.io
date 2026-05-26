@@ -163,7 +163,7 @@ nav a.active {
 }
 
 .btn:hover {
-  background: var(--blue-light);
+  background: rgba(2, 28, 37, 0.85);
 
   transform: translateY(-2px);
 }
