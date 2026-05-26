@@ -40,7 +40,7 @@ body {
   }
 }
 
-/* Container class for consistent width */
+/* Container for consistent width */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -57,7 +57,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px); /* optional blur effect for background */
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -79,9 +79,6 @@ body {
   height: 50px;
   background-color: #ccc; /* Placeholder color, replace with logo image if available */
   border-radius: 50%;
-  /* Optional: add background-image instead of color */
-  /* background-image: url('logo.png'); */
-  /* background-size: cover; */
   margin-right: 10px;
 }
 
@@ -89,10 +86,10 @@ body {
 .nav-title {
   font-size: 1.5em;
   font-weight: bold;
-  color: #fff; /* ensure text is visible over background */
+  color: #fff;
 }
 
-/* Navigation links styles */
+/* Navigation links styles with vibrant colors */
 .nav-links {
   display: flex;
   gap: 20px;
@@ -100,16 +97,17 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: #fff;
-  font-weight: 600;
   padding: 8px 12px;
-  transition: color 0.2s, background-color 0.2s;
+  font-weight: 600;
+  transition: color 0.3s, background-color 0.3s, transform 0.2s;
+  border-radius: 4px;
 }
 
+/* Hover effects with bright, complementary colors */
 .nav-links a:hover {
-  color: #00ffff;
+  color: #00ffff; /* cyan for hover */
   background-color: rgba(0, 255, 255, 0.2);
-  border-radius: 4px;
+  transform: scale(1.05);
 }
 
 /* Landing section styles */
@@ -171,6 +169,23 @@ footer {
   font-size: 0.9em;
   color: #fff;
   border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Buttons - styled to match the theme */
+button {
+  background: linear-gradient(135deg, #00f, #0ff);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0ff, #00f);
+  transform: scale(1.05);
 }
 
 /* Responsive adjustments */
