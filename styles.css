@@ -761,6 +761,7 @@ section p {
 ========================= */
 
 .contact-section {
+
   position: relative;
 
   min-height: 100vh;
@@ -777,7 +778,7 @@ section p {
 }
 
 /* =========================
-   CONTACT CARD
+   CONTACT BOX
 ========================= */
 
 .contact-box {
@@ -791,25 +792,22 @@ section p {
 
   border-radius: 34px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(16, 24, 40, 0.96),
-      rgba(10, 18, 30, 0.94)
-    );
+  background: #0B1423;
 
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(125,255,138,0.08);
 
   backdrop-filter: blur(24px);
 
   box-shadow:
     0 30px 80px rgba(0,0,0,0.55),
-    0 0 60px rgba(125,255,138,0.04);
+    0 0 40px rgba(125,255,138,0.05);
 
   overflow: hidden;
 }
 
-/* glow border */
+/* =========================
+   GLOW BORDER
+========================= */
 
 .contact-box::before {
 
@@ -819,13 +817,14 @@ section p {
   inset: 0;
 
   border-radius: inherit;
+
   padding: 1px;
 
   background:
     linear-gradient(
       135deg,
-      rgba(125,255,138,0.22),
-      rgba(176,92,255,0.18),
+      rgba(125,255,138,0.16),
+      rgba(176,92,255,0.14),
       transparent 70%
     );
 
@@ -871,7 +870,7 @@ section p {
   margin-bottom: 24px;
 }
 
-.contact-box h1 {
+.contact-box h2 {
 
   font-size: clamp(2.8rem, 6vw, 4.2rem);
 
@@ -915,7 +914,7 @@ section p {
 }
 
 /* =========================
-   QUICK ACTIONS
+   CONTACT CARDS
 ========================= */
 
 .contact-actions {
@@ -929,6 +928,13 @@ section p {
   margin-bottom: 36px;
 }
 
+.contact-actions a {
+
+  text-decoration: none !important;
+
+  color: inherit !important;
+}
+
 .contact-card {
 
   display: flex;
@@ -940,8 +946,6 @@ section p {
 
   border-radius: 22px;
 
-  text-decoration: none;
-
   background:
     linear-gradient(
       180deg,
@@ -952,6 +956,10 @@ section p {
   border: 1px solid rgba(255,255,255,0.06);
 
   transition: 0.35s ease;
+
+  text-decoration: none;
+
+  color: inherit;
 }
 
 .contact-card:hover {
@@ -969,6 +977,10 @@ section p {
 
   box-shadow:
     0 16px 40px rgba(0,0,0,0.35);
+}
+
+.contact-card * {
+  text-decoration: none !important;
 }
 
 .contact-icon {
@@ -991,23 +1003,35 @@ section p {
 
   color: white;
 
-  font-size: 1.15rem;
-
   flex-shrink: 0;
+}
+
+.contact-icon i {
+
+  font-size: 1.1rem;
+
+  color: white;
+}
+
+.contact-card div:last-child {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .contact-card h3 {
 
-  color: white;
+  color: #F5F9FF;
 
   font-size: 1rem;
 
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
 .contact-card span {
 
-  color: #8FA5BC;
+  color: #9FB3C8;
 
   font-size: 0.95rem;
 }
@@ -1019,9 +1043,12 @@ section p {
 .social-links {
 
   display: flex;
+
   gap: 18px;
 
   margin-bottom: 42px;
+
+  flex-wrap: wrap;
 }
 
 .social-links a {
@@ -1070,10 +1097,11 @@ section p {
 }
 
 /* =========================
-   INPUT GROUP
+   INPUT GROUPS
 ========================= */
 
 .input-group {
+
   display: flex;
   flex-direction: column;
 }
@@ -1097,12 +1125,7 @@ textarea {
 
   width: 100%;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.02)
-    );
+  background: #111C2D;
 
   border: 1px solid rgba(255,255,255,0.08);
 
@@ -1115,8 +1138,6 @@ textarea {
   font-size: 1rem;
 
   transition: 0.3s ease;
-
-  backdrop-filter: blur(12px);
 }
 
 input::placeholder,
@@ -1138,12 +1159,7 @@ textarea:focus {
 
   border-color: rgba(125,255,138,0.45);
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(125,255,138,0.04),
-      rgba(255,255,255,0.02)
-    );
+  background: #132034;
 
   box-shadow:
     0 0 0 4px rgba(125,255,138,0.08),
@@ -1220,11 +1236,13 @@ textarea {
 @media (max-width: 768px) {
 
   .contact-box {
+
     padding: 42px 24px;
+
     border-radius: 28px;
   }
 
-  .contact-box h1 {
+  .contact-box h2 {
     font-size: 2.5rem;
   }
 
@@ -1237,8 +1255,14 @@ textarea {
   }
 
   .social-links a {
+
     width: 100%;
+
     justify-content: center;
+  }
+
+  .contact-card {
+    padding: 18px;
   }
 }
 /* =========================
