@@ -3,7 +3,6 @@
 /* =========================
    ROOT
 ========================= */
-
 :root {
   --bg:#040816;
   --surface:#0A1322;
@@ -16,14 +15,12 @@
   --muted:#91A3B7;
 
   --border:rgba(255,255,255,0.08);
-
   --radius:20px;
 }
 
 /* =========================
    RESET
 ========================= */
-
 * {
   margin:0;
   padding:0;
@@ -40,45 +37,42 @@ body {
   color: var(--text);
   overflow-x:hidden;
   min-height:100vh;
+  position:relative;
 }
-/* =========================
-   STAR FIELD
-========================= */
 
+/* =========================
+   AURORA + STAR FIELD
+========================= */
 body::before {
   content:"";
   position:fixed;
   inset:0;
-  background-image:
+  background:
+    radial-gradient(circle at 15% 20%, rgba(176,92,255,0.18), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(125,255,138,0.12), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(105,183,255,0.10), transparent 45%),
     radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px);
-  background-size:180px 180px;
-  opacity:0.08;
+  background-size: auto, auto, auto, 160px 160px;
+  opacity:0.12;
+  filter: blur(70px);
   pointer-events:none;
-  z-index:-3;
+  z-index:-2;
 }
-
-/* =========================
-   GLOBAL GLOW (AURORA LIGHT)
-========================= */
 
 body::after {
   content:"";
   position:fixed;
   inset:0;
-
-  background:
-    radial-gradient(circle at 20% 20%, rgba(176,92,255,0.10), transparent 35%),
-    radial-gradient(circle at 80% 70%, rgba(125,255,138,0.08), transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(80,180,255,0.06), transparent 45%);
-
-  filter: blur(90px);
+  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 160px 160px;
+  opacity:0.06;
   pointer-events:none;
-  z-index:-2;
+  z-index:-3;
 }
+
 /* =========================
    NAV
 ========================= */
-
 nav {
   position:fixed;
   top:0;
@@ -101,19 +95,40 @@ nav ul {
 }
 
 nav a {
-  color:var(--text);
-  text-decoration:none;
-  font-weight:600;
-  transition:0.2s ease;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 600;
+  position: relative;
+  padding: 6px 2px;
+  transition: 0.3s ease;
 }
 
-nav a:hover,
-nav a.active {
-  color:var(--green);
+/* hover */
+nav a:hover {
+  color: var(--green);
+  text-shadow: 0 0 12px rgba(125,255,138,0.35);
+}
+
+/* underline */
+nav a::after {
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  border-radius:999px;
+  background: linear-gradient(90deg, var(--green), var(--purple));
+  transition:0.35s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width:100%;
 }
 
 /* LOGO */
-
 .logo img {
   width:55px;
   height:55px;
@@ -121,126 +136,10 @@ nav a.active {
   object-fit:cover;
   border:2px solid rgba(125,255,138,0.25);
 }
-/* =========================
-   NAV LINKS (UPGRADED)
-========================= */
 
-nav a {
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.98rem;
-  font-weight: 600;
-  position: relative;
-  transition: 0.3s ease;
-  padding: 6px 2px;
-}
-
-/* hover glow */
-nav a:hover {
-  color: var(--green);
-  text-shadow: 0 0 12px rgba(125,255,138,0.35);
-}
-
-/* underline animation */
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0%;
-  height: 2px;
-  border-radius: 999px;
-
-  background: linear-gradient(90deg, var(--green), var(--purple));
-  transition: 0.35s ease;
-}
-
-/* hover + active underline */
-nav a:hover::after,
-nav a.active {
-  color: var(--green);
-  text-shadow: 0 0 14px rgba(125,255,138,0.45);
-}
-}
 /* =========================
    HERO
 ========================= */
-/* =========================
-   AURORA GLOBAL BACKGROUND
-========================= */
-
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 15% 20%, rgba(176,92,255,0.18), transparent 40%),
-    radial-gradient(circle at 85% 30%, rgba(125,255,138,0.12), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(105,183,255,0.10), transparent 45%);
-  filter: blur(70px);
-  z-index:-2;
-  pointer-events:none;
-}
-
-body::after {
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-  background-size: 160px 160px;
-  opacity:0.06;
-  z-index:-3;
-  pointer-events:none;
-}
-
-/* =========================
-   GLASS UTILITY
-========================= */
-
-.glass {
-  background: rgba(10, 19, 34, 0.65);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 20px;
-}
-
-/* =========================
-   MODAL SYSTEM (GLOBAL)
-========================= */
-
-.modal {
-  position:fixed;
-  inset:0;
-  background: rgba(0,0,0,0.85);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  opacity:0;
-  pointer-events:none;
-  transition:0.25s ease;
-  z-index:2000;
-}
-
-.modal.active {
-  opacity:1;
-  pointer-events:auto;
-}
-
-.modal img {
-  max-width:90%;
-  max-height:85%;
-  border-radius:18px;
-  box-shadow:0 30px 80px rgba(0,0,0,0.6);
-}
-
-.close {
-  position:absolute;
-  top:20px;
-  right:30px;
-  font-size:2rem;
-  color:white;
-  cursor:pointer;
-}
 .hero {
   min-height:100vh;
   display:flex;
@@ -266,7 +165,6 @@ body::after {
 /* =========================
    BUTTON
 ========================= */
-
 .btn {
   display:inline-block;
   margin-top:16px;
@@ -286,7 +184,6 @@ body::after {
 /* =========================
    SECTIONS
 ========================= */
-
 section {
   padding:100px 20px;
 }
@@ -299,7 +196,6 @@ h2 {
 /* =========================
    PROJECTS
 ========================= */
-
 .projects {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -329,9 +225,8 @@ h2 {
 }
 
 /* =========================
-   GALLERY (FAST + CLEAN)
+   GALLERY
 ========================= */
-
 .gallery {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -345,7 +240,6 @@ h2 {
   border-radius:14px;
   cursor:pointer;
   transition:0.2s ease;
-  will-change:transform;
 }
 
 .gallery-img:hover {
@@ -355,7 +249,6 @@ h2 {
 /* =========================
    CONTACT
 ========================= */
-
 .contact-section {
   min-height:100vh;
   display:flex;
@@ -392,7 +285,6 @@ textarea {
   min-height:140px;
 }
 
-/* BUTTON IN FORM */
 button {
   padding:14px;
   border:none;
@@ -403,9 +295,36 @@ button {
 }
 
 /* =========================
+   MODAL
+========================= */
+.modal {
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.25s ease;
+  z-index:2000;
+}
+
+.modal.active {
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modal img {
+  max-width:90%;
+  max-height:85%;
+  border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* =========================
    SUCCESS PAGE
 ========================= */
-
 .success-box {
   max-width:650px;
   margin:auto;
@@ -420,79 +339,9 @@ button {
   font-size:2.5rem;
 }
 
-/* CAT ANIMATION */
-.success-animation {
-  position:fixed;
-  bottom:0;
-  width:100%;
-  height:120px;
-  pointer-events:none;
-}
-
-/* CAT */
-.success-cat {
-  position:absolute;
-  bottom:20px;
-  left:-80px;
-  width:60px;
-  height:40px;
-  background:#000;
-  border-radius:20px;
-  animation:run 4s linear forwards;
-}
-
-@keyframes run {
-  to { left:110%; }
-}
-
-/* PAWS */
-.success-paw {
-  position:absolute;
-  width:10px;
-  height:10px;
-  background:var(--green);
-  border-radius:50%;
-  opacity:0;
-  animation:paw 4s ease forwards;
-}
-
-@keyframes paw {
-  0% {opacity:0;}
-  50% {opacity:1;}
-  100% {opacity:0.3;}
-}
-
-.success-paw:nth-child(1){ left:10%; animation-delay:0.2s; }
-.success-paw:nth-child(2){ left:30%; animation-delay:0.6s; }
-.success-paw:nth-child(3){ left:50%; animation-delay:1s; }
-.success-paw:nth-child(4){ left:70%; animation-delay:1.4s; }
-.success-paw:nth-child(5){ left:85%; animation-delay:1.8s; }
-
-/* CAT TEXT */
-.cat-bubble {
-  position:absolute;
-  bottom:80px;
-  left:20px;
-  background:var(--surface);
-  border:1px solid rgba(125,255,138,0.3);
-  padding:8px 12px;
-  border-radius:12px;
-  color:var(--green);
-  font-weight:600;
-  animation:bubble 4s ease forwards;
-}
-
-@keyframes bubble {
-  0% {opacity:0; transform:translateY(10px);}
-  20% {opacity:1;}
-  80% {opacity:1;}
-  100% {opacity:0;}
-}
-
 /* =========================
    FOOTER
 ========================= */
-
 footer {
   text-align:center;
   padding:40px;
@@ -502,7 +351,6 @@ footer {
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width:768px) {
   nav {
     padding:14px 20px;
