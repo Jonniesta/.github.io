@@ -2,255 +2,155 @@
 // NAVBAR SCROLL EFFECT
 // =========================
 
-const navbar =
-  document.getElementById("navbar");
+const navbar = document.getElementById("navbar");
 
 window.addEventListener("scroll", () => {
-
   if (navbar) {
-
-    navbar.classList.toggle(
-      "scrolled",
-      window.scrollY > 40
-    );
-
+    navbar.classList.toggle("scrolled", window.scrollY > 40);
   }
-
 });
 
 // =========================
-// SCROLL REVEAL ANIMATION
+// MOBILE MENU
 // =========================
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
 
-const revealObserver =
-  new IntersectionObserver(
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
 
-    (entries) => {
+    menuToggle.textContent =
+      navMenu.classList.contains("show") ? "✕" : "☰";
+  });
 
-      entries.forEach((entry) => {
+  navMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+      menuToggle.textContent = "☰";
+    });
+  });
+}
 
-        if (entry.isIntersecting) {
+// =========================
+// SCROLL REVEAL
+// =========================
 
-          entry.target.classList.add("show");
+const revealElements = document.querySelectorAll(".reveal");
 
-        }
-
-      });
-
-    },
-
-    {
-      threshold: 0.15
-    }
-
+const revealObserver = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
 );
 
-revealElements.forEach((element) => {
-
+revealElements.forEach(element => {
   revealObserver.observe(element);
-
 });
 
 // =========================
 // CONTACT FORM AJAX
 // =========================
 
-const form =
-  document.getElementById("contact-form");
-
-const successMessage =
-  document.getElementById("success-message");
+const form = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
 
 if (successMessage) {
-
   successMessage.style.display = "none";
-
 }
 
 if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  form.addEventListener(
+    const formData = new FormData(form);
 
-    "submit",
-
-    async (e) => {
-
-      e.preventDefault();
-
-      const formData =
-        new FormData(form);
-
-      try {
-
-        const response = await fetch(
-
-          "https://formspree.io/f/mbjpalvn",
-
-          {
-            method: "POST",
-
-            body: formData,
-
-            headers: {
-              Accept: "application/json"
-            }
-
+    try {
+      const response = await fetch(
+        "https://formspree.io/f/mbjpalvn",
+        {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
           }
+        }
+      );
 
-        );
+      if (response.ok) {
+        form.reset();
+        form.style.display = "none";
 
-        if (response.ok) {
-
-          // RESET FORM
-
-          form.reset();
-
-          // HIDE FORM
-
-          form.style.display = "none";
-
-          // SHOW SUCCESS MESSAGE
-
-          if (successMessage) {
-
-            successMessage.style.display = "block";
-
-            successMessage.scrollIntoView({
-              behavior: "smooth"
-            });
-
-          }
-
-          // OPTIONAL:
-          // redirect after 2 seconds
-
-          setTimeout(() => {
-
-            window.location.href =
-              "success.html";
-
-          }, 2000);
-
-        } else {
-
-          alert(
-            "Something went wrong. Please try again."
-          );
-
+        if (successMessage) {
+          successMessage.style.display = "block";
         }
 
-      } catch (error) {
+        setTimeout(() => {
+          window.location.href = "success.html";
+        }, 1500);
 
-        alert(
-          "Network error. Please try again."
-        );
-
+      } else {
+        alert("Something went wrong. Please try again.");
       }
 
+    } catch (error) {
+      alert("Network error. Please try again.");
     }
-
-  );
-
+  });
 }
 
 // =========================
 // PHOTO MODAL
 // =========================
 
-const modal =
-  document.getElementById("imageModal");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const galleryImages = document.querySelectorAll(".gallery-img");
+const closeBtn = document.querySelector(".close");
 
-const modalImg =
-  document.getElementById("modalImg");
-
-const galleryImages =
-  document.querySelectorAll(".gallery-img");
-
-const closeBtn =
-  document.querySelector(".close");
-
-if (
-  modal &&
-  modalImg &&
-  galleryImages.length > 0
-) {
-
-  galleryImages.forEach((img) => {
-
+if (modal && modalImg && galleryImages.length > 0) {
+  galleryImages.forEach(img => {
     img.addEventListener("click", () => {
-
       modal.classList.add("active");
-
       modalImg.src = img.src;
-
-      document.body.classList.add(
-        "modal-open"
-      );
-
+      document.body.classList.add("modal-open");
     });
-
   });
-
 }
 
-if (closeBtn && modal) {
-
-  closeBtn.addEventListener("click", () => {
-
+function closeModal() {
+  if (modal) {
     modal.classList.remove("active");
+    document.body.classList.remove("modal-open");
+  }
+}
 
-    document.body.classList.remove(
-      "modal-open"
-    );
-
-  });
-
+if (closeBtn) {
+  closeBtn.addEventListener("click", closeModal);
 }
 
 if (modal) {
-
   modal.addEventListener("click", (e) => {
-
     if (e.target === modal) {
-
-      modal.classList.remove("active");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-
+      closeModal();
     }
-
   });
-
 }
 
-// =========================
-// ESC KEY CLOSE MODAL
-// =========================
-
-document.addEventListener(
-  "keydown",
-
-  (e) => {
-
-    if (
-      e.key === "Escape" &&
-      modal &&
-      modal.classList.contains("active")
-    ) {
-
-      modal.classList.remove("active");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-
-    }
-
+document.addEventListener("keydown", (e) => {
+  if (
+    e.key === "Escape" &&
+    modal &&
+    modal.classList.contains("active")
+  ) {
+    closeModal();
   }
-
-);
+});
