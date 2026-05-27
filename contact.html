@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -39,7 +40,7 @@
 </nav>
 
 <!-- =========================
-     CONTACT
+     CONTACT SECTION
 ========================= -->
 
 <section class="contact-section">
@@ -58,7 +59,7 @@
       feel free to reach out.
     </p>
 
-    <!-- CONTACT BUTTONS -->
+    <!-- CONTACT LINKS -->
 
     <div class="contact-info">
 
@@ -84,7 +85,7 @@
         💼 LinkedIn
       </a>
 
-      <a href="https://github.com/yourusername" target="_blank">
+      <a href="https://github.com/Jonniesta" target="_blank">
         💻 GitHub
       </a>
 
@@ -94,16 +95,11 @@
 
     </div>
 
-    <!-- FORM -->
+    <!-- =========================
+         CONTACT FORM
+    ========================= -->
 
-    <form action="https://formspree.io/f/mbjpalvn" method="POST">
-
-      <!-- SUCCESS REDIRECT -->
-      <input
-        type="hidden"
-        name="_next"
-        value="https://jonnycjonnydo.com/success.html"
-      >
+    <form id="contact-form">
 
       <input
         type="text"
@@ -132,6 +128,21 @@
 
     </form>
 
+    <!-- SUCCESS MESSAGE -->
+
+    <div id="success-message">
+
+      <h3>
+        ✅ Message Sent Successfully
+      </h3>
+
+      <p>
+        Thank you for reaching out.
+        I’ll get back to you as soon as possible.
+      </p>
+
+    </div>
+
   </div>
 
 </section>
@@ -147,4 +158,5 @@
 <script src="app.js"></script>
 
 </body>
+
 </html>
