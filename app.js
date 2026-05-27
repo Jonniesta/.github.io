@@ -154,3 +154,23 @@ document.addEventListener("keydown", (e) => {
     closeModal();
   }
 });
+
+const phonePopupBtn = document.getElementById("phone-popup-btn");
+const phonePopup = document.getElementById("phone-popup");
+const phonePopupClose = document.getElementById("phone-popup-close");
+
+if (phonePopupBtn && phonePopup && phonePopupClose) {
+  phonePopupBtn.addEventListener("click", () => {
+    phonePopup.classList.add("show");
+  });
+
+  phonePopupClose.addEventListener("click", () => {
+    phonePopup.classList.remove("show");
+  });
+
+  phonePopup.addEventListener("click", (e) => {
+    if (e.target === phonePopup) {
+      phonePopup.classList.remove("show");
+    }
+  });
+}
