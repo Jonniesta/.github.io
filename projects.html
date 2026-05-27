@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,75 +8,111 @@
   <title>Projects | Jonny Calderon</title>
 
   <link rel="stylesheet" href="styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="logo">
     <a href="index.html">
-      <img src="gjc.png" alt="JC">
+      <img src="logo.JPG" alt="JC Logo">
     </a>
   </div>
 
-  <ul>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+    ☰
+  </button>
+
+  <ul id="nav-menu">
+    <li><a href="index.html">Home</a></li>
     <li><a href="projects.html" class="active">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
-<section class="photo-header">
-  <h1>Projects</h1>
-  <p>Creative work, ideas, and personal growth projects.</p>
+<section class="page-header reveal">
+  <span class="section-label">Projects</span>
+
+  <h1>Creative Work</h1>
+
+  <p>
+    A collection of projects, ideas, and creative work connected to design,
+    photography, human services, and personal growth.
+  </p>
 </section>
 
-<section class="section">
+<section class="projects-section reveal">
 
   <div class="grid">
 
     <div class="card">
-      <img src="slate.jpg" alt="Portfolio Project">
+      <img src="slate.jpg" alt="Portfolio Website">
 
       <div class="card-content">
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Portfolio</span>
+        </div>
+
         <h3>Portfolio Website</h3>
 
         <p>
-          A fully custom personal portfolio built with HTML, CSS,
-          and modern UI styling.
+          A custom personal portfolio built with HTML, CSS,
+          modern styling, and interactive details.
         </p>
 
-        <a href="#" class="btn">View Project</a>
+        <a href="index.html" class="btn small-btn">View Project</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="slate1.jpg" alt="Photography Project">
+      <img src="slate1.jpg" alt="Photography Collection">
 
       <div class="card-content">
+        <div class="tags">
+          <span>Photography</span>
+          <span>Gallery</span>
+          <span>Visuals</span>
+        </div>
+
         <h3>Photography Collection</h3>
 
         <p>
-          A visual gallery focused on atmosphere, nature,
-          and storytelling.
+          A visual gallery focused on atmosphere, emotion,
+          storytelling, and meaningful moments.
         </p>
 
-        <a href="photography.html" class="btn">Open Gallery</a>
+        <a href="photography.html" class="btn small-btn">Open Gallery</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="me.png" alt="Mental Health Project">
+      <img src="me.png" alt="Human Services Journey">
 
       <div class="card-content">
+        <div class="tags">
+          <span>Psychology</span>
+          <span>Growth</span>
+          <span>Support</span>
+        </div>
+
         <h3>Human Services Journey</h3>
 
         <p>
-          Exploring psychology, empathy, and creating meaningful
-          support for others.
+          Exploring empathy, mental health, psychology,
+          and meaningful support for others.
         </p>
 
-        <a href="contact.html" class="btn">Connect</a>
+        <a href="contact.html" class="btn small-btn">Connect</a>
       </div>
     </div>
 
@@ -84,4 +121,10 @@
 </section>
 
 <footer>
+  © 2026 Jonny Calderon
+</footer>
+
+<script src="app.js"></script>
+
+</body>
 </html>
