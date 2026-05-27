@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Jonny Calderon | Portfolio</title>
 
   <link rel="stylesheet" href="styles.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
-<body>
+<body class="home-page">
 
 <nav id="navbar">
   <div class="logo">
     <a href="index.html">
-      <img src="gjc.png" alt="JC Logo">
+      <img src="logo.JPG" alt="JC Logo">
     </a>
   </div>
 
-  <ul>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+    ☰
+  </button>
+
+  <ul id="nav-menu">
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -29,7 +39,6 @@
 </nav>
 
 <section class="hero">
-
   <div class="stars"></div>
 
   <div class="aurora aurora-1"></div>
@@ -46,14 +55,19 @@
 
     <div class="hero-buttons">
       <a href="projects.html" class="btn">View My Work</a>
-      <a href="26 resume.pdf" class="btn btn-outline" target="_blank">View Resume</a>
+
+      <a
+        href="resume.pdf"
+        class="btn btn-outline"
+        download="Jonny-Calderon-Resume.pdf"
+      >
+        Download Resume
+      </a>
     </div>
   </div>
-
 </section>
 
 <section class="section reveal">
-
   <span class="section-label">Mission</span>
 
   <h2>Helping Others Feel Seen, Heard, and Valued</h2>
@@ -62,20 +76,16 @@
     I’m passionate about helping people grow, understand themselves,
     and build meaningful lives through empathy, creativity, and connection.
   </p>
-
 </section>
 
 <section class="quote-banner reveal">
-
   <h2>
     “My mission is to create spaces where people feel understood,
     supported, and encouraged to grow.”
   </h2>
-
 </section>
 
 <section class="section reveal">
-
   <span class="section-label">Featured</span>
 
   <h2>Featured Work</h2>
@@ -86,7 +96,7 @@
 
   <div class="grid">
 
-    <div class="card reveal">
+    <div class="card">
       <img src="slate.jpg" alt="Creative Work">
 
       <div class="card-content">
@@ -106,7 +116,7 @@
       </div>
     </div>
 
-    <div class="card reveal">
+    <div class="card">
       <img src="slate1.jpg" alt="Photography">
 
       <div class="card-content">
@@ -125,7 +135,7 @@
       </div>
     </div>
 
-    <div class="card reveal">
+    <div class="card">
       <img src="me.png" alt="Human Services">
 
       <div class="card-content">
@@ -146,11 +156,9 @@
     </div>
 
   </div>
-
 </section>
 
 <section class="section reveal">
-
   <span class="section-label">Connect</span>
 
   <h2>Let’s Work Together</h2>
@@ -162,7 +170,6 @@
   <div class="center-btn">
     <a href="contact.html" class="btn">Contact Me</a>
   </div>
-
 </section>
 
 <footer>
