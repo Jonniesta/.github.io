@@ -11,7 +11,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
@@ -21,19 +20,22 @@
 <body>
 
 <nav id="navbar">
-
   <div class="logo">
     <a href="index.html">
       <img src="logo.JPG" alt="JC Logo">
     </a>
   </div>
 
-  <ul>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+    ☰
+  </button>
+
+  <ul id="nav-menu">
+    <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
-
 </nav>
 
 <section class="hero">
@@ -47,10 +49,7 @@
 
   <div class="hero-content reveal">
 
-    <div class="woohoo-cat">
-      <img src="blackcat.png.png" alt="Black Cat">
-      <p>woohoo!</p>
-    </div>
+    <div class="success-icon">✅</div>
 
     <span class="section-label">Success</span>
 
@@ -67,7 +66,10 @@
       <a href="projects.html" class="btn btn-outline">View Projects</a>
     </div>
 
-
+    <div class="woohoo-cat">
+      <img src="blackcat.png" alt="Black Cat">
+      <p>woohoo!</p>
+    </div>
 
   </div>
 
