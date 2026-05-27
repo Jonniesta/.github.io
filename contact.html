@@ -9,10 +9,8 @@
 
   <link rel="stylesheet" href="styles.css">
 
-  <!-- GOOGLE FONT -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
@@ -21,29 +19,24 @@
 
 <body>
 
-<!-- =========================
-     NAVBAR
-========================= -->
-
 <nav id="navbar">
-
   <div class="logo">
     <a href="index.html">
-      <img src="gjc.png" alt="JC Logo">
+      <img src="logo.JPG" alt="JC Logo">
     </a>
   </div>
 
-  <ul>
+  <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">
+    ☰
+  </button>
+
+  <ul id="nav-menu">
+    <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
     <li><a href="photography.html">Photography</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
-
 </nav>
-
-<!-- =========================
-     CONTACT
-========================= -->
 
 <section class="contact-section">
 
@@ -58,40 +51,17 @@
       or simply connect — feel free to reach out.
     </p>
 
-    <!-- CONTACT LINKS -->
-
     <div class="contact-info">
-
-      <a href="mailto:jonniesta@gmail.com">
-         Email Me
-      </a>
-
-      <a href="tel:+13172134147">
-         Call / Text
-      </a>
-
+      <a href="mailto:jonniesta@gmail.com">📧 Email Me</a>
+      <a href="tel:+13172134147">📱 Call / Text</a>
     </div>
-
-    <!-- SOCIAL LINKS -->
 
     <div class="social-links">
-
-      <a href="https://www.teacherspayteachers.com/store/jonny-calderon" target="_blank">
-        Teachers Pay Teachers
-      </a>
-
-      <a href="https://linkedin.com/in/jonny-calderon" target="_blank">
-        LinkedIn
-      </a>
-
-      <a href="https://github.com/Jonniesta" target="_blank">
-        GitHub
-      </a>
-
-
+      <a href="https://instagram.com/yourusername" target="_blank">📸 Instagram</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">💼 LinkedIn</a>
+      <a href="https://github.com/Jonniesta" target="_blank">💻 GitHub</a>
+      <a href="https://x.com/yourusername" target="_blank">✖️ X</a>
     </div>
-
-    <!-- CONTACT FORM -->
 
     <form id="contact-form">
 
@@ -116,32 +86,22 @@
         required
       ></textarea>
 
-      <button type="submit">
-        Send Message
-      </button>
+      <button type="submit">Send Message</button>
 
     </form>
 
-    <!-- SUCCESS MESSAGE -->
-
     <div id="success-message" style="display: none;">
-
-      <h3>✅ Message Sent Successfully</h3>
+      <h3> Message Sent Successfully</h3>
 
       <p>
         Thank you for reaching out.
         I’ll get back to you as soon as possible.
       </p>
-
     </div>
 
   </div>
 
 </section>
-
-<!-- =========================
-     FOOTER
-========================= -->
 
 <footer>
   © 2026 Jonny Calderon
@@ -150,5 +110,4 @@
 <script src="app.js"></script>
 
 </body>
-
 </html>
